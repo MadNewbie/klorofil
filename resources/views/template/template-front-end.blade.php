@@ -15,8 +15,8 @@
             @yield('content')
         </div>
         @yield('script')
-        <script type='text/javascript' src="{{URL::to('general/smooth-scroll/smooth-scroll.js')}}"/>
-        <script type='text/javascript' src="{{URL::to('general/bootstrap/dist/js/bootstrap.min.js')}}"/>
-        <script type='text/javascript' src="{{URL::to('general/jquery/dist/jquery.min.js')}}"/>
+        <script type='text/javascript' src="{{URL::to('general/smooth-scroll/smooth-scroll.js')}}"></script>
+        <script type='text/javascript' src="{{URL::to('general/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+        <script type='text/javascript' src="{{URL::to('general/jquery/dist/jquery.min.js')}}"></script>
     </body>
 </html>
