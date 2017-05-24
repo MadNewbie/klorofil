@@ -10,8 +10,13 @@
                         <div class="hamburger-icon"></div>
                     </button>
                     <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="navBarMenu">
-
+                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="#">Menu 1</a></li>
+                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="#">Menu 2</a></li>
+                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="#">Menu 3</a></li>
                     </ul>
+                    <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <div class="close-icon"></div>
+                    </button>
                 </div>
             </div>
         </div>

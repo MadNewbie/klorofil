@@ -7,4 +7,3 @@ Test
 @section('content')
 Hello World
 @endsection
-
