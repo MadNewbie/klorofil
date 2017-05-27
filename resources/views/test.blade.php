@@ -1,9 +1,9 @@
-@extends('template.template-front-end')
+@extends('template.template-back-end')
 
 @section('title')
 Test
 @endsection
 
-@section('content')
+<!--@section('content')
 Hello World
-@endsection
+@endsection-->
