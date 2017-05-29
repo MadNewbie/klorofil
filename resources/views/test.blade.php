@@ -1,7 +1,7 @@
 @extends('template.template-back-end')
 
 @section('title')
-Test
+Test-Back End
 @endsection
 
 <!--@section('content')
