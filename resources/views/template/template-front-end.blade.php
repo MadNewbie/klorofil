@@ -34,7 +34,7 @@
 
 
 
-                        <a class="navbar-caption" href="../index.html">M-APP</a>
+                        <a class="navbar-caption" href="../index.html">KLOROFIL-TREE</a>
 
 
                 </div>
@@ -45,10 +45,9 @@
                     </button>
 
                     <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
-                      <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="index.html#header3-k">THE APP</a></li>
-                      <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="index.html#pricing-table2-f">PRICES</a></li>
+                      <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="index.html#header3-k">LOGIN</a></li>
                       <li class="nav-item dropdown open">
-                        <a class="nav-link link dropdown-toggle mbr-editable-menu-item" href="index.html#pricing-table2-f" data-toggle="dropdown-submenu" aria-expanded="true">MORE</a>
+                        <a class="nav-link link dropdown-toggle mbr-editable-menu-item" href="index.html#pricing-table2-f" data-toggle="dropdown-submenu" aria-expanded="true">INFO</a>
                           <div class="dropdown-menu">
                             <a class="dropdown-item mbr-editable-menu-item" href="#">What's New</a>
                             <a class="dropdown-item mbr-editable-menu-item" href="#">Features</a>
@@ -56,8 +55,6 @@
                             <a class="dropdown-item mbr-editable-menu-item" href=".#">Forum</a>
                           </div>
                       </li>
-                      <li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline mbr-editable-menu-item" href="#"><span class="mbri-apple mbr-iconfont mbr-iconfont-btn"></span>GET ON APP STORE</a></li>
-                      <li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline mbr-editable-menu-item" href="#"><span class="mbri-android mbr-iconfont mbr-iconfont-btn"></span>GET ON PLAY MARKET</a></li>
                     </ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
@@ -73,7 +70,7 @@
 
 <section class="mbr-section mbr-section-hero mbr-section-full header2 mbr-parallax-background mbr-after-navbar" id="header2-1" style="background-image: url(assets/images/f-mwo-dznni-averie-woodard-2000x2000.jpg);">
 
-    <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(71, 85, 119);">
+    <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(139, 195, 74);">
     </div>
 
     <div class="mbr-table mbr-table-full">
@@ -88,10 +85,10 @@
 
                         <div class="mbr-table-cell col-md-5 content-size text-xs-center text-md-right">
 
-                            <h3 class="mbr-section-title display-2">MOBILE APP SHOWCASE</h3>
+                            <h3 class="mbr-section-title display-2">WELCOME TO KLOROFIL</h3>
 
                             <div class="mbr-section-text">
-                                <p>Fusce interdum vulputate tortor, et ultrices nunc gravida ac. Curabitur nec odio lacaus.&nbsp;</p>
+                                <p>Love your tree, Love your life.&nbsp;</p>
                             </div>
 
                             <div class="mbr-section-btn"><a class="btn btn-black" href="https://mobirise.com">IPHONE</a> <a class="btn btn-black" href="https://mobirise.com">ANDROID</a> </div>
