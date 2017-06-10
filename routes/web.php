@@ -11,6 +11,25 @@
 |
 */
 
-Route::get('/', function () {
-    return view('test');
+Route::group(['middleware'=>['web']],function(){
+    
+   Route::get('/', function () {
+    return view('test-front-end');
+   });
+   
+   Route::group(['prefix'=>'admin'],function(){
+       
+       //Menu Dashboard
+       Route::get('/',[
+          'uses'=>'AdminController@getIndex',
+          'as'=>'admin.index'
+       ]);
+       
+       //Menu Penyakit
+       Route::get('/penyakit/',[
+           'uses'=>'PenyakitController@getIndex',
+           'as'=>'penyakit.index'
+       ]);
+   });
+   
 });

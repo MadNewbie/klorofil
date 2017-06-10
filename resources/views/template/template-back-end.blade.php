@@ -35,7 +35,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"> <span>Klorofil - Tree</span></a>
+              <a href="index.html" class="site_title"> <span>CiBOR</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -59,7 +59,7 @@
               <div class="menu_section">
                 <h3>Data Master</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> Wilayah <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-map-o"></i> Wilayah <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="#">Pulau</a></li>
                       <li><a href="#">Provinsi</a></li>
@@ -69,34 +69,35 @@
                       <li><a href="#">Area</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-edit"></i>Jenis Pohon <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-tree"></i>Jenis Pohon <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="#">Nama Ilmiah</a></li>
                       <li><a href="#">Nama Lokal</a></li>
                       <li><a href="#">Pertumbuhan</a></li>
                       <li><a href="#">Daun</a></li>
                       <li><a href="#">Cabang</a></li>
-                      <li><a href="#">Batang</a></li>
-                      <li><a href="#">Akar</a></li>
+<!--                      <li><a href="#">Batang</a></li>-->
+<!--                      <li><a href="#">Akar</a></li>-->
                       <li><a href="#">Bunga</a></li>
+                      <li><a href="#">Habitat</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-desktop"></i> Perlakuan <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-cogs"></i> Perlakuan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="#">Jenis Perlakuan</a></li>
                       <li><a href="#">Perlakuan</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-table"></i> Penyakit <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-ambulance"></i> Penyakit <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="tables.html">Jenis Penyakit</a></li>
-                      <li><a href="tables_dynamic.html">Penyakit</a></li>
+                      <li><a href="#">Jenis Penyakit</a></li>
+                      <li><a href="{{Route('penyakit.index')}}">Penyakit</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-table"></i> Akun <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-user"></i> Akun <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="tables.html">Jenis Akun</a></li>
-                      <li><a href="tables_dynamic.html">Akun</a></li>
+                      <li><a href="#">Jenis Akun</a></li>
+                      <li><a href="#">Akun</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -112,7 +113,7 @@
             <!-- /sidebar menu -->
 
             <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
+<!--            <div class="sidebar-footer hidden-small">
               <a data-toggle="tooltip" data-placement="top" title="Settings">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
               </a>
@@ -122,10 +123,10 @@
               <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+              <a data-toggle="tooltip" data-placement="top" title="Logout" >
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
-            </div>
+            </div>-->
             <!-- /menu footer buttons -->
           </div>
         </div>
@@ -141,7 +142,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">John Doe
+                    <img src="images/img.jpg" alt="">@yield('name')
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
