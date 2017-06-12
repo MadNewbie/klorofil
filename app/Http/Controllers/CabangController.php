@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class CabangController extends Controller
 {
     public function getIndex() {
-        return view('admin.index');
+        return view('cabang.index');
     }
 }

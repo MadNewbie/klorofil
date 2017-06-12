@@ -17,13 +17,15 @@
     <link href="{{URL::to('back-end/vendors/nprogress/nprogress.css')}}" rel="stylesheet">
     <!-- iCheck -->
     <link href="{{URL::to('back-end/vendors/iCheck/skins/flat/green.css')}}" rel="stylesheet">
-	
     <!-- bootstrap-progressbar -->
     <link href="{{URL::to('back-end/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet">
-    <!-- JQVMap -->
-    <link href="{{URL::to('back-end/vendors/jqvmap/dist/jqvmap.min.css')}}" rel="stylesheet"/>
-    <!-- bootstrap-daterangepicker -->
-    <link href="{{URL::to('back-end/vendors/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
+    <!-- PNotify -->
+    <link href="{{URL::to('back-end/vendors/pnotify/dist/pnotify.css')}}" rel="stylesheet">
+    <link href="{{URL::to('back-end/vendors/pnotify/dist/pnotify.buttons.css')}}" rel="stylesheet">
+    <link href="{{URL::to('back-end/vendors/pnotify/dist/pnotify.nonblock.css')}}" rel="stylesheet">
+    
+    @yield('styles')
+    
 
     <!-- Custom Theme Style -->
     <link href="{{URL::to('back-end/css/custom.min.css')}}" rel="stylesheet">
@@ -35,7 +37,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"> <span>CiBOR</span></a>
+              <a href="{{Route('admin.index')}}" class="site_title"> <span>CiBOR</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -61,43 +63,43 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-map-o"></i> Wilayah <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">Pulau</a></li>
-                      <li><a href="#">Provinsi</a></li>
-                      <li><a href="#">Kabupaten / Kota</a></li>
-                      <li><a href="#">Kecamatan</a></li>
-                      <li><a href="#">Kelurahan / Desa</a></li>
-                      <li><a href="#">Area</a></li>
+<!--                      <li><a href="#">Pulau</a></li>-->
+                      <li><a href="{{Route('provinsi.index')}}">Provinsi</a></li>
+                      <li><a href="{{Route('kabupaten_kota.index')}}">Kabupaten / Kota</a></li>
+                      <li><a href="{{Route('kecamatan.index')}}">Kecamatan</a></li>
+                      <li><a href="{{Route('kelurahan_desa.index')}}">Kelurahan / Desa</a></li>
+                      <li><a href="{{Route('area.index')}}">Area</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-tree"></i>Jenis Pohon <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">Nama Ilmiah</a></li>
-                      <li><a href="#">Nama Lokal</a></li>
-                      <li><a href="#">Pertumbuhan</a></li>
-                      <li><a href="#">Daun</a></li>
-                      <li><a href="#">Cabang</a></li>
+                      <li><a href="{{Route('nama_ilmiah.index')}}">Nama Ilmiah</a></li>
+                      <li><a href="{{Route('nama_lokal.index')}}">Nama Lokal</a></li>
+                      <li><a href="{{Route('pertumbuhan.index')}}">Pertumbuhan</a></li>
+                      <li><a href="{{Route('daun.index')}}">Daun</a></li>
+                      <li><a href="{{Route('cabang.index')}}">Cabang</a></li>
 <!--                      <li><a href="#">Batang</a></li>-->
 <!--                      <li><a href="#">Akar</a></li>-->
-                      <li><a href="#">Bunga</a></li>
-                      <li><a href="#">Habitat</a></li>
+                      <li><a href="{{Route('bunga.index')}}">Bunga</a></li>
+                      <li><a href="{{Route('habitat.index')}}">Habitat</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-cogs"></i> Perlakuan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">Jenis Perlakuan</a></li>
-                      <li><a href="#">Perlakuan</a></li>
+                      <li><a href="{{Route('jenis_perlakuan.index')}}">Jenis Perlakuan</a></li>
+                      <li><a href="{{Route('perlakuan.index')}}">Perlakuan</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-ambulance"></i> Penyakit <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">Jenis Penyakit</a></li>
+                      <li><a href="{{Route('jenis_penyakit.index')}}">Jenis Penyakit</a></li>
                       <li><a href="{{Route('penyakit.index')}}">Penyakit</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-user"></i> Akun <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">Jenis Akun</a></li>
-                      <li><a href="#">Akun</a></li>
+                      <li><a href="{{Route('jenis_akun.index')}}">Jenis Akun</a></li>
+                      <li><a href="{{Route('akun.index')}}">Akun</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -253,35 +255,16 @@
     <script src="{{URL::to('back-end/vendors/fastclick/lib/fastclick.js')}}"></script>
     <!-- NProgress -->
     <script src="{{URL::to('back-end/vendors/nprogress/nprogress.js')}}"></script>
-    <!-- Chart.js -->
-    <script src="{{URL::to('back-end/vendors/Chart.js/dist/Chart.min.js')}}"></script>
-    <!-- gauge.js -->
-    <script src="{{URL::to('back-end/vendors/gauge.js/dist/gauge.min.js')}}"></script>
     <!-- bootstrap-progressbar -->
     <script src="{{URL::to('back-end/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js')}}"></script>
     <!-- iCheck -->
     <script src="{{URL::to('back-end/vendors/iCheck/icheck.min.js')}}"></script>
-    <!-- Skycons -->
-    <script src="{{URL::to('back-end/vendors/skycons/skycons.js')}}"></script>
-    <!-- Flot -->
-    <script src="{{URL::to('back-end/vendors/Flot/jquery.flot.js')}}"></script>
-    <script src="{{URL::to('back-end/vendors/Flot/jquery.flot.pie.js')}}"></script>
-    <script src="{{URL::to('back-end/vendors/Flot/jquery.flot.time.js')}}"></script>
-    <script src="{{URL::to('back-end/vendors/Flot/jquery.flot.stack.js')}}"></script>
-    <script src="{{URL::to('back-end/vendors/Flot/jquery.flot.resize.js')}}"></script>
-    <!-- Flot plugins -->
-    <script src="{{URL::to('back-end/vendors/flot.orderbars/js/jquery.flot.orderBars.js')}}"></script>
-    <script src="{{URL::to('back-end/vendors/flot-spline/js/jquery.flot.spline.min.js')}}"></script>
-    <script src="{{URL::to('back-end/vendors/flot.curvedlines/curvedLines.js')}}"></script>
-    <!-- DateJS -->
-    <script src="{{URL::to('back-end/vendors/DateJS/build/date.js')}}"></script>
-    <!-- JQVMap -->
-    <script src="{{URL::to('back-end/vendors/jqvmap/dist/jquery.vmap.js')}}"></script>
-    <script src="{{URL::to('back-end/vendors/jqvmap/dist/maps/jquery.vmap.world.js')}}"></script>
-    <script src="{{URL::to('back-end/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js')}}"></script>
-    <!-- bootstrap-daterangepicker -->
-    <script src="{{URL::to('back-end/vendors/moment/min/moment.min.js')}}"></script>
-    <script src="{{URL::to('back-end/vendors/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+    <!-- PNotify -->
+    <script src="{{URL::to('back-end/vendors/pnotify/dist/pnotify.js')}}"></script>
+    <script src="{{URL::to('back-end/vendors/pnotify/dist/pnotify.buttons.js')}}"></script>
+    <script src="{{URL::to('back-end/vendors/pnotify/dist/pnotify.nonblock.js')}}"></script>
+    
+    @yield('scripts')
 
     <!-- Custom Theme Scripts -->
     <script src="{{URL::to('back-end/js/custom.min.js')}}"></script>

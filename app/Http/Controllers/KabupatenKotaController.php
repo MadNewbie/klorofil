@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class KabupatenKotaController extends Controller
 {
     public function getIndex() {
-        return view('admin.index');
+        return view('kabupaten_kota.index');
     }
 }

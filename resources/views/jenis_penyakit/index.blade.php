@@ -1,7 +1,7 @@
 @extends('template.template-back-end')
 
 @section('title')
-Admin - Penyakit
+Admin - Jenis Penyakit
 @endsection
 
 @section('name')
@@ -9,5 +9,5 @@ Moh. Ardiansyah
 @endsection
 
 @section('content')
-Penyakit
+Jenis Penyakit
 @endsection

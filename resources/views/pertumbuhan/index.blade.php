@@ -1,7 +1,7 @@
 @extends('template.template-back-end')
 
 @section('title')
-Test
+Admin - Pertumbuhan
 @endsection
 
 @section('name')
@@ -9,5 +9,5 @@ Moh. Ardiansyah
 @endsection
 
 @section('content')
-Hello World
+Pertumbuhan
 @endsection
