@@ -17,6 +17,14 @@ Route::group(['middleware'=>['web']],function(){
     return view('test-front-end');
    });
    
+   Route::get('/osmtest',function(){
+       return view('test-osm');
+   });
+   
+   Route::get('/gmap',function(){
+       return view('test-gmap');
+   });
+   
    Route::group(['prefix'=>'admin'],function(){
        
        //Menu Dashboard
