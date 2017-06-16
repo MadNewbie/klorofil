@@ -12,14 +12,33 @@ Moh. Ardiansyah
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
         <div class="x_title">
-            <h2>Penyakit</h2>
+            <h2>Jenis Akun</h2>
             <div class="clearfix"></div>
+        </div>
+         <div class="x_panel">
+            <div class="x_title">
+                    <ul class="nav navbar-left panel_toolbox">
+                        <li><a class="collapse-link btn btn-primary"><i class="fa fa-plus"></i></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+            </div>
+            <div class="x_content" style="display: none">
+                <div class="row">
+                    <input class="col-md-2" type="text" placeholder="Jenis Akun"/>
+                    <select class="col-md-2">
+                        <option hidden="">Hak Akses</option>
+                        <option>Provinsi</option>
+                        <option>Kabupaten/Kota</option>
+                        <option>Kecamatan</option>
+                        <option>Kelurahan/Desa</option>
+                        <option>Area</option>
+                    </select>
+                    <button class="btn btn-primary"><i class="fa fa-plus"></i></button>
+                </div>
+            </div>
         </div>
         <div class="x_content">
             <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <button class="btn btn-primary"><i class="fa fa-plus"></i></button>
-                </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 dataTables_filter">
                     <input type="search" placeholder="Cari"/>
                 </div>

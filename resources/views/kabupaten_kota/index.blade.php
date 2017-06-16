@@ -47,9 +47,6 @@ Moh. Ardiansyah
         </div>
         <div class="x_content">
             <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <button class="btn btn-primary"><i class="fa fa-plus"></i></button>
-                </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 dataTables_filter">
                     <input type="search" placeholder="Cari"/>
                 </div>

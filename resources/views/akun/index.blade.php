@@ -15,11 +15,32 @@ Moh. Ardiansyah
             <h2>Akun</h2>
             <div class="clearfix"></div>
         </div>
-        <div class="x_content">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                    <ul class="nav navbar-left panel_toolbox">
+                        <li><a class="collapse-link btn btn-primary"><i class="fa fa-plus"></i></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+            </div>
+            <div class="x_content" style="display: none">
+                <div class="row">
+                    <input class="col-md-2" type="text" placeholder="Nama Lengkap"/>
+                    <input class="col-md-2" type="text" placeholder="Username"/>
+                    <select>
+                        <option hidden="">Hak Akses</option>
+                        <option>Administrator</option>
+                        <option>Operator (Provinsi)</option>
+                        <option>Operator (Kabupaten/Kota)</option>
+                        <option>Operator (Kecamatan)</option>
+                        <option>Operator (Kelurahan/Desa)</option>
+                        <option>Operator (Area)</option>
+                    </select>
                     <button class="btn btn-primary"><i class="fa fa-plus"></i></button>
                 </div>
+            </div>
+        </div>
+        <div class="x_content">
+            <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12 dataTables_filter">
                     <input type="search" placeholder="Cari"/>
                 </div>
