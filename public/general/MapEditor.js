@@ -1,6 +1,6 @@
       var map;
       var pointBorder = new Array();
-      var geocoder;
+      var selectedBorder;
       
       function initMap() {
         var defaultCenter = {lat: -7.9666204, lng: 112.6326321};
@@ -22,14 +22,29 @@
       
       function onClick(point){
           pointBorder.push(point);
-          console.log(pointBorder);
+//          console.log(pointBorder);
+          if(selectedBorder !== undefined){
+//            console.log(selectedBorder.getPath());
+            selectedBorder.setMap(null);
+          }
           var borderLine = new google.maps.Polygon({
                 paths: pointBorder,
                 strokeColor: '#FF0000',
                 strokeOpacity: 0.8,
                 strokeWeight: 3,
                 fillColor: '#FF0000',
-                fillOpacity: 0.35
+                fillOpacity: 0.35,
+                editable:true
           });
-          borderLine.setMap(map);
+          selectedBorder = borderLine;
+          selectedBorder.setMap(map);
+//          borderLine.setMap(map);
+      }
+      
+      function btnSimpanOnClick(){
+          pointBorder = new Array();
+          for(var i=0;i<selectedBorder.getPath().getLength();i++){
+              pointBorder.push(selectedBorder.getPath().getAt(i).toUrlValue(6));
+          }
+          console.log(pointBorder);
       }

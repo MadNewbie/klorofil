@@ -55,6 +55,7 @@ Moh. Ardiansyah
                             <option>Sukun</option>
                         </select>
                         <input class="col-md-2" type="text" placeholder="Nama Area"/>
+                        <button class="col-md-1 btn btn-success" onclick="btnSimpanOnClick()">Simpan</button>
                     </div>
                 </div>
                 <div id="map"></div>
