@@ -46,5 +46,5 @@
           for(var i=0;i<selectedBorder.getPath().getLength();i++){
               pointBorder.push(selectedBorder.getPath().getAt(i).toUrlValue(6));
           }
-          console.log(pointBorder);
+          window.alert(pointBorder);
       }
