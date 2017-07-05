@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class TingkatanHakAkses extends Seeder
+class TingkatanHakAksesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
