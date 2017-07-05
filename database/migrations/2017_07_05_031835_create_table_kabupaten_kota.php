@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateTableKabupatenKota extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->increments('id_user');
-            $table->integer('jenis_user');
-            $table->string('nama');
-            $table->string('username')->unique();
-            $table->string('password');
-            $table->rememberToken();
+        Schema::create('kabupaten_kota', function (Blueprint $table) {
+            $table->increments('id_kabupaten_kota');
+            $table->string('nama_kabupaten_kota');
+            $table->integer('id_provinsi');
             $table->timestamps();
         });
+        DB::statement('ALTER TABLE area ADD detail_wilayah POLYGON');
     }
 
     /**
@@ -31,6 +29,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('kabupaten_kota');
     }
 }
