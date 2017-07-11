@@ -20,7 +20,7 @@ class CreateTableKecamatan extends Migration
             $table->integer('id_kabupaten_kota');
             $table->timestamps();
         });
-        DB::statement('ALTER TABLE kecamatan ADD detail_wilayah POLYGON');
+        DB::statement('ALTER TABLE area ADD detail_wilayah POLYGON');
     }
 
     /**

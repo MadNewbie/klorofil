@@ -14,28 +14,22 @@ class JenisUserTableSeeder extends Seeder
     {
         //
         DB::table('jenis_user')->insert([
-            'nama_jenis_akun'=>'Administrator',
-            'id_tingkatan_hak_akses'=>1
+            'nama_jenis_akun'=>'Administrator'
         ]);
         DB::table('jenis_user')->insert([
-            'nama_jenis_akun'=>'Operator (Provinsi)',
-            'id_tingkatan_hak_akses'=>2
+            'nama_jenis_akun'=>'Operator (Provinsi)'
         ]);
         DB::table('jenis_user')->insert([
-            'nama_jenis_akun'=>'Operator (Kabupaten/Kota)',
-            'id_tingkatan_hak_akses'=>3
+            'nama_jenis_akun'=>'Operator (Kabupaten/Kota)'
         ]);
         DB::table('jenis_user')->insert([
-            'nama_jenis_akun'=>'Operator (Kecamatan)',
-            'id_tingkatan_hak_akses'=>4
+            'nama_jenis_akun'=>'Operator (Kecamatan)'
         ]);
         DB::table('jenis_user')->insert([
-            'nama_jenis_akun'=>'Operator (Kelurahan/Desa)',
-            'id_tingkatan_hak_akses'=>5
+            'nama_jenis_akun'=>'Operator (Kelurahan/Desa)'
         ]);
         DB::table('jenis_user')->insert([
-            'nama_jenis_akun'=>'Operator (Area)',
-            'id_tingkatan_hak_akses'=>6
+            'nama_jenis_akun'=>'Operator (Area)'
         ]);
     }
 }

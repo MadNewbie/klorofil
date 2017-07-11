@@ -19,7 +19,7 @@ class CreateTableKabupatenKota extends Migration
             $table->integer('id_provinsi');
             $table->timestamps();
         });
-        DB::statement('ALTER TABLE kabupaten_kota ADD detail_wilayah POLYGON');
+        DB::statement('ALTER TABLE area ADD detail_wilayah POLYGON');
     }
 
     /**

@@ -15,8 +15,8 @@ class UsersTableSeeder extends Seeder
     {
         //
         DB::table('users')->insert([
-            'id_jenis_user'=>1,
-            'nama'=>'Administrator',
+            'id_jenis_user'=>0,
+            'name'=>'Administrator',
             'username'=>'admin',
             'password'=>bcrypt('admin'),
         ]);

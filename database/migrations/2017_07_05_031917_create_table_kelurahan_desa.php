@@ -21,7 +21,7 @@ class CreateTableKelurahanDesa extends Migration
             $table->integer('id_kecamatan');
             $table->timestamps();
         });
-        DB::statement('ALTER TABLE kelurahan_desa ADD detail_wilayah POLYGON');
+        DB::statement('ALTER TABLE area ADD detail_wilayah POLYGON');
     }
 
     /**

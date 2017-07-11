@@ -15,10 +15,10 @@ class CreateTableProvinsi extends Migration
     {
         Schema::create('provinsi', function (Blueprint $table) {
             $table->increments('id_provinsi');
-            $table->string('nama_provinsi');
+            $table->stirng('nama_provinsi');
             $table->timestamps();
         });
-        DB::statement('ALTER TABLE provinsi ADD detail_wilayah POLYGON');
+        DB::statement('ALTER TABLE area ADD detail_wilayah POLYGON');
     }
 
     /**
