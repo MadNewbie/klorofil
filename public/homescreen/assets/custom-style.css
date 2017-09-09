@@ -1,0 +1,129 @@
+#navigation-bar{
+}
+
+#btn-join-us{
+    color: #000 !important;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: 1rem;
+    background: #80ce1d;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.caption{
+    font-family: Courier,monospace;
+    font-style: italic;
+    font-weight: bold;
+    position: relative;
+    top: 17vh;
+    left: 10vw;
+    width: 35vw;
+    height: 15vh;
+}
+
+.carousel-item{
+    min-width: 100%;
+}
+
+.text-definition{
+    font-size: 2rem;
+}
+
+.text-description{
+    font-size: 1.5rem;
+}
+
+.text-on-image{
+    position: relative;
+    background: whitesmoke;
+    opacity: 0.6;
+}
+
+.nopadding {
+   padding-left: 0 !important;
+   padding-right: 0 !important;
+   margin: 0 !important;
+}
+
+#slider-1 .carousel-indicators{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    list-style: none;
+    width: 100%;
+    margin: 0;
+}
+
+#slider-1 .carousel-indicators li{
+    background: none;
+    display: inline-block;
+    width: 30%;
+    margin: 0;
+    text-indent: 0;
+    opacity: 1;
+}
+
+#slider-1 .carousel-indicators .active{
+    background: none;
+    border: none;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#slider-2 .carousel-indicators{
+    position: relative;
+    bottom: 0.5vh;
+}
+
+#slider-2 .carousel-item div{
+    height: 20vh;
+}
+
+#slider-3 .carousel-indicators{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    list-style: none;
+    width: 100%;
+    margin: 0;
+}
+
+#slider-3 .carousel-indicators li{
+    background: none;
+    display: inline-block;
+    width: 13%;
+    height: 20vh;
+    margin: 0;
+    text-indent: 0;
+    opacity: 1;
+}
+
+#slider-3 .carousel-indicators .active{
+    background: #455a64;
+    border: none;
+}
+
+#slider-3 .carousel-indicators .active img{
+    filter: brightness(500%);
+}
+
+#slider-3 .carousel-inner {
+    width: 100%;
+    min-height: 55vh;
+}
+
+#slider-3 .inner-box{
+    background-color: #455a64;
+    color: white;
+}
+
+#slider-3 .carousel-item{
+    height: 40vh;
+}
+
+.mbr-section{
+    text-align: center;
+}

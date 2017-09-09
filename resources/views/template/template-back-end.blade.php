@@ -98,6 +98,7 @@
                   </li>
                   <li><a><i class="fa fa-user"></i> Akun <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
+                        <li><a href="{{Route('jenis_wilayah_akun.index')}}">Jenis Wilayah Akun</a></li>
                       <li><a href="{{Route('jenis_akun.index')}}">Jenis Akun</a></li>
                       <li><a href="{{Route('akun.index')}}">Akun</a></li>
                     </ul>
@@ -245,8 +246,14 @@
         </footer>
         <!-- /footer content -->
       </div>
-    </div>
-
+    </div>     
+    <!--Token-->
+        <script type="text/javascript">
+            var token = "{{Session::token()}}";
+            var baseUrl="{{URL::to('/')}}";
+        </script>
+    <!--Ajax-->
+    <script src="{{URL::to('general/ajax.js')}}"></script>
     <!-- jQuery -->
     <script src="{{URL::to('back-end/vendors/jquery/dist/jquery.min.js')}}"></script>
     <!-- Bootstrap -->
@@ -264,6 +271,7 @@
     <script src="{{URL::to('back-end/vendors/pnotify/dist/pnotify.buttons.js')}}"></script>
     <script src="{{URL::to('back-end/vendors/pnotify/dist/pnotify.nonblock.js')}}"></script>
     
+    <!--Script from menu-->
     @yield('scripts')
 
     <!-- Custom Theme Scripts -->

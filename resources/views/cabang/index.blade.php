@@ -24,12 +24,15 @@ Moh. Ardiansyah
             </div>
             <div class="x_content" style="display: none">
                 <div class="row">
-                    <input class="col-md-2" type="text" placeholder="Jenis Cabang"/>
-                    <button class="btn btn-primary"><i class="fa fa-plus"></i></button>
+                    <input id="nama_jenis_cabang" class="col-md-2" type="text" placeholder="Jenis Cabang"/>
+                    <button id="btnAdd" class="btn btn-primary"><i class="fa fa-plus"></i></button>
                 </div>
             </div>
         </div>
         <div class="x_content">
+            @if(count($cabangs)===0)
+            <h4 class="text-center">Tidak ada data cabang</h4>
+            @else
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12 dataTables_filter">
                     <input type="search" placeholder="Cari"/>
@@ -46,21 +49,42 @@ Moh. Ardiansyah
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $i=0 ?>
+                            @foreach($cabangs as $cabang)
+                            <?php $i++?>
                             <tr class="row">
-                                <td class="col-md-1 col-sm-1 col-xs-1">1</td>
-                                <td class="col-md-10 col-sm-10 col-xs-10">Jenis Cabang 1</td>
+                                <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
+                                <td class="col-md-10 col-sm-10 col-xs-10">{{$cabang->nama_jenis_cabang}}</td>
                                 <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div role="group" class="btn-group btn-group-justified">
+                                   <div data-id="{{$cabang->id_cabang}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
                                         <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
                                         <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
+                @if($cabangs->lastPage() > 1)
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12 text-center">
+                        @if($cabangs->currentPage() !== 1)
+                            <a href="{{$cabangs->previousPageUrl()}}"><i class="fa fa-caret-left"></i></a>
+                        @endif
+                        @if($cabangs->currentPage() !== $cabangs->lastPage())
+                            <a href="{{$cabangs->nextPageUrl()}}"><i class="fa fa-caret-right"></i></a>
+                        @endif
+                    </div>
+                </div>
+                @endif
+            @endif
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script src="{{URL::to('back-end/js/cabang/cabang.js')}}"></script>
 @endsection

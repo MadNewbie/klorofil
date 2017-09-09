@@ -50,6 +50,7 @@ Moh. Ardiansyah
                             <option>Sukun</option>
                         </select>
                         <input class="col-md-2" type="text" placeholder="Nama Kelurahan"/>
+                        <button class="col-md-1 btn btn-success" onclick="btnSimpanOnClick()">Simpan</button>
                     </div>
                 </div>
                 <div id="map"></div>
@@ -114,18 +115,6 @@ Moh. Ardiansyah
 @endsection
 
 @section('scripts')
-<script>
-      function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-</script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqbtULHt9MCzx6qiqosU40KgeKVylVTL0&callback=initMap" type="text/javascript"></script> 
+<script src="{{URL::to('general/MapEditor.js')}}"></script>
 @endsection

@@ -24,20 +24,16 @@ Moh. Ardiansyah
             </div>
             <div class="x_content" style="display: none">
                 <div class="row">
-                    <input class="col-md-2" type="text" placeholder="Jenis Akun"/>
-                    <select class="col-md-2">
-                        <option hidden="">Hak Akses</option>
-                        <option>Provinsi</option>
-                        <option>Kabupaten/Kota</option>
-                        <option>Kecamatan</option>
-                        <option>Kelurahan/Desa</option>
-                        <option>Area</option>
-                    </select>
-                    <button class="btn btn-primary"><i class="fa fa-plus"></i></button>
+                    <input id="nama_jenis_akun" class="col-md-2" type="text" placeholder="Jenis Akun"/>
+                    <select id="drp_nilai_jenis_wilayah_akun" class="col-md-2"></select>
+                    <button id="btnAdd" class="btn btn-primary"><i class="fa fa-plus"></i></button>
                 </div>
             </div>
         </div>
         <div class="x_content">
+            @if(count($jenis_users)===0)
+            <h4 class="text-center">Tidak ada data jenis user</h4>
+            @else
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12 dataTables_filter">
                     <input type="search" placeholder="Cari"/>
@@ -55,77 +51,31 @@ Moh. Ardiansyah
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $i=0 ?>
+                            @foreach($jenis_users as $jenis_user)
+                            <?php $i++ ?>
                             <tr class="row">
-                                <td class="col-md-1 col-sm-1 col-xs-1">1</td>
-                                <td class="col-md-5 col-sm-5 col-xs-5">Administrator</td>
-                                <td class="col-md-5 col-sm-5 col-xs-5">Semua</td>
+                                <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
+                                <td class="col-md-5 col-sm-5 col-xs-5">{{$jenis_user->nama_jenis_akun}}</td>
+                                <td class="col-md-5 col-sm-5 col-xs-5" data-id="{{$jenis_user->id_jenis_wilayah_user}}">{{$jenis_user->jenisWilayahUser->nama_jenis_wilayah_user}}</td>
                                 <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div role="group" class="btn-group btn-group-justified">
+                                   <div role="group" data-id="{{$jenis_user->id_jenis_user}}" class="btnGroupOperation btn-group btn-group-justified">
                                         <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
                                         <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="row">
-                                <td class="col-md-1 col-sm-1 col-xs-1">2</td>
-                                <td class="col-md-5 col-sm-5 col-xs-5">Operator (Provinsi)</td>
-                                <td class="col-md-5 col-sm-5 col-xs-5">Provinsi</td>
-                                <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div role="group" class="btn-group btn-group-justified">
-                                        <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                                        <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="row">
-                                <td class="col-md-1 col-sm-1 col-xs-1">3</td>
-                                <td class="col-md-5 col-sm-5 col-xs-5">Operator (Kabupaten/Kota)</td>
-                                <td class="col-md-5 col-sm-5 col-xs-5">Kabupaten / Kota</td>
-                                <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div role="group" class="btn-group btn-group-justified">
-                                        <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                                        <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="row">
-                                <td class="col-md-1 col-sm-1 col-xs-1">4</td>
-                                <td class="col-md-5 col-sm-5 col-xs-5">Operator (Kecamatan)</td>
-                                <td class="col-md-5 col-sm-5 col-xs-5">Kecamatan</td>
-                                <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div role="group" class="btn-group btn-group-justified">
-                                        <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                                        <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="row">
-                                <td class="col-md-1 col-sm-1 col-xs-1">6</td>
-                                <td class="col-md-5 col-sm-5 col-xs-5">Operator (Kelurahan / Desa)</td>
-                                <td class="col-md-5 col-sm-5 col-xs-5">Kelurahan / Desa</td>
-                                <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div role="group" class="btn-group btn-group-justified">
-                                        <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                                        <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="row">
-                                <td class="col-md-1 col-sm-1 col-xs-1">7</td>
-                                <td class="col-md-5 col-sm-5 col-xs-5">Operator (Area)</td>
-                                <td class="col-md-5 col-sm-5 col-xs-5">Area</td>
-                                <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div role="group" class="btn-group btn-group-justified">
-                                        <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                                        <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script src="{{URL::to('back-end/js/jenis_user/jenis_user.js')}}"></script>
 @endsection

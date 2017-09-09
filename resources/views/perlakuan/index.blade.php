@@ -25,17 +25,17 @@ Moh. Ardiansyah
             <div class="x_content" style="display: none">
                 <div class="row">
                     <div class="col-md-12 col-xs-12 col-sm-12">
-                        <select class="col-md-2">
-                            <option hidden="">Jenis Perlakuan</option>
-                            <option>Area</option>
-                        </select>
-                        <input class="col-md-2" type="text" placeholder="Nama Lokal"/>
-                        <button class="btn btn-primary"><i class="fa fa-plus"></i></button>
+                        <select id="jenis_perlakuan" class="col-md-2"></select>
+                        <input id="nama_perlakuan" class="col-md-2" type="text" placeholder="Perlakuan"/>
+                        <button id="btnAdd" class="btn btn-primary"><i class="fa fa-plus"></i></button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="x_content">
+            @if(count($perlakuans)===0)
+            <h4 class="text-center">Tidak ada data perlakuan</h4>
+            @else
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12 dataTables_filter">
                     <input type="search" placeholder="Cari"/>
@@ -53,33 +53,31 @@ Moh. Ardiansyah
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $i=0 ?>
+                            @foreach($perlakuans as $perlakuan)
+                            <?php $i++ ?>
                             <tr class="row">
-                                <td class="col-md-1 col-sm-1 col-xs-1">1</td>
-                                <td class="col-md-5 col-sm-5 col-xs-5">Penyiraman</td>
-                                <td class="col-md-5 col-sm-5 col-xs-5">Area</td>
+                                <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
+                                <td class="col-md-5 col-sm-5 col-xs-5">{{$perlakuan->nama_perlakuan}}</td>
+                                <td class="col-md-5 col-sm-5 col-xs-5" data-id="{{$perlakuan->id_jenis_perlakuan}}">{{$perlakuan->jenisPerlakuan->nama_jenis_perlakuan}}</td>
                                 <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div role="group" class="btn-group btn-group-justified">
+                                   <div data-id="{{$perlakuan->id_perlakuan}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
                                         <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
                                         <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="row">
-                                <td class="col-md-1 col-sm-1 col-xs-1">2</td>
-                                <td class="col-md-5 col-sm-5 col-xs-5">Pemupukan</td>
-                                <td class="col-md-5 col-sm-5 col-xs-5">Area</td>
-                                <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div role="group" class="btn-group btn-group-justified">
-                                        <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                                        <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script src="{{URL::to('back-end/js/perlakuan/perlakuan.js')}}"></script>
 @endsection

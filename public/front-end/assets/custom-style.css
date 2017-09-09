@@ -1,0 +1,27 @@
+.navbar-dropdown .mbr-table-cell{
+    height: 50px;
+}
+
+.main_container{
+    top: 50px;
+}
+
+.info-section{
+    background: #a7c4d2;
+    height: 100vh;
+}
+
+#map-section{
+    background: grey;
+    height: 100vh;
+}
+
+#btn-join-us{
+    color: #000 !important;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: 1rem;
+    background: #80ce1d;
+    padding: 20px;
+    text-decoration: none;
+}

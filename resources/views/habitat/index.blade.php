@@ -24,13 +24,16 @@ Moh. Ardiansyah
             </div>
             <div class="x_content" style="display: none">
                 <div class="row">
-                    <input class="col-md-2" type="text" placeholder="Nama Hewan"/>
-                    <textarea class="col-md-8" type="text" placeholder="Keterangan" rows="1"></textarea>
-                    <button class="btn btn-primary"><i class="fa fa-plus"></i></button>
+                    <input id="nama_hewan" class="col-md-2" type="text" placeholder="Nama Hewan"/>
+                    <textarea id="keterangan" class="col-md-8" type="text" placeholder="Keterangan" rows="1"></textarea>
+                    <button id="btnAdd" class="btn btn-primary"><i class="fa fa-plus"></i></button>
                 </div>
             </div>
         </div>
         <div class="x_content">
+            @if(count($habitats)===0)
+            <h4 class="text-center">Tidak ada data habitat</h4>
+            @else
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12 dataTables_filter">
                     <input type="search" placeholder="Cari"/>
@@ -48,22 +51,43 @@ Moh. Ardiansyah
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $i=0 ?>
+                            @foreach($habitats as $habitat)
+                            <?php $i++ ?>
                             <tr class="row">
-                                <td class="col-md-1 col-sm-1 col-xs-1">1</td>
-                                <td class="col-md-5 col-sm-5 col-xs-5">Burung Parkit</td>
-                                <td class="col-md-5 col-sm-5 col-xs-5">Jenis burung yang memakan biji-bijian kecil</td>
+                                <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
+                                <td class="col-md-5 col-sm-5 col-xs-5">{{$habitat->nama_hewan}}</td>
+                                <td class="col-md-5 col-sm-5 col-xs-5">{{$habitat->keterangan}}</td>
                                 <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div role="group" class="btn-group btn-group-justified">
+                                   <div data-id="{{$habitat->id_habitat}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
                                         <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
                                         <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
+                @if($habitats->lastPage() > 1)
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12 text-center">
+                        @if($habitats->currentPage() !== 1)
+                            <a href="{{$habitats->previousPageUrl()}}"><i class="fa fa-caret-left"></i></a>
+                        @endif
+                        @if($habitats->currentPage() !== $habitats->lastPage())
+                            <a href="{{$habitats->nextPageUrl()}}"><i class="fa fa-caret-right"></i></a>
+                        @endif
+                    </div>
+                </div>
+                @endif
+            @endif
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script src="{{URL::to('back-end/js/habitat/habitat.js')}}"></script>
 @endsection
