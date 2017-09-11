@@ -16,13 +16,13 @@ class CreateKabupatenKotasTable extends Migration
         Schema::create('kabupaten_kotas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
-            $table->integer('detail_wilayah')->nullable();
+            $table->integer('detail_area')->nullable();
             $table->unsignedInteger('created_by')->nullable();
             $table->unsignedInteger('updated_by')->nullable();
             $table->timestamps();
             $table->unsignedInteger('provinsi_id');
             
-            $table->foreign('provinisi_id')->references('id')->on('provinsis')->onUpdate('cascade');
+            $table->foreign('provinsi_id')->references('id')->on('provinsis')->onUpdate('cascade');
         });
         DB::statement('ALTER TABLE `kabupaten_kotas` MODIFY COLUMN `detail_area` POLYGON NULL DEFAULT NULL;');
     }

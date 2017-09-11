@@ -17,8 +17,8 @@ class CreateKecamatansTable extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->integer('detail_area')->nullable();
-            $table->unsigndeInteger('created_by')->nullable();
-            $table->unsigndeInteger('updated_by')->nullable();
+            $table->unsignedInteger('created_by')->nullable();
+            $table->unsignedInteger('updated_by')->nullable();
             $table->timestamps();
             $table->unsignedInteger('kabupaten_kota_id');
             

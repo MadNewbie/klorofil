@@ -16,11 +16,11 @@ class CreatePlantPhysicalsTable extends Migration
         Schema::create('plant_physicals', function (Blueprint $table) {
             $table->increments('id');
             $table->dateTime('date');
-            $table->unsignedDouble('height',6,2);
-            $table->unsignedDouble('dbh',6,2);
-            $table->unsignedDouble('crown_width',6,2);
-            $table->unsignedDouble('crown_density',6,2);
-            $table->unsignedDouble('root_radius_critical',6,2);
+            $table->double('height',6,2);
+            $table->double('dbh',6,2);
+            $table->double('crown_width',6,2);
+            $table->double('crown_density',6,2);
+            $table->double('root_radius_critical',6,2);
             $table->unsignedInteger('created_by');
             $table->unsignedInteger('updated_by');
             $table->unsignedInteger('plant_general_id');

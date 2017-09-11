@@ -18,7 +18,7 @@ class CreatePlantHealthsTable extends Migration
             $table->unsignedInteger('plant_physical_id');
             $table->unsignedInteger('disease_type_id');
             $table->unsignedInteger('disease_id');
-            $table->unsignedDouble('overall_condition');
+            $table->double('overall_condition');
             $table->timestamps();
             
             $table->foreign('plant_physical_id')->references('id')->on('plant_physicals')->onUpdate('cascade');

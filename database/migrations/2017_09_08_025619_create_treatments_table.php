@@ -21,7 +21,7 @@ class CreateTreatmentsTable extends Migration
             $table->unsignedInteger('updated_by')->nullable();
             $table->timestamps();
             
-            $table->foreign('type_species_id')->references('id')->on('type_species')->onUpdate('cascade');
+            $table->foreign('type_species_id')->references('id')->on('species_types')->onUpdate('cascade');
         });
     }
 

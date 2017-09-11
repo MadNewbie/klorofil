@@ -18,7 +18,7 @@ class CreateTypeAreasTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
-        DB::statement('ALTER TABLE `areas` FOREIGN KEY `type_area_id` REFERENCES `type_areas`(`id`);');
+        DB::statement('ALTER TABLE `areas` ADD FOREIGN KEY (`type_area_id`) REFERENCES `type_areas`(`id`);');
     }
 
     /**

@@ -16,7 +16,7 @@ class CreatePlantGeneralsTable extends Migration
         Schema::create('plant_generals', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedTinyInteger('status');
-            $table->unsignedDouble('age',5,2);
+            $table->double('age',5,2);
             $table->unsignedInteger('plant_replacement_id')->nullable();
             $table->unsignedInteger('area_id');
             $table->unsignedInteger('species_id');

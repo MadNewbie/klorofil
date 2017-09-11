@@ -15,9 +15,9 @@ class CreateDetailAreasTable extends Migration
     {
         Schema::create('detail_areas', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedDouble('jumlah_penduduk',10,0);
+            $table->double('jumlah_penduduk',10,0);
             $table->string('jenis_kendaraan');
-            $table->unsignedDouble('kepadatan',10,2);
+            $table->double('kepadatan',10,2);
             $table->unsignedInteger('area_id');
             $table->unsignedInteger('created_by')->nullable();
             $table->unsignedInteger('updated_by')->nullable();

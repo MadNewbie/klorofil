@@ -16,6 +16,7 @@ class CreateDiseasesTable extends Migration
         Schema::create('diseases', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
+            $table->unsignedInteger('weight');
             $table->unsignedInteger('disease_type_id');
             $table->unsignedInteger('created_by')->nullable();
             $table->unsignedInteger('updated_by')->nullable();
