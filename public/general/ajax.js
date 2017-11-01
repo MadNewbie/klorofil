@@ -13,9 +13,10 @@ function showNotif(title,type,message){
         });
 }
 
-function ajax(method,url,params,callback,callbackParams){
+function ajax(method,url,datas,callback,callbackParams){
     var http;
-    
+//    datas["_token"]=token;
+    console.log(datas);
     if(window.XMLHttpRequest){
         http = new XMLHttpRequest();
     }else{
@@ -45,7 +46,8 @@ function ajax(method,url,params,callback,callbackParams){
     }
     
     http.open(method,baseUrl + url, true);
-    http.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    http.setRequestHeader('Content-Type','application/json');
     http.setRequestHeader('X-Requested-With','XMLHttpRequest');
-    http.send(params + "&_token=" + token);
+    http.setRequestHeader('X-Csrf-Token',token);
+    http.send(JSON.stringify(datas));
 }

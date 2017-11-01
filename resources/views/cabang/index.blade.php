@@ -1,7 +1,7 @@
 @extends('template.template-back-end')
 
 @section('title')
-Admin - Cabang
+Admin - Jenis Cabang
 @endsection
 
 @section('name')
@@ -24,13 +24,13 @@ Moh. Ardiansyah
             </div>
             <div class="x_content" style="display: none">
                 <div class="row">
-                    <input id="nama_jenis_cabang" class="col-md-2" type="text" placeholder="Jenis Cabang"/>
+                    <input id="branch_type_name" class="col-md-2" type="text" placeholder="Jenis Cabang"/>
                     <button id="btnAdd" class="btn btn-primary"><i class="fa fa-plus"></i></button>
                 </div>
             </div>
         </div>
         <div class="x_content">
-            @if(count($cabangs)===0)
+            @if(count($datas)===0)
             <h4 class="text-center">Tidak ada data cabang</h4>
             @else
             <div class="row">
@@ -50,13 +50,13 @@ Moh. Ardiansyah
                         </thead>
                         <tbody>
                             <?php $i=0 ?>
-                            @foreach($cabangs as $cabang)
+                            @foreach($datas as $branchType)
                             <?php $i++?>
                             <tr class="row">
                                 <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
-                                <td class="col-md-10 col-sm-10 col-xs-10">{{$cabang->nama_jenis_cabang}}</td>
+                                <td class="col-md-10 col-sm-10 col-xs-10">{{$branchType->branch_type_name}}</td>
                                 <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div data-id="{{$cabang->id_cabang}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
+                                   <div data-id="{{$branchType->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
                                         <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
                                         <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                     </div>
@@ -67,14 +67,14 @@ Moh. Ardiansyah
                     </table>
                 </div>
             </div>
-                @if($cabangs->lastPage() > 1)
+                @if($datas->lastPage() > 1)
                 <div class="row">
                     <div class="col-sm-12 col-xs-12 text-center">
-                        @if($cabangs->currentPage() !== 1)
-                            <a href="{{$cabangs->previousPageUrl()}}"><i class="fa fa-caret-left"></i></a>
+                        @if($datas->currentPage() !== 1)
+                            <a href="{{$datas->previousPageUrl()}}"><i class="fa fa-caret-left"></i></a>
                         @endif
-                        @if($cabangs->currentPage() !== $cabangs->lastPage())
-                            <a href="{{$cabangs->nextPageUrl()}}"><i class="fa fa-caret-right"></i></a>
+                        @if($datas->currentPage() !== $datas->lastPage())
+                            <a href="{{$datas->nextPageUrl()}}"><i class="fa fa-caret-right"></i></a>
                         @endif
                     </div>
                 </div>
@@ -86,5 +86,5 @@ Moh. Ardiansyah
 @endsection
 
 @section('scripts')
-<script src="{{URL::to('back-end/js/cabang/cabang.js')}}"></script>
+<script src="{{URL::to('back-end/js/branch_type/branch_type.js')}}"></script>
 @endsection

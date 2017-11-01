@@ -63,44 +63,35 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-map-o"></i> Wilayah <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-<!--                      <li><a href="#">Pulau</a></li>-->
-                      <li><a href="{{Route('provinsi.index')}}">Provinsi</a></li>
-                      <li><a href="{{Route('kabupaten_kota.index')}}">Kabupaten / Kota</a></li>
-                      <li><a href="{{Route('kecamatan.index')}}">Kecamatan</a></li>
-                      <li><a href="{{Route('kelurahan_desa.index')}}">Kelurahan / Desa</a></li>
-                      <li><a href="{{Route('area.index')}}">Area</a></li>
+                        <li><a href="{{Route('negara.index')}}">Negara</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-tree"></i>Jenis Pohon <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-tree"></i> Detail Pohon<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{Route('nama_ilmiah.index')}}">Nama Ilmiah</a></li>
-                      <li><a href="{{Route('nama_lokal.index')}}">Nama Lokal</a></li>
-                      <li><a href="{{Route('pertumbuhan.index')}}">Pertumbuhan</a></li>
-                      <li><a href="{{Route('daun.index')}}">Daun</a></li>
-                      <li><a href="{{Route('cabang.index')}}">Cabang</a></li>
-<!--                      <li><a href="#">Batang</a></li>-->
-<!--                      <li><a href="#">Akar</a></li>-->
-                      <li><a href="{{Route('bunga.index')}}">Bunga</a></li>
-                      <li><a href="{{Route('habitat.index')}}">Habitat</a></li>
+                        <li><a href="{{Route('speciestype.index')}}">Jenis Species</a></li>
+                        <li><a href="{{Route('functiontype.index')}}">Fungsi Spesies</a></li>
+                        <li><a href="{{Route('roottype.index')}}">Jenis Akar</a></li>
+                        <li><a href="{{Route('trunktype.index')}}">Jenis Batang</a></li>
+                        <li><a href="{{Route('branchtype.index')}}">Jenis Cabang</a></li>
+                        <li><a href="{{Route('leaftype.index')}}">Jenis Daun</a></li>
+                        <li><a href="{{Route('habitat.index')}}">Habitat Hewan</a></li>
+                        <li><a href="#">Species</a></li>
+                        
                     </ul>
                   </li>
                   <li><a><i class="fa fa-cogs"></i> Perlakuan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{Route('jenis_perlakuan.index')}}">Jenis Perlakuan</a></li>
-                      <li><a href="{{Route('perlakuan.index')}}">Perlakuan</a></li>
+                        <li><a href="#">Nama Perlakuan</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-ambulance"></i> Penyakit <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{Route('jenis_penyakit.index')}}">Jenis Penyakit</a></li>
-                      <li><a href="{{Route('penyakit.index')}}">Penyakit</a></li>
+                        <li><a href="#">Jenis Penyakit</a></li>
+                        <li><a href="#">Nama Penyakit</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-user"></i> Akun <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="{{Route('jenis_wilayah_akun.index')}}">Jenis Wilayah Akun</a></li>
-                      <li><a href="{{Route('jenis_akun.index')}}">Jenis Akun</a></li>
-                      <li><a href="{{Route('akun.index')}}">Akun</a></li>
                     </ul>
                   </li>
                 </ul>

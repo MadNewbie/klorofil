@@ -1,7 +1,7 @@
 @extends('template.template-back-end')
 
 @section('title')
-Admin - Daun
+Admin - Jenis Daun
 @endsection
 
 @section('name')
@@ -30,7 +30,7 @@ Moh. Ardiansyah
             </div>
         </div>
         <div class="x_content">
-            @if(count($dauns)===0)
+            @if(count($datas)===0)
             <h4 class="text-center">Tidak ada data jenis daun</h4>
             @else
             <div class="row">
@@ -50,13 +50,13 @@ Moh. Ardiansyah
                         </thead>
                         <tbody>
                             <?php $i=0 ?>
-                            @foreach($dauns as $daun)
+                            @foreach($datas as $leafType)
                             <?php $i++ ?>
                             <tr class="row">
                                 <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
-                                <td class="col-md-10 col-sm-10 col-xs-10">{{$daun->nama_jenis_daun}}</td>
+                                <td class="col-md-10 col-sm-10 col-xs-10">{{$leafType->leaf_type_name}}</td>
                                 <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div data-id="{{$daun->id_daun}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
+                                   <div data-id="{{$leafType->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
                                         <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
                                         <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                     </div>
@@ -67,14 +67,14 @@ Moh. Ardiansyah
                     </table>
                 </div>
             </div>
-                @if($dauns->lastPage() > 1)
+                @if($datas->lastPage() > 1)
                 <div class="row">
                     <div class="col-sm-12 col-xs-12 text-center">
-                        @if($dauns->currentPage() !== 1)
-                            <a href="{{$dauns->previousPageUrl()}}"><i class="fa fa-caret-left"></i></a>
+                        @if($datas->currentPage() !== 1)
+                            <a href="{{$datas->previousPageUrl()}}"><i class="fa fa-caret-left"></i></a>
                         @endif
-                        @if($dauns->currentPage() !== $dauns->lastPage())
-                            <a href="{{$dauns->nextPageUrl()}}"><i class="fa fa-caret-right"></i></a>
+                        @if($datas->currentPage() !== $datas->lastPage())
+                            <a href="{{$datas->nextPageUrl()}}"><i class="fa fa-caret-right"></i></a>
                         @endif
                     </div>
                 </div>

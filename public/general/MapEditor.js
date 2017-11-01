@@ -41,10 +41,10 @@
 //          borderLine.setMap(map);
       }
       
-      function btnSimpanOnClick(){
-          pointBorder = new Array();
-          for(var i=0;i<selectedBorder.getPath().getLength();i++){
-              pointBorder.push(selectedBorder.getPath().getAt(i).toUrlValue(6));
-          }
-          window.alert(pointBorder);
-      }
+//      function btnSimpanOnClick(){
+//          pointBorder = new Array();
+//          for(var i=0;i<selectedBorder.getPath().getLength();i++){
+//              pointBorder.push(selectedBorder.getPath().getAt(i).toUrlValue(6));
+//          }
+//          window.alert(pointBorder);
+//      }

@@ -22,7 +22,7 @@ class CreateDiseasesTable extends Migration
             $table->unsignedInteger('updated_by')->nullable();
             $table->timestamps();
             
-            $table->foreign('disease_type_id')->references('id')->on('diseases')->onUpdate('cascade');
+            $table->foreign('disease_type_id')->references('id')->on('disease_types')->onUpdate('cascade');
         });
     }
 

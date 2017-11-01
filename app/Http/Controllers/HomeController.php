@@ -6,23 +6,11 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
+    public function getGuestIndex() {
+        return view('front-end.homescreen');
     }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('test-front-end');
+    
+    public function getAdminIndex() {
+        return view('admin.index');
     }
 }

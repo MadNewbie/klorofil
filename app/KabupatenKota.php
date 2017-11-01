@@ -6,7 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class KabupatenKota extends Model
 {
-    protected $table = "kabupaten_kota";
-    protected $primaryKey = "id_kabupaten_kota";
-    //
+    protected $table = 'kabupaten_kotas';
+    
+    function kecamatans(){
+        return $this->hasMany('App\Kecamatan');
+    }
+    
+    function kelurahanDesas(){
+        return $this->hasMany('App\KelurahanDesa');
+    }
+    
+    function provinsi(){
+        return $this->belongsTo('App\Provinsi');
+    }
 }
