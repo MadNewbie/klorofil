@@ -64,6 +64,7 @@
                   <li><a><i class="fa fa-map-o"></i> Wilayah <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                         <li><a href="{{Route('negara.index')}}">Negara</a></li>
+                        <li><a href="{{Route('provinsi.index')}}">Provinsi</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-tree"></i> Detail Pohon<span class="fa fa-chevron-down"></span></a>

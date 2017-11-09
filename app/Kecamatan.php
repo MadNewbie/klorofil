@@ -9,7 +9,7 @@ class Kecamatan extends Model
     protected $table = 'kecamatans';
     
     function kelurahanDesas(){
-        return $this->hasMany('App\Kecamatan');
+        return $this->hasMany('App\KelurahanDesa');
     }
     
     function kabupatenKota(){

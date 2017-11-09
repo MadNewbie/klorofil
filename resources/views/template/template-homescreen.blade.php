@@ -22,7 +22,7 @@
                 <div class="container">
                     <div class="mbr-table">
                         <div class="col-md-4 hidden-md-down mbr-table-cell">
-                            <a id="btn-get-started" href="{{route('guest.index')}}" class="navbar-caption">Get Strated</a>
+                            <a id="btn-get-started" href="{{route('guest.index')}}" class="navbar-caption">Get Started</a>
                         </div>
                         <div class="col-xs-6 col-md-4 mbr-table-cell">
                             <center><a id="btn-home" href="#" class="navbar-caption"><img style="padding:1vh; height:70px;" src="{{URL::to('homescreen/pictures/logo.png')}}"></a></center>
