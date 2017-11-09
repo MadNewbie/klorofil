@@ -24,9 +24,9 @@ Moh. Ardiansyah
             </div>
             <div class="x_content" style="display: none">
                 <div class="row">
-                    <input id="nama_hewan" class="col-md-2" type="text" placeholder="Nama Hewan"/>
+                    <input id="animal_name" class="col-md-2" type="text" placeholder="Nama Hewan"/>
                     <div class="clearfix"></div>
-                    <textarea id="keterangan" class="col-md-8" type="text" placeholder="Keterangan" rows="1"></textarea>
+                    <textarea id="description" class="col-md-8" type="text" placeholder="Keterangan" rows="1"></textarea>
                     <div class="clearfix"></div>
                     <button id="btnAdd" class="btn btn-primary"><i class="fa fa-plus"></i></button>
                 </div>

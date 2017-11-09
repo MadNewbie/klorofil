@@ -27,7 +27,7 @@ class DiseaseTypeController extends Controller
         $input = $request->all();
         $validator = Validator::make($input,$rule);
         if($validator->fails()){
-            return Response::json($validator->errors(),200);
+            return Response::json(['kode'=>404,'message'=>$validator->errors()],200);
         }
         $diseaseType = new DiseaseType();
         $diseaseType->name = $input['name'];
@@ -47,5 +47,38 @@ class DiseaseTypeController extends Controller
             $diseaseType = DiseaseType::where('species_type_id',$species_type_id)->get();
         }
         return Response::json(['disease_type'=>$diseaseType],200);
+    }
+    
+    public function postUpdate(Request $request) {
+        $rule = array(
+            'name'=>'required',
+            'species_type_id'=>'required'
+        );
+        $input = $request->all();
+        $validator = Validator::make($input,$rule);
+        if($validator->fails()){
+            return Response::json(['kode'=>404,'message'=>$validator->errors()],200);
+        }
+        $diseaseType = DiseaseType::find($input['id']);
+        if(!$diseaseType){
+            return Response::json(['kode'=>404,'message'=>'Data Tidak Ditemukan'],200);
+        }
+        $diseaseType->name = (strcmp($input['name'],$diseaseType->name) == 0 ? $diseaseType->name : $input['name']);
+        $diseaseType->updated_by = 1;
+        $diseaseType->species_type_id = $input['species_type_id'];
+        if($diseaseType->update()){
+            return Response::json(['kode'=>200,'message'=>'Data Berhasil Terupdate'],200);
+        }else{
+            return Response::json(['kode'=>404,'message'=>'Data Tidak Berhasil Terupdate'],200);
+        }
+    }
+    
+    public function getDelete($id) {
+        $diseaseType = DiseaseType::find($id);
+        if($diseaseType->delete()){
+            return Response::json(['kode'=>200,'message'=>'Data Berhasil Terhapus'],200);
+        }else{
+            return Response::json(['kode'=>404,'message'=>'Data Tidak Berhasil Terhapus'],200);
+        }
     }
 }

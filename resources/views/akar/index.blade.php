@@ -51,7 +51,7 @@ Moh. Ardiansyah
                         <tbody>
                             <?php $i=0 ?>
                             @foreach($datas as $rootType)
-                            <?php $i++?>
+                            <?php $i++ ?>
                             <tr class="row">
                                 <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
                                 <td class="col-md-10 col-sm-10 col-xs-10">{{$rootType->root_type_name}}</td>

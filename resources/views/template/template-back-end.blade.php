@@ -81,7 +81,7 @@
                   </li>
                   <li><a><i class="fa fa-cogs"></i> Perlakuan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="#">Nama Perlakuan</a></li>
+                        <li><a href="{{Route('treatment.index')}}">Nama Perlakuan</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-ambulance"></i> Penyakit <span class="fa fa-chevron-down"></span></a>
