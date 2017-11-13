@@ -22,18 +22,18 @@
                 <div class="container">
                     <div class="mbr-table">
                         <div class="col-md-4 hidden-md-down mbr-table-cell">
-                            <a id="btn-get-started" href="{{route('guest.index')}}" class="navbar-caption">Get Started</a>
+                            <a id="btn-get-started" href="{{route('ministered.index')}}" class="navbar-caption">Login</a>
                         </div>
                         <div class="col-xs-6 col-md-4 mbr-table-cell">
-                            <center><a id="btn-home" href="{{route('guest.index')}}" class="navbar-caption"><img style="padding:1vh; height:70px;" src="{{URL::to('homescreen/pictures/logo.png')}}"></a></center>
+                            <center><a id="btn-home" href="{{route('ministered.index')}}" class="navbar-caption"><img style="padding:1vh; height:70px;" src="{{URL::to('homescreen/pictures/logo.png')}}"></a></center>
                         </div>
                         <div class="col-xs-6 col-md-4 mbr-table-cell">
                             <button class="navbar-toggler pull-xs-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                                 <div class="hamburger-icon"></div>
                             </button>
                             <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
-                              <li class="nav-item hidden-lg-up"><a class="nav-link link mbr-editable-menu-item" href="{{route('guest.index')}}">Get Started</a></li>
-                              <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="#what-we-do">Missions</a></li>
+                              <li class="nav-item hidden-lg-up"><a class="nav-link link mbr-editable-menu-item" href="{{route('ministered.index')}}">Login</a></li>
+                              <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="{{route('guest.index')}}">Homepage</a></li>
                               <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="#how-we-do">Projects</a></li>
                               <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="#why-we-do">Impacts</a></li>
                               <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="#">Blog</a></li>

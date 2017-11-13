@@ -13,4 +13,8 @@ class HomeController extends Controller
     public function getAdminIndex() {
         return view('admin.index');
     }
+
+    public function getMinisteredIndex(){
+    	return view('ministered.ministered');
+    }
 }

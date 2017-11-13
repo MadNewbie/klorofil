@@ -1,4 +1,4 @@
-@extends('template.template-homescreen')
+@extends('template.template-ministered')
 
 @section('title')
 CiBOR
@@ -161,13 +161,12 @@ CiBOR
         </div>
 </section>
 
-<section style="min-height: 20vh; text-align: center">
-    <div class="col-md-8 col-xs-12 display-4">
+<section style="min-height: 5vh; text-align: center">
+    <!-- <div class="col-md-8 col-xs-12 display-4">
         The industry leader in tree inventory
     </div>
     <div class="col-md-4 col-xs-12 display-4">
-        <a href="{{ route('ministered.index') }}" id="btn-join-us" class="navbar-caption">Join with us</a>
-    </div>
-</section>
-
+        <a href="#" id="btn-join-us" class="navbar-caption">Join with us</a>
+    </div> -->
+</section> 
 @endsection
