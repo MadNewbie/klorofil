@@ -87,5 +87,5 @@ Moh. Ardiansyah
 
 @section('scripts')
    <script src="{{URL::to('back-end/js/species_type/species_type.js ')}}"></script>
-@ensection
+@endsection
 
