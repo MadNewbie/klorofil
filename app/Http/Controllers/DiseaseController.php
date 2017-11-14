@@ -12,7 +12,7 @@ class DiseaseController extends Controller
 {
     public function getIndex() {
         $disease = Disease::orderBy('name')->paginate(10);
-        return view('test-controller.index',['datas'=>$disease]);
+        return view('penyakit.index',['datas'=>$disease]);
     }
     
     public function getCreate() {
@@ -51,10 +51,10 @@ class DiseaseController extends Controller
         return Response::json(['kode'=>200,'disease'=>$disease],200);
     }
     
-    public function postUpdated(Request $request) {
+    public function postUpdate(Request $request) {
         $rule = array(
             'name'=>'required',
-            'weigth'=>'required',
+            'weight'=>'required',
             'disease_type_id'=>'required'
         );
         $input = $request->all();
@@ -82,7 +82,7 @@ class DiseaseController extends Controller
         if($disease->delete()){
             return Response::json(['kode'=>200,'message'=>'Data Berhasil Tehapus'],200);
         }else{
-            return Response::json(['kode'=>404,'message'=>'Data Tidak Berhasil Terhapus'],200)
+            return Response::json(['kode'=>404,'message'=>'Data Tidak Berhasil Terhapus'],200);
         }
     }
 }

@@ -25,14 +25,15 @@ Moh. Ardiansyah
             <div class="x_content" style="display: none">
                 <div class="row">
                     <div class="col-md-12 col-xs-12 col-sm-12">
-                        <input id="nama_jenis_penyakit" class="col-md-2" type="text" placeholder="Nama Penyakit"/>
+                        <select id="drp_species_type" class="col-md-2"></select>
+                        <input id="name" class="col-md-2" type="text" placeholder="Nama Jenis Penyakit"/>
                         <button id="btnAdd" class="btn btn-primary"><i class="fa fa-plus"></i></button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="x_content">
-            @if(count($jenis_penyakits)==0)
+            @if(count($datas)==0)
             <h4 class="text-center">Tidak ada data jenis penyakit</h4>
             @else
             <div class="row">
@@ -46,19 +47,21 @@ Moh. Ardiansyah
                         <thead>
                             <tr class="row">
                                 <th class="col-md-1 col-sm-1 col-xs-1">No</th>
-                                <th class="col-md-10 col-sm-10 col-xs-10">Jenis Penyakit</th>
+                                <th class="col-md-5 col-sm-5 col-xs-5">Jenis Penyakit</th>
+                                <th class="col-md-5 col-sm-5 col-xs-5">Jenis Spesies</th>
                                 <th class="col-md-1 col-sm-1 col-xs-1">Operasi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $i=0 ?>
-                            @foreach($jenis_penyakits as $jenis_penyakit)
+                            @foreach($datas as $jenis_penyakit)
                             <?php $i++ ?>
                             <tr class="row">
                                 <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
-                                <td class="col-md-10 col-sm-10 col-xs-10">{{$jenis_penyakit->nama_jenis_penyakit}}</td>
+                                <td class="col-md-5 col-sm-5 col-xs-5">{{$jenis_penyakit->name}}</td>
+                                <td class="col-md-5 col-sm-5 col-xs-5" data-id="{{$jenis_penyakit->species_type_id}}">{{$jenis_penyakit->speciesType->species_type_name}}</td>
                                 <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div data-id="{{$jenis_penyakit->id_jenis_penyakit}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
+                                   <div data-id="{{$jenis_penyakit->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
                                         <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
                                         <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                     </div>
@@ -69,14 +72,14 @@ Moh. Ardiansyah
                     </table>
                 </div>
             </div>
-                @if($jenis_penyakits->lastPage() > 1)
+                @if($datas->lastPage() > 1)
                 <div class="row">
                     <div class="col-sm-12 col-xs-12 text-center">
-                        @if($jenis_penyakits->currentPage() !== 1)
-                            <a href="{{$jenis_penyakits->previousPageUrl()}}"><i class="fa fa-caret-left"></i></a>
+                        @if($datas->currentPage() !== 1)
+                            <a href="{{$datas->previousPageUrl()}}"><i class="fa fa-caret-left"></i></a>
                         @endif
-                        @if($jenis_penyakits->currentPage() !== $jenis_penyakits->lastPage())
-                            <a href="{{$jenis_penyakits->nextPageUrl()}}"><i class="fa fa-caret-right"></i></a>
+                        @if($datas->currentPage() !== $datas->lastPage())
+                            <a href="{{$datas->nextPageUrl()}}"><i class="fa fa-caret-right"></i></a>
                         @endif
                     </div>
                 </div>

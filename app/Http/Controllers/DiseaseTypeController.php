@@ -12,7 +12,7 @@ class DiseaseTypeController extends Controller
 {
     public function getIndex() {
         $diseaseType = DiseaseType::orderBy('name')->paginate(10);
-        return view('test-controller.index',['datas'=>$diseaseType]);
+        return view('jenis_penyakit.index',['datas'=>$diseaseType]);
     }
     
     public function getCreate() {

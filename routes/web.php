@@ -220,7 +220,7 @@ Route::group(['middleware'=>['web']],function(){
             ]);
             
             Route::get('/disease_type/{id}/delete',[
-                'uses'=>'DisesaseTypeController@getDelete',
+                'uses'=>'DiseaseTypeController@getDelete',
                 'as'=>'diseasetype.delete'
             ]);
             

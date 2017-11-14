@@ -26,10 +26,10 @@ function newDataCreated(params,success,responseObj){
             showNotif('Sukses','success',responseObj.message);
             location.reload(); 
         }else{
-            console.log(responseObj.message.root_type_name);
+            console.log(responseObj.message);
             var error = '';
-            for(i=0;i<responseObj.message.root_type_name.length;i++){
-                error+=responseObj.message.root_type_name[i];
+            for(var key in responseObj.message){
+                error+=responseObj.message[key]+'\n';
             }
             showNotif('Error','error',error);
         }
@@ -118,16 +118,15 @@ function saveEdit(event){
 
 function dataUpdated(params,success,responseObj){
     var event = params[0];
-     if(success){
+    if(success){
         if(responseObj.kode == 200){
-            changeToInput(event.target.parentElement.parentElement);
             showNotif('Sukses','success',responseObj.message);
             location.reload(); 
         }else{
-            console.log(responseObj.message.function_type_species);
+            console.log(responseObj.message);
             var error = '';
-            for(i=0;i<responseObj.message.function_type_species.length;i++){
-                error+=responseObj.message.function_type_species[i];
+            for(var key in responseObj.message){
+                error+=responseObj.message[key]+'\n';
             }
             showNotif('Error','error',error);
         }
@@ -148,14 +147,14 @@ function deleteData(event){
 function endDeleteData(params,success,responseObj){
     var event = params[0];
     if(success){
-         if(responseObj.kode == 200){
+        if(responseObj.kode == 200){
             showNotif('Sukses','success',responseObj.message);
             location.reload(); 
         }else{
-            console.log(responseObj.message.function_type_species);
+            console.log(responseObj.message);
             var error = '';
-            for(i=0;i<responseObj.message.function_type_species.length;i++){
-                error+=responseObj.message.function_type_species[i];
+            for(var key in responseObj.message){
+                error+=responseObj.message[key]+'\n';
             }
             showNotif('Error','error',error);
         }
