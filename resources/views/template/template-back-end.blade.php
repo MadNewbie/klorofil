@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>@yield('title')</title>
+    <link rel="shortcut icon" href="{{URL::to('general/pictures/icon-logo.png')}}"/>
 
     <!-- Bootstrap -->
     <link href="{{URL::to('back-end/vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -26,7 +27,6 @@
     
     @yield('styles')
     
-
     <!-- Custom Theme Style -->
     <link href="{{URL::to('back-end/css/custom.min.css')}}" rel="stylesheet">
   </head>
@@ -37,7 +37,10 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="{{Route('admin.index')}}" class="site_title"> <span>CiBOR</span></a>
+              <a href="{{Route('admin.index')}}" class="site_title">
+               <span>
+                <image src="{{URL::to('general/pictures/icon-logo.png')}}" style="width: 16px; height: 27px;"/>CiBOR
+              </span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -64,19 +67,19 @@
                   <li><a><i class="fa fa-map-o"></i> Wilayah <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                         <li><a href="{{Route('negara.index')}}">Negara</a></li>
+                        <li><a href="{{Route('provinsi.index')}}">Provinsi</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-tree"></i> Detail Pohon<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="{{Route('speciestype.index')}}">Jenis Species</a></li>
+                        <li><a href="{{Route('speciestype.index')}}">Jenis Spesies</a></li>
                         <li><a href="{{Route('functiontype.index')}}">Fungsi Spesies</a></li>
                         <li><a href="{{Route('roottype.index')}}">Jenis Akar</a></li>
                         <li><a href="{{Route('trunktype.index')}}">Jenis Batang</a></li>
                         <li><a href="{{Route('branchtype.index')}}">Jenis Cabang</a></li>
                         <li><a href="{{Route('leaftype.index')}}">Jenis Daun</a></li>
                         <li><a href="{{Route('habitat.index')}}">Habitat Hewan</a></li>
-                        <li><a href="#">Species</a></li>
-                        
+                        <li><a href="#">Spesies</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-cogs"></i> Perlakuan <span class="fa fa-chevron-down"></span></a>
@@ -86,14 +89,16 @@
                   </li>
                   <li><a><i class="fa fa-ambulance"></i> Penyakit <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="{{Route('diseasetype.index')}}">Jenis Penyakit</a></li>
-                        <li><a href="{{Route('disease.index')}}">Nama Penyakit</a></li>
+                        <li><a href="#">Jenis Penyakit</a></li>
+                        <li><a href="#">Nama Penyakit</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-user"></i> Akun <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-user"></i> Pengelolaan Akun<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
+                      <li><a href="#">Pendaftaran Pengguna</a></li>
+                      <li><a href="#">Tingkat Pengguna</a></li>
+                      <li><a href="#">Fungsi Pengguna</a></li>
                     </ul>
-                  </li>
                 </ul>
               </div>
               <div class="menu_section">

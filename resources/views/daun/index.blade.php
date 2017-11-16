@@ -24,7 +24,7 @@ Moh. Ardiansyah
             </div>
             <div class="x_content" style="display: none">
                 <div class="row">
-                    <input id="leaf_type_name" class="col-md-2" type="text" placeholder="Jenis Daun"/>
+                    <input id="nama_jenis_daun" class="col-md-2" type="text" placeholder="Jenis Daun"/>
                     <button id="btnAdd" class="btn btn-primary"><i class="fa fa-plus"></i></button>
                 </div>
             </div>
@@ -86,5 +86,5 @@ Moh. Ardiansyah
 @endsection
 
 @section('scripts')
-<script src="{{URL::to('back-end/js/leaf_type/leaf_type.js')}}"></script>
+<script src="{{URL::to('back-end/js/daun/daun.js')}}"></script>
 @endsection

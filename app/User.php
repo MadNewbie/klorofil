@@ -9,7 +9,10 @@ use Zizaco\Entrust\Traits\EntrustUserTrait;
 class User extends Authenticatable
 {
     use Notifiable;
-    use EntrustUserTrait; 
+    use SoftDeletes, EntrustUserTrait {
+        SoftDeletes::restore insteadof EntrustUserTrait;
+        EntrustUserTrait::restore insteadof SoftDeletes;
+    }
     
     protected $table = "users";
     protected $primaryKey = "id_user";
@@ -31,4 +34,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPasswordNotification($token));
+    }
+
+    public function getAvatarUrl()
+    {
+        return "https://www.gravatar.com/avatar/" . md5($this->email) . "?d=mm";
+    }
+    
 }

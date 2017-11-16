@@ -27,7 +27,7 @@ class HabitatController extends Controller
         $input = $request->all();
         $validator = Validator::make($input,$rule);
         if($validator->fails()){
-            return Response::json(['kode'=>404,'message'=>$validator->errors()],200);
+            return Response::json($validator->errors(),200);
         }
         $habitats = new Habitat();
         $habitats->animal_name = $input['animal_name'];
@@ -43,35 +43,5 @@ class HabitatController extends Controller
     function getRetrieve(){
         $habitat = Habitat::orderBy('animal_name')->get();
         return Response::json(['habitat'=>$habitat]);
-    }
-    
-    public function postUpdate(Request $request) {
-        $rule = array(
-            'animal_name' => 'required',
-            'description' => 'required'
-        );
-        $input = $request->all();
-        $validator = Validator::make($input,$rule);
-        if($validator->fails()){
-            return response::json(['kode'=>404,'message'=>$validator->errors()],200);
-        }
-//        dd($input);
-        $habitat = Habitat::find($input['id']);
-        if(!$habitat){
-            return Response::json(['kode'=>404,'message'=>'Data tidak ditemukan'],200);
-        }
-        $habitat->animal_name = (strcmp($habitat->animal_name,$input['animal_name'])==0? $habitat->animal_name : $input['animal_name']);
-        $habitat->description = (strcmp($habitat->description,$input['description'])==0? $habitat->description : $input['description']);
-        $habitat->updated_by = 1;
-//        dd(strcmp($habitat->description,$input['description']));
-//        dd($habitat);
-        $habitat->update();
-        return Response::json(['kode'=>200,'message'=>'Data berhasil diubah'],200);
-    }
-    
-    public function getDelete($id) {
-        $habitat = Habitat::find($id);
-        $habitat->delete();
-        return Response::json(['message'=>'Data berhasil dihapus','kode'=>200],200);
     }
 }

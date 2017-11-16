@@ -124,7 +124,7 @@ CiBOR
                     </div>
                     <div class="carousel-item" style="">
                         <center><img src="{{URL::to('homescreen/pictures/absorb-stormwater-icon.png')}}" alt="absorb-stormwater-icon.png" style="height: 10vh; margin-top: 5vh; filter: brightness(500%);" class="hidden-lg-up"></center>
-                        <div class="text-definition">Trees absorb stromwater runoff, reducing erosion and pollution in our waterways. A healthy tree canopy means cleaner rivers and less investment in costly infrastructure.</div>
+                        <div class="text-definition">Trees absorb stormwater runoff, reducing erosion and pollution in our waterways. A healthy tree canopy means cleaner rivers and less investment in costly infrastructure.</div>
                         <h3 class="display-4">ABSORB STORMWATER</h3>
                     </div>
                     <div class="carousel-item" style="">
@@ -166,7 +166,7 @@ CiBOR
         The industry leader in tree inventory
     </div>
     <div class="col-md-4 col-xs-12 display-4">
-        <a href="#" id="btn-join-us" class="navbar-caption">Join with us</a>
+        <a href="{{ route('ministered.index') }}" id="btn-join-us" class="navbar-caption">Join with us</a>
     </div>
 </section>
 
