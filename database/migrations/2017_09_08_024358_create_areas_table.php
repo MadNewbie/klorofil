@@ -35,6 +35,7 @@ class CreateAreasTable extends Migration
      */
     public function down()
     {
+        //Schema::dropIfExists('type_areas');
         Schema::dropIfExists('areas');
     }
 }

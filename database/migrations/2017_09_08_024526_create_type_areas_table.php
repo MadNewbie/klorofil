@@ -17,8 +17,13 @@ class CreateTypeAreasTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
+
+            //$table->foreign('type_area_id')->references('id')->on('areas');
         });
-        DB::statement('ALTER TABLE `areas` ADD FOREIGN KEY (`type_area_id`) REFERENCES `type_areas`(`id`);');
+        //DB::statement('ALTER TABLE `areas` ADD FOREIGN KEY (`type_area_id`) REFERENCES `type_areas`(`id`);');
+        Schema::table('areas', function (Blueprint $table) {
+            $table->foreign('type_area_id')->references('id')->on('type_areas')->onUpdate('cascade');
+        });
     }
 
     /**
@@ -28,6 +33,10 @@ class CreateTypeAreasTable extends Migration
      */
     public function down()
     {
+         Schema::table('areas', function (Blueprint $table) {
+            $table->dropForeign('areas_type_area_id_foreign');
+         });
         Schema::dropIfExists('type_areas');
+        //Schema::dropIfExists('areas');
     }
 }

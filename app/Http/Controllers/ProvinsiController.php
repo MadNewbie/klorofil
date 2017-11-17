@@ -12,7 +12,7 @@ class ProvinsiController extends Controller
 {
     public function getIndex() {
         $provinsi = Provinsi::orderBy('negara_id')->paginate(10);
-        return view('test-controller.index',['datas'=>$provinsi]);
+        return view('provinsi.index',['datas'=>$provinsi]);
     }
     
     public function getCreate(){

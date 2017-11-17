@@ -42,29 +42,4 @@ class LeafTypeController extends Controller
         $leafType = LeafType::orderBy('leaf_type_name')->get();
         return Response::json(['leaf_type'=>$leafType]);
     }
-    
-    public function postUpdate(Request $request) {
-        $rule = array(
-            'leaf_type_name' => 'required'
-        );
-        $input = $request->all();
-        $validator = Validator::make($input,$rule);
-        if($validator->fails()){
-            return response::json(['kode'=>404,'message'=>$validator->errors()],200);
-        }
-        $leafType = LeafType::find($input['id']);
-        if(!$leafType){
-            return Response::json(['kode'=>404,'message'=>'Data tidak ditemukan'],200);
-        }
-        $leafType->leaf_type_name = ($leafType->leaf_type_name == $input['leaf_type_name']? $leafType->leaf_type_name : $input['leaf_type_name']);
-        $leafType->updated_by = 1;
-        $leafType->update();
-        return Response::json(['kode'=>200,'message'=>'Data berhasil diubah'],200);
-    }
-    
-    public function getDelete($id) {
-        $leafType = LeafType::find($id);
-        $leafType->delete();
-        return Response::json(['message'=>'Data berhasil dihapus','kode'=>200],200);
-    }
 }

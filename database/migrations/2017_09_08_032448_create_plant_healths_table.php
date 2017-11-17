@@ -18,6 +18,7 @@ class CreatePlantHealthsTable extends Migration
             $table->unsignedInteger('plant_physical_id');
             $table->unsignedInteger('disease_type_id');
             $table->unsignedInteger('disease_id');
+            $table->double('severity_rate',3,2);
             $table->double('overall_condition');
             $table->timestamps();
             

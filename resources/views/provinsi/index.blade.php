@@ -8,7 +8,6 @@ Admin - Provinsi
 Moh. Ardiansyah
 @endsection
 
-
 @section('styles')
     <style>
        #map {
