@@ -15,26 +15,26 @@
         <link rel="stylesheet" href="{{URL::to('homescreen/assets/mobirise/css/mbr-additional.css')}}">
         <link rel="stylesheet" href="{{URL::to('homescreen/assets/custom-style.css')}}">
     </head>
-    <body>
+    <body style="background: #F7F7F7;">
         <div id="menu-0" custom-code="true">
         <section>
             <nav id="navigation-bar" class="navbar navbar-dropdown bg-color transparent navbar-fixed-top">
                 <div class="container">
                     <div class="mbr-table">
                         <div class="col-md-4 hidden-md-down mbr-table-cell">
-                            <a id="btn-get-started" href="javascript:;" data-toggle="modal" data-target=".login-modal-sm" class="navbar-caption">Login</a>
+                            <a id="btn-get-started" href="{{route('guest.index')}}" class="navbar-caption">Homepage</a>
                         </div>
                         <div class="col-xs-6 col-md-4 mbr-table-cell">
-                            <center><a id="btn-home" href="{{route('ministered.index')}}" class="navbar-caption"><img style="padding:1vh; height:70px;" src="{{URL::to('homescreen/pictures/logo.png')}}"></a></center>
+                            <center><a id="btn-home" href="{{route('blog.index')}}" class="navbar-caption"><img style="padding:1vh; height:70px;" src="{{URL::to('homescreen/pictures/logo.png')}}"></a></center>
                         </div>
                         <div class="col-xs-6 col-md-4 mbr-table-cell">
                             <button class="navbar-toggler pull-xs-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                                 <div class="hamburger-icon"></div>
                             </button>
                             <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
-                              <li class="nav-item hidden-lg-up"><a class="nav-link link mbr-editable-menu-item" href="{{route('ministered.index')}}">Login</a></li>
-                              <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="{{route('guest.index')}}">Homepage</a></li>
-                              <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="{{ route('blog.index') }}">Blog</a></li>
+                              <!-- <li class="nav-item hidden-lg-up"><a class="nav-link link mbr-editable-menu-item" href="{{route('ministered.index')}}">Join Us</a></li> -->
+                              <!-- <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="{{route('guest.index')}}">Homepage</a></li> -->
+                              <li class="nav-item"><a id="btn-get-started" class="nav-link link mbr-editable-menu-item" style="font-size: 1rem;" href="{{ route('ministered.index') }}">Join Us</a></li>
 <!--                              <li class="nav-item dropdown open">
                                   <a class="nav-link link dropdown-toggle mbr-editable-menu-item" href="#" data-toggle="dropdown-submenu" aria-expanded="true">About Us</a>
                                   <div class="dropdown-menu">
@@ -103,7 +103,7 @@
 
         </section>
         @yield('content')
-        <section id="footer" style="padding-bottom: 5vh">
+        <section id="footer" style="padding-bottom: 5vh; background: #FFFFFF;">
             <div class="container">
                 <div class="col-md-4 col-xs-12">
                     <i class="fa fa-envelope-o"></i> tatacipta.kanopi@gmail.com

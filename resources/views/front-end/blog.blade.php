@@ -1,4 +1,4 @@
-@extends('template.template-homescreen')
+@extends('template.template-blog')
 
 @section('title')
 {{ config('app.name', 'Laravel') }}
@@ -161,7 +161,7 @@
         </div>
 </section>
 
-<section style="min-height: 20vh; text-align: center">
+<section style="background: #FFFFFF; min-height: 20vh; text-align: center">
     <div class="col-md-8 col-xs-12 display-4">
         The industry leader in tree inventory
     </div>

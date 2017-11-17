@@ -36,7 +36,7 @@
                               <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="#what-we-do">Missions</a></li>
                               <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="#how-we-do">Projects</a></li>
                               <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="#why-we-do">Impacts</a></li>
-                              <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="#">Blog</a></li>
+                              <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="{{ route('blog.index') }}">Blog</a></li>
 <!--                              <li class="nav-item dropdown open">
                                   <a class="nav-link link dropdown-toggle mbr-editable-menu-item" href="#" data-toggle="dropdown-submenu" aria-expanded="true">About Us</a>
                                   <div class="dropdown-menu">
