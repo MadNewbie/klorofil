@@ -19,12 +19,14 @@ class CreatePlantHealthsTable extends Migration
             $table->unsignedInteger('disease_type_id');
             $table->unsignedInteger('disease_id');
             $table->double('severity_rate',3,2);
+            $table->unsignedInteger('disesase_severity_id');
             $table->double('overall_condition');
             $table->timestamps();
             
             $table->foreign('plant_physical_id')->references('id')->on('plant_physicals')->onUpdate('cascade');
             $table->foreign('disease_type_id')->references('id')->on('disease_types')->onUpdate('cascade');
             $table->foreign('disease_id')->references('id')->on('diseases')->onUpdate('cascade');
+            $table->foreign('disesase_severity_id')->references('id')->on('disesase_severity')->onUpdate('cascade');
         });
     }
 
