@@ -23,6 +23,10 @@ class CreateDiseaseSeverityTable extends Migration
             $table->unsignedInteger('updated_by')->nullable();
             $table->timestamps();
         });
+
+        Schema::table('plant_healths', function (Blueprint $table) {
+            $table->foreign('disease_severity_id')->references('id')->on('disease_severity')->onUpdate('cascade');
+        });
     }
 
     /**
