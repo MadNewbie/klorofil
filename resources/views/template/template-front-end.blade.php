@@ -25,7 +25,7 @@
                             <a id="btn-get-started" href="#" class="navbar-caption">Join Us</a>
                         </div>
                         <div class="col-xs-6 col-md-4 mbr-table-cell">
-                            <center><a id="btn-home" href="{{route('web.home')}}" class="navbar-caption"><img style="padding:1vh; height:40px;" src="{{URL::to('homescreen/pictures/logo.png')}}"></a></center>
+                            <center><a id="btn-home" href="{{route('blog.index')}}" class="navbar-caption"><img style="padding:1vh; height:40px;" src="{{URL::to('homescreen/pictures/logo.png')}}"></a></center>
                         </div>
                         <div class="col-xs-6 col-md-4 mbr-table-cell">
                             <button class="navbar-toggler pull-xs-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">

@@ -20,6 +20,11 @@ Route::get('/price-and-planning', [
   'as' => 'ministered.index'
 ]);
 
+Route::get('/blog', [
+  'uses' => 'HomeController@getBlogIndex', 
+  'as' => 'blog.index'
+]);
+
 Route::get('/osmtest',function(){
     return view('test-osm');
 });
@@ -30,6 +35,8 @@ Route::get('/gmap',function(){
 
      
 //'auth',
+
+//Auth::routes();
 
 Route::group(['middleware'=>['web']],function(){
        Route::group(['prefix'=>'admin'],function(){
@@ -477,9 +484,9 @@ Route::group(['middleware'=>['web']],function(){
     //   }]);
     });
 
-Auth::routes();
+// Auth::routes();
 
-Route::auth();
+// Route::auth();
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 

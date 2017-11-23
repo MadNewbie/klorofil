@@ -1,7 +1,7 @@
 @extends('template.template-ministered')
 
 @section('title')
-CiBOR
+{{ config('app.name', 'Laravel') }}
 @endsection
 
 @section('content')
