@@ -79,7 +79,7 @@
                         <li><a href="{{Route('branchtype.index')}}">Jenis Cabang</a></li>
                         <li><a href="{{Route('leaftype.index')}}">Jenis Daun</a></li>
                         <li><a href="{{Route('habitat.index')}}">Habitat Hewan</a></li>
-                        <li><a href="#">Spesies</a></li>
+                        <li><a href="{{Route('species.index')}}">Spesies</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-cogs"></i> Perlakuan <span class="fa fa-chevron-down"></span></a>

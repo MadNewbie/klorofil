@@ -29,7 +29,7 @@ class NegaraController extends Controller
 //        dd($input,$validation,$validation->fails());
         if($validation->fails()){
 //            dd(response()->json($validation->errors()));
-            return Response::json($validation->errors(),200);
+            return Response::json(['kode'=>404,'message'=>$validation->errors()],200);
         }else{
             $negara = new Negara();
             $negara->name = $input['name'];
@@ -43,14 +43,25 @@ class NegaraController extends Controller
         }
     }
     
+    function getUpdate($id){
+        $negara = Negara::where('id',$id)->all();
+        return view('negara.create',['datas'=>$negara]);
+    }
+
     public function postUpdate(Request $request){
         $this->validate($request, [
             'name'=>'required'
         ]);
+        $input = $request->all();
+        $validator = Validator::make($input,$rule);
+        if($validation->fails()){
+            return Response::json(['kode'=>404,'message'=>$validation->errors()],200);
+        }
         $negara = Negara::find($request['id']);
         if(!$negara){
             return Response::json(['kode'=>404,'message'=>'Data tidak ditemukan'],404);
         }
+        
     }
     
     public function getRetrieve() {

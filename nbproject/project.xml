@@ -6,7 +6,11 @@
             <name>pohon.klorofil</name>
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>Akar</word>
+            <word>Ardiansyah</word>
+            <word>Batang</word>
             <word>Provinsi</word>
+            <word>Spesies</word>
         </spellchecker-wordlist>
     </configuration>
 </project>

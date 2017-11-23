@@ -3,13 +3,33 @@ var docReady = setInterval(function(){
         return;
     }
     clearInterval(docReady);
-    ajax("GET","/species_type/retrieve",null,injectSpeciesTypes,null);
-    ajax("GET","/trunk_type/retrieve",null,injectTrunkTypes,null);
-    ajax("GET","/leaf_type/retrieve",null,injectLeafTypes,null);
-    ajax("GET","/branch_type/retrieve",null,injectBranchTypes,null);
-    ajax("GET","/root_type/retrieve",null,injectRootTypes,null);
-    ajax("GET","/function_type/retrieve",null,injectFunctionTypes,null);
+    var btnForm = document.getElementById('btnForm');
+    btnForm.addEventListener('click',startForm);
 },100);
+
+function startForm(event){
+    ajax("GET","/admin/species_type/retrieve/",null,injectSpeciesTypeData,[event]);
+}
+
+function injectSpeciesTypeData(params,success,responseObj){
+    var drp_species_type = document.getElementById('drp_species_type');
+    var species_type = responseObj.species_type;
+    $(drp_species_type).empty();
+    $(drp_species_type).append($('<option>',{
+        text: 'Jenis Spesies',
+        hidden:''
+    }));
+    if(success){
+        console.log(species_type);
+        for(i=0;i<species_type.length;i++){
+            $(drp_species_type).append($('<option>',{
+                text: species_type[i].species_type_name,
+                value: species_type[i].id
+            }));
+        }
+    }
+    drp_species_type.addEventListener();
+}
 
 function startAdd(event){
     var species_id = document.getElementById('species_id').value;

@@ -13,11 +13,11 @@ class SpeciesController extends Controller
 {
     public function getIndex() {
         $species = Species::orderBy('species_type_id')->paginate(10);
-        return view('test-controller.index',['datas'=>$species]);
+        return view('spesies.index',['datas'=>$species]);
     }
     
     public function getCreate() {
-        return view('test-controller.create-species');
+        return view('spesies.form');
     }
     
     public function postCreate(Request $request) {

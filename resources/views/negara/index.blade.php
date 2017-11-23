@@ -18,7 +18,7 @@ Moh. Ardiansyah
 @endsection
 
 @section('content')
-    <a href="{{Route('negara.getCreate')}}">Create</a>
+    <a  class="btn btn-primary" href="{{Route('negara.getCreate')}}"><i class="fa fa-plus"></i></a>
     @if(count($datas)===0)
     <h3>Tidak Ada Data</h3>
     @else
