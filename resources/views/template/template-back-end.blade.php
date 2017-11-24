@@ -89,8 +89,8 @@
                   </li>
                   <li><a><i class="fa fa-ambulance"></i> Penyakit <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="#">Jenis Penyakit</a></li>
-                        <li><a href="#">Nama Penyakit</a></li>
+                        <li><a href="{{Route('diseasetype.index')}}">Jenis Penyakit</a></li>
+                        <li><a href="{{Route('disease.index')}}">Nama Penyakit</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-user"></i> Pengelolaan Akun<span class="fa fa-chevron-down"></span></a>

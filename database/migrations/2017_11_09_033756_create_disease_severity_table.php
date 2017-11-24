@@ -18,7 +18,7 @@ class CreateDiseaseSeverityTable extends Migration
             $table->string('name')->unique();
             $table->double('range_alfa',3,2);
             $table->double('range_beta',3,2);
-            $table->double('weight',1,1);
+            $table->double('weight',2,1);
             $table->unsignedInteger('created_by')->nullable();
             $table->unsignedInteger('updated_by')->nullable();
             $table->timestamps();

@@ -24,10 +24,12 @@ function newDataCreated(params,success,responseObj){
             showNotif('Sukses','success',responseObj.message);
             location.reload(); 
         }else{
-            console.log(responseObj.message.species_type_name);
+            console.log(responseObj.message);
             var error = '';
-            for(i=0;i<responseObj.message.species_type_name.length;i++){
-                error+=responseObj.message.species_type_name[i];
+            for (errors in responseObj.message){
+                for(i=0;i<responseObj.message[errors].length;i++){
+                    error += responseObj.message[errors][i]+'\n';
+                }
             }
             showNotif('Error','error',error);
         }

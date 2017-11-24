@@ -126,7 +126,8 @@ Route::group(['middleware'=>['web']],function(){
                 'uses'=>'SpeciesController@getRetrieve',
                 'as'=>'species.retrieve'
             ]);
-
+            
+            //Menu Provinsi
             Route::get('/provinsi',[
                 'uses'=>'ProvinsiController@getIndex',
                 'as'=>'provinsi.index'
@@ -193,6 +194,16 @@ Route::group(['middleware'=>['web']],function(){
             Route::get('/disease_type/retrieve/{species_type_id?}',[
                 'uses'=>'DiseaseTypeController@getRetrieve',
                 'as'=>'diseasetype.retrieve'
+            ]);
+            
+            Route::post('/disease_type/update/',[
+                'uses'=>'DiseaseTypeController@postUpdate',
+                'as'=>'diseasetype.update'
+            ]);
+            
+            Route::get('/disease_type/{id}/delete',[
+                'uses'=>'DiseaseTypeController@getDelete',
+                'as'=>'diseasetype.delete'
             ]);
            
            //Menu Function Type Species

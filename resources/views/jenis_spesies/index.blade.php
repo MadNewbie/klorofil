@@ -31,7 +31,7 @@ Moh. Ardiansyah
         </div>
         <div class="x_content">
             @if(count($datas)===0)
-            <h4 class="text-center">Tidak ada data akar</h4>
+            <h4 class="text-center">Tidak ada data jenis spesies</h4>
             @else
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12 dataTables_filter">
