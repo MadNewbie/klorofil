@@ -36,6 +36,9 @@ class CreateDiseaseSeverityTable extends Migration
      */
     public function down()
     {
+        Schema::table('plant_healths', function (Blueprint $table) {
+          $table->dropForeign('plant_healths_disease_severity_id_foreign');
+        });
         Schema::dropIfExists('disease_severity');
     }
 }
