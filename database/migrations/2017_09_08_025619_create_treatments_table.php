@@ -20,8 +20,8 @@ class CreateTreatmentsTable extends Migration
             $table->unsignedInteger('created_by')->nullable();
             $table->unsignedInteger('updated_by')->nullable();
             $table->timestamps();
-            
-            $table->foreign('type_species_id')->references('id')->on('species_types')->onUpdate('cascade');
+
+            $table->foreign('species_type_id')->references('id')->on('species_types')->onUpdate('cascade');
         });
     }
 
