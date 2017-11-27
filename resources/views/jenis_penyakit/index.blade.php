@@ -61,7 +61,7 @@ Moh. Ardiansyah
                             <tr class="row">
                                 <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
                                 <td class="col-md-4 col-sm-4 col-xs-4">{{$jenis_penyakit->name}}</td>
-                                <td class="col-md-4 col-sm-4 col-xs-4">{{$jenis_penyakit->speciesType->species_type_name}}</td>
+                                <td class="col-md-4 col-sm-4 col-xs-4" data-id="{{$jenis_penyakit->species_type_id}}">{{$jenis_penyakit->speciesType->species_type_name}}</td>
                                 <td class="col-md-2 col-sm-2 col-xs-2">{{$jenis_penyakit->weight}}</td>
                                 <td class="col-md-1 col-sm-1 col-xs-1">
                                    <div data-id="{{$jenis_penyakit->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified">

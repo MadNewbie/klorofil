@@ -12,7 +12,7 @@ class DiseaseController extends Controller
 {
     public function getIndex() {
         $disease = Disease::orderBy('name')->paginate(10);
-        return view('test-controller.index',['datas'=>$disease]);
+        return view('penyakit.index',['datas'=>$disease]);
     }
     
     public function getCreate() {
@@ -28,7 +28,7 @@ class DiseaseController extends Controller
         $input = $request->all();
         $validator = Validator::make($input,$rule);
         if($validator->fails()){
-            return Response::json($validator->errors(),200);
+            return Response::json(['kode'=>404,'message'=>$validator->errors()],200);
         }
         $disease = new Disease();
         $disease->name = $input['name'];
@@ -40,5 +40,36 @@ class DiseaseController extends Controller
             return Response::json(['kode'=>200,'message'=>'Data Berhasil Tersimpan']);
         }
         return Response::json(['kode'=>404,'message'=>'Data Tidak Berhasil Tersimpan']);
+    }
+    
+    public function postUpdate(Request $request){
+        $rule = array(
+            'name'=>'required',
+            'weight'=>'required',
+            'disease_type_id'=>'required'
+        );
+        $input = $request->all();
+        $validator = Validator::make($input,$rule);
+        if($validator->fails()){
+            return Response::json(['kode'=>404,'message'=>$validator->errors()],200);
+        }
+        $disease = Disease::find($input['id']);
+        if(!$disease){
+            return Response::json(['kode'=>404,'message'=>'Data tidak ditemukan'],200);
+        }
+        $disease->name = (strcmp($disease->name,$input['name'])==0?$disease->name:$input['name']);
+        $disease->disease_type_id = $input['disease_type_id'];
+        $disease->weight = $input['weight'];
+        $disease->updated_by = 1;
+        if($disease->update()){
+            return Response::json(['kode'=>200,'message'=>'Data berhasil diubah'],200);           
+        }
+        return Response::json(['kode'=>404,'message'=>'Data tidak berhasil diubah'],200);
+    }
+    
+    public function getDelete($id) {
+        $disease= Disease::find($id);
+        $disease->delete();
+        return Response::json(['kode'=>200,'message'=>'Data berhasil dihapus'],200);
     }
 }

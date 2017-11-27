@@ -66,8 +66,9 @@ class DiseaseTypeController extends Controller
         if(!$diseaseType){
             return Response::json(['kode'=>404,'message'=>'Data tidak ditemukan'],200);
         }
-        $diseaseType->name = (strcmp($diseaseType->name,$input['name'])==0?$input['name']:$diseaseType->name);
-        $diseaseType->species_type_id = $input['disease_type_id'];
+//        dd(strcmp($diseaseType->name,$input['name'])==0);
+        $diseaseType->name = (strcmp($diseaseType->name,$input['name'])==0?$diseaseType->name:$input['name']);
+        $diseaseType->species_type_id = $input['species_type_id'];
         $diseaseType->weight = $input['weight'];
         $diseaseType->updated_by = 1;
         if($diseaseType->update()){
@@ -78,7 +79,7 @@ class DiseaseTypeController extends Controller
     
     public function getDelete($id) {
         $diseaseType = DiseaseType::find($id);
-        $disesaeType->delete();
+        $diseaseType->delete();
         return Response::json(['kode'=>200,'message'=>'Data berhasil dihapus'],200);
     }
 }

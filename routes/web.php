@@ -158,6 +158,16 @@ Route::group(['middleware'=>['web']],function(){
                 'uses'=>'TreatmentController@postCreate',
                 'as'=>'treatment.create'
             ]);
+            
+            Route::post('/treatment/update',[
+                'uses'=>'TreatmentController@postUpdate',
+                'as'=>'treatment.update'
+            ]);
+            
+            Route::get('/treatment/{id}/delete',[
+                'uses'=>'TreatmentController@getDelete',
+                'as'=>'treatment.delete'
+            ]);
            
            //Menu Disease  
             Route::get('/disease',[
@@ -173,6 +183,16 @@ Route::group(['middleware'=>['web']],function(){
             Route::post('/disease/create',[
                 'uses'=>'DiseaseController@postCreate',
                 'as'=>'disease.create'
+            ]);
+            
+            Route::post('/disease/update',[
+                'uses'=>'DiseaseController@postUpdate',
+                'as'=>'disease.update'
+            ]);
+            
+            Route::get('/disease/{id}/delete',[
+                'uses'=>'DiseaseController@getDelete',
+                'as'=>'disease.delete'
             ]);
            
            //Menu Disease Type
@@ -287,6 +307,16 @@ Route::group(['middleware'=>['web']],function(){
             Route::get('/habitat/retrieve',[
                 'uses'=>'HabitatController@getRetrieve',
                 'as'=>'habitat.retrieve'
+            ]);
+            
+            Route::post('/habitat/update',[
+                'uses'=>'HabitatController@postUpdate',
+                'as'=>'habitat.update'
+            ]);
+            
+            Route::get('/habitat/{id}/delete',[
+                'uses'=>'HabitatController@getDelete',
+                'as'=>'habitat.delete'
             ]);
            
            //Menu Leaf type
