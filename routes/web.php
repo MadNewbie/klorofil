@@ -21,7 +21,7 @@ Route::get('/price-and-planning', [
 ]);
 
 Route::get('/blog', [
-  'uses' => 'HomeController@getBlogIndex', 
+  'uses' => 'HomeController@getBlogIndex',
   'as' => 'blog.index'
 ]);
 
@@ -33,20 +33,20 @@ Route::get('/gmap',function(){
     return view('test-gmap');
 });
 
-     
+
 //'auth',
 
 //Auth::routes();
 
 Route::group(['middleware'=>['web']],function(){
        Route::group(['prefix'=>'admin'],function(){
-           
+
            //Menu Dashboard
            Route::get('/',[
               'uses'=>'HomeController@getAdminIndex',
               'as'=>'admin.index'
            ]);
-           
+
            //Menu Plant General
             Route::get('plant_general',[
                 'uses'=>'PlantGeneralController@getIndex',
@@ -126,7 +126,7 @@ Route::group(['middleware'=>['web']],function(){
                 'uses'=>'SpeciesController@getRetrieve',
                 'as'=>'species.retrieve'
             ]);
-            
+
             //Menu Provinsi
             Route::get('/provinsi',[
                 'uses'=>'ProvinsiController@getIndex',
@@ -142,7 +142,7 @@ Route::group(['middleware'=>['web']],function(){
                 'uses'=>'ProvinsiController@postCreate',
                 'as'=>'provinsi.Create'
             ]);
-           
+
            //Menu Treatment
            Route::get('/treatment',[
                 'uses'=>'TreatmentController@getIndex',
@@ -158,18 +158,18 @@ Route::group(['middleware'=>['web']],function(){
                 'uses'=>'TreatmentController@postCreate',
                 'as'=>'treatment.create'
             ]);
-            
+
             Route::post('/treatment/update',[
                 'uses'=>'TreatmentController@postUpdate',
                 'as'=>'treatment.update'
             ]);
-            
+
             Route::get('/treatment/{id}/delete',[
                 'uses'=>'TreatmentController@getDelete',
                 'as'=>'treatment.delete'
             ]);
-           
-           //Menu Disease  
+
+           //Menu Disease
             Route::get('/disease',[
                 'uses'=>'DiseaseController@getIndex',
                 'as'=>'disease.index'
@@ -184,17 +184,17 @@ Route::group(['middleware'=>['web']],function(){
                 'uses'=>'DiseaseController@postCreate',
                 'as'=>'disease.create'
             ]);
-            
+
             Route::post('/disease/update',[
                 'uses'=>'DiseaseController@postUpdate',
                 'as'=>'disease.update'
             ]);
-            
+
             Route::get('/disease/{id}/delete',[
                 'uses'=>'DiseaseController@getDelete',
                 'as'=>'disease.delete'
             ]);
-           
+
            //Menu Disease Type
            Route::get('/disease_type',[
                 'uses'=>'DiseaseTypeController@getIndex',
@@ -210,22 +210,22 @@ Route::group(['middleware'=>['web']],function(){
                 'uses'=>'DiseaseTypeController@postCreate',
                 'as'=>'diseasetype.create'
             ]);
-            
+
             Route::get('/disease_type/retrieve/{species_type_id?}',[
                 'uses'=>'DiseaseTypeController@getRetrieve',
                 'as'=>'diseasetype.retrieve'
             ]);
-            
+
             Route::post('/disease_type/update/',[
                 'uses'=>'DiseaseTypeController@postUpdate',
                 'as'=>'diseasetype.update'
             ]);
-            
+
             Route::get('/disease_type/{id}/delete',[
                 'uses'=>'DiseaseTypeController@getDelete',
                 'as'=>'diseasetype.delete'
             ]);
-           
+
            //Menu Function Type Species
            Route::get('/function_type',[
                 'uses'=>'FunctionTypeController@getIndex',
@@ -241,22 +241,22 @@ Route::group(['middleware'=>['web']],function(){
                 'uses'=>'FunctionTypeController@postCreate',
                 'as'=>'functiontype.create'
             ]);
-            
+
             Route::get('/function_type/retrieve',[
                 'uses'=>'FunctionTypeController@getRetrieve',
                 'as'=>'functiontype.retrieve'
             ]);
-            
+
             Route::post('/function_type/update',[
                 'uses'=>'FunctionTypeController@postUpdate',
                 'as'=>'functiontype.update'
             ]);
-            
+
             Route::get('/function_type/{id}/delete',[
                 'uses'=>'FunctionTypeController@getDelete',
                 'as'=>'functiontype.delete'
             ]);
-           
+
            //Menu Species Type
            Route::get('/species_type',[
                 'uses'=>'SpeciesTypeController@getIndex',
@@ -272,22 +272,22 @@ Route::group(['middleware'=>['web']],function(){
                 'uses'=>'SpeciesTypeController@postCreate',
                 'as'=>'speciestype.create'
             ]);
-            
+
             Route::get('/species_type/retrieve',[
                 'uses'=>'SpeciesTypeController@getRetrieve',
                 'as'=>'speciestype.retrieve'
             ]);
-            
+
             Route::post('/species_type/update',[
                 'uses'=>'SpeciesTypeController@postUpdate',
                 'as'=>'speciestype.update'
             ]);
-            
+
             Route::get('/species_type/{id}/delete',[
                 'uses'=>'SpeciesTypeController@getDelete',
                 'as'=>'speciestype.delete'
             ]);
-           
+
            //Menu Habitat
            Route::get('/habitat',[
                 'uses'=>'HabitatController@getIndex',
@@ -303,22 +303,22 @@ Route::group(['middleware'=>['web']],function(){
                 'uses'=>'HabitatController@postCreate',
                 'as'=>'habitat.create'
             ]);
-            
+
             Route::get('/habitat/retrieve',[
                 'uses'=>'HabitatController@getRetrieve',
                 'as'=>'habitat.retrieve'
             ]);
-            
+
             Route::post('/habitat/update',[
                 'uses'=>'HabitatController@postUpdate',
                 'as'=>'habitat.update'
             ]);
-            
+
             Route::get('/habitat/{id}/delete',[
                 'uses'=>'HabitatController@getDelete',
                 'as'=>'habitat.delete'
             ]);
-           
+
            //Menu Leaf type
            Route::get('/leaf_type',[
                 'uses'=>'LeafTypeController@getIndex',
@@ -334,84 +334,84 @@ Route::group(['middleware'=>['web']],function(){
                 'uses'=>'LeafTypeController@postCreate',
                 'as'=>'leaftype.create'
             ]);
-            
+
             Route::get('/leaf_type/retrieve',[
                 'uses'=>'LeafTypeController@getRetrieve',
                 'as'=>'leaftype.retrieve'
             ]);
-           
+
             Route::post('/leaf_type/update',[
                 'uses'=>'LeafTypeController@postUpdate',
                 'as'=>'leaftype.update'
             ]);
-            
+
             Route::get('/leaf_type/{id}/delete',[
                 'uses'=>'LeafTypeController@getDelete',
                 'as'=>'leaftype.delete'
             ]);
-            
+
            //Menu Branch type
            Route::get('/branch_type',[
                'uses'=>'BranchTypeController@getIndex',
                'as'=>'branchtype.index'
            ]);
-           
+
            Route::get('/branch_type/create',[
                'uses'=>'BranchTypeController@getCreate',
                'as'=>'branchtype.getCreate'
            ]);
-           
+
            Route::post('/branch_type/create',[
                'uses'=>'BranchTypeController@postCreate',
                'as'=>'branchtype.create'
            ]);
-           
+
            Route::get('/branch_type/retrieve',[
                 'uses'=>'BranchTypeController@getRetrieve',
                 'as'=>'branchtype.retrieve'
             ]);
-           
+
            Route::post('/branch_type/update',[
                'uses'=>'BranchTypeController@postUpdate',
                'as'=>'branchtype.update'
            ]);
-           
+
            Route::get('/branch_type/{id}/delete',[
                'uses'=>'BranchTypeController@getDelete',
                'as'=>'branchtype.delete'
            ]);
-           
+
            //Menu Trunk type
            Route::get('/trunk_type',[
                'uses'=>'TrunkTypeController@getIndex',
                'as'=>'trunktype.index'
            ]);
-           
+
            Route::get('/trunk_type/create',[
                'uses'=>'TrunkTypeController@getCreate',
                'as'=>'trunktype.getCreate'
            ]);
-           
+
            Route::post('/trunk_type/create',[
                'uses'=>'TrunkTypeController@postCreate',
                'as'=>'trunktype.create'
            ]);
-           
+
            Route::get('/trunk_type/retrieve',[
                 'uses'=>'TrunkTypeController@getRetrieve',
                 'as'=>'trunktype.retrieve'
             ]);
-           
+
            Route::post('/trunk_type/update',[
               'uses'=>'TrunkTypeController@postUpdate',
               'as'=>'trunktype.update'
            ]);
-           
+
            Route::get('/trunk_type/{id}/delete',[
               'uses'=>'TrunkTypeController@getDelete',
                'as'=>'trunktype.delete'
            ]);
-           
+
            //Menu Root Type
            Route::get('/root_type',[
                 'uses'=>'RootTypeController@getIndex',
@@ -427,38 +427,38 @@ Route::group(['middleware'=>['web']],function(){
                 'uses'=>'RootTypeController@postCreate',
                 'as'=>'roottype.create'
            ]);
-           
+
            Route::get('/root_type/retrieve',[
                 'uses'=>'RootTypeController@getRetrieve',
                 'as'=>'roottype.retrieve'
             ]);
-           
+
            Route::post('/root_type/update',[
                'uses'=>'RootTypeController@postUpdate',
                'as'=>'roottype.update'
            ]);
-           
+
            Route::get('/root_type/{id}/delete',[
                'uses'=>'RootTypeController@getDelete',
                'as'=>'roottype.delete'
            ]);
-           
+
            //Menu Negara
            Route::get('/negara',[
                 'uses'=>'NegaraController@getIndex',
                 'as'=>'negara.index'
            ]);
-           
+
            Route::get('/negara/create',[
                 'uses'=>'NegaraController@getCreate',
                 'as'=>'negara.getCreate'
             ]);
-           
+
            Route::post('/negara/create',[
                 'uses'=>'NegaraController@postCreate',
                 'as'=>'negara.create'
             ]);
-           
+
            Route::get('/negara/retrieve',[
                 'uses'=>'NegaraController@getRetrieve',
                 'as'=>'negara.retrieve'
@@ -514,14 +514,35 @@ Route::group(['middleware'=>['web']],function(){
            Route::get('/penyakit/get',[
                'uses'=>'PenyakitController@getPenyakit',
                'as'=>'penyakit.get'
-           ]);       
+           ]);
+
+           //Menu Pengaturan Pengguna
+          // ==========================
+          //Submenu Pendaftaran Pengguna
+           Route::get('/pengguna/',[
+              'uses'=>'UserManagementController@getUsermanIndex',
+              'as'=>'usersmanagement.index'
+           ]);
+
+          //Submenu Peran pengguna
+          Route::get('/peranpengguna/',[
+            'uses'=>'UserManagementController@getRolesmanIndex',
+            'as'=>'rolesmanagement.index'
+          ]);
+
+          //Submenu Perizinan Pengguna
+          Route::get('/perizinanpengguna/',[
+            'uses'=>'UserManagementController@getPermissionsmanIndex',
+            'as'=>'permissionsmanagement.index'
+          ]);
+
        });
     //   Route::group(['prefix'=>'operator',function(){
-    //       
+    //
     //   }]);
-    //   
+    //
     //   Route::group(['prefix'=>'surveyor',function(){
-    //       
+    //
     //   }]);
     });
 

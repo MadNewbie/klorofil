@@ -1,7 +1,7 @@
 @extends('template.template-back-end')
 
 @section('title')
-Admin - Akun
+Admin - Pengaturan Perizinan Pengguna
 @endsection
 
 @section('name')

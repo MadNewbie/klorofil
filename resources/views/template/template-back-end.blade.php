@@ -24,9 +24,9 @@
     <link href="{{URL::to('back-end/vendors/pnotify/dist/pnotify.css')}}" rel="stylesheet">
     <link href="{{URL::to('back-end/vendors/pnotify/dist/pnotify.buttons.css')}}" rel="stylesheet">
     <link href="{{URL::to('back-end/vendors/pnotify/dist/pnotify.nonblock.css')}}" rel="stylesheet">
-    
+
     @yield('styles')
-    
+
     <!-- Custom Theme Style -->
     <link href="{{URL::to('back-end/css/custom.min.css')}}" rel="stylesheet">
   </head>
@@ -95,9 +95,9 @@
                   </li>
                   <li><a><i class="fa fa-user"></i> Pengelolaan Akun<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">Pendaftaran Pengguna</a></li>
-                      <li><a href="#">Tingkat Pengguna</a></li>
-                      <li><a href="#">Fungsi Pengguna</a></li>
+                      <li><a href="{{Route('usersmanagement.index')}}">Pendaftaran Pengguna</a></li>
+                      <li><a href="{{Route('rolesmanagement.index')}}">Peranan Pengguna</a></li>
+                      <li><a href="{{Route('permissionsmanagement.index')}}">Perizinan Pengguna</a></li>
                     </ul>
                 </ul>
               </div>
@@ -242,7 +242,7 @@
         </footer>
         <!-- /footer content -->
       </div>
-    </div>     
+    </div>
     <!--Token-->
         <script type="text/javascript">
             var token = "{{Session::token()}}";
@@ -266,14 +266,12 @@
     <script src="{{URL::to('back-end/vendors/pnotify/dist/pnotify.js')}}"></script>
     <script src="{{URL::to('back-end/vendors/pnotify/dist/pnotify.buttons.js')}}"></script>
     <script src="{{URL::to('back-end/vendors/pnotify/dist/pnotify.nonblock.js')}}"></script>
-    
+
     <!--Script from menu-->
     @yield('scripts')
 
     <!-- Custom Theme Scripts -->
     <script src="{{URL::to('back-end/js/custom.min.js')}}"></script>
-	
+
   </body>
 </html>
-
-
