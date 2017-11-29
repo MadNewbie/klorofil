@@ -24,10 +24,14 @@ Moh. Ardiansyah
             </div>
             <div class="x_content" style="display: none">
                 <div class="row">
-                    <div class="col-md-12 col-xs-12 col-sm-12">
-                        <select id="drp_species_type" class="col-md-2"></select>
-                        <input id="name" class="col-md-2" type="text" placeholder="Perlakuan"/>
-                        <button id="btnAdd" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <select id="drp_species_type" class="form-control"></select>
+                    </div>
+                    <div class="col-md-7 col-sm-7 col-xs-7">
+                        <input id="name" class="form-control" type="text" placeholder="Perlakuan"/>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1">
+                        <button id="btnAdd" class="form-control btn btn-primary"><i class="fa fa-plus"></i></button>
                     </div>
                 </div>
             </div>

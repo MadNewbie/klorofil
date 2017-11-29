@@ -24,9 +24,14 @@ Moh. Ardiansyah
             </div>
             <div class="x_content" style="display: none">
                 <div class="row">
-                    <input class="col-md-2" type="text" placeholder="Nama Lengkap"/>
-                    <input class="col-md-2" type="text" placeholder="Username"/>
-                    <select>
+                  <div class="col-md-4 col-xs-4 col-sm-4">
+                    <input class="form-control" type="text" placeholder="Nama Lengkap"/>
+                  </div>
+                  <div class="col-md-4 col-xs-4 col-sm-4">
+                    <input class="form-control" type="text" placeholder="Username"/>
+                  </div>
+                  <div class="col-md-3 col-xs-3 col-sm-3">
+                    <select class="form-control">
                         <option hidden="">Hak Akses</option>
                         <option>Administrator</option>
                         <option>Operator (Provinsi)</option>
@@ -35,7 +40,10 @@ Moh. Ardiansyah
                         <option>Operator (Kelurahan/Desa)</option>
                         <option>Operator (Area)</option>
                     </select>
-                    <button class="btn btn-primary"><i class="fa fa-plus"></i></button>
+                  </div>
+                  <div class="col-md-1 col-xs-1 col-sm-1">
+                    <button class="form-control btn btn-primary"><i class="fa fa-plus"></i></button>
+                  </div>
                 </div>
             </div>
         </div>
