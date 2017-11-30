@@ -17,16 +17,18 @@ Moh. Ardiansyah
         </div>
         <div class="x_panel">
             <div class="x_title">
-                    <ul class="nav navbar-left panel_toolbox">
+                    <ul class="nav navbar-left panel_toolbox pull-left">
                         <li><a class="collapse-link btn btn-primary"><i class="fa fa-plus"></i></a></li>
                     </ul>
                     <div class="clearfix"></div>
             </div>
             <div class="x_content" style="display: none">
-                <div class="row">
-                    <input id="trunk_type_name" class="col-md-2" type="text" placeholder="Jenis Batang"/>
-                    <button id="btnAdd" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+              <form class="form-inline clearfix">
+                <div class="form-group">
+                  <input id="trunk_type_name" class="form-control" type="text" placeholder="Jenis Batang"/>
                 </div>
+                <button id="btnAdd" class="form-control btn btn-primary"  style="margin-bottom: 0px;"><i class="fa fa-plus"></i></button>
+              </form>
             </div>
         </div>
         <div class="x_content">

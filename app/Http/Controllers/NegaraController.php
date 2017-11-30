@@ -12,9 +12,10 @@ class NegaraController extends Controller
 {
     public function getIndex(){
         $negara = Negara::orderBy('name')->paginate(10);
-        return view('negara.index',['datas'=>$negara]);
+        $sectionTitle = "Negara";
+        return view('negara.index',['datas'=>$negara,'pageslice'=>$sectionTitle]);
     }
-    
+
     public function getCreate(){
         return view('negara.create');
     }
@@ -42,7 +43,7 @@ class NegaraController extends Controller
             return Response::json(['kode'=>404,'message'=>'Data tidak berhasil tersimpan'],200);
         }
     }
-    
+
     function getUpdate($id){
         $negara = Negara::where('id',$id)->all();
         return view('negara.create',['datas'=>$negara]);
@@ -61,9 +62,9 @@ class NegaraController extends Controller
         if(!$negara){
             return Response::json(['kode'=>404,'message'=>'Data tidak ditemukan'],404);
         }
-        
+
     }
-    
+
     public function getRetrieve() {
         $negara = Negara::all();
         return Response::json(['negara'=>$negara],200);

@@ -38,8 +38,10 @@
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
               <a href="{{Route('admin.index')}}" class="site_title">
+                <i style="background: transparent; background-color: #00ff004f;"><image src="{{URL::to('general/pictures/icon-logo.png')}}" style="width: 16px; height: 27px;"/></i>
                <span>
-                <image src="{{URL::to('general/pictures/icon-logo.png')}}" style="width: 16px; height: 27px;"/>CiBOR
+                <!-- <image src="{{URL::to('general/pictures/icon-logo.png')}}" style="width: 16px; height: 27px;"/> -->
+                {{config('app.name')}}
               </span></a>
             </div>
 
@@ -236,7 +238,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            CiBOR (City Arbor) Information Admin is powered by Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
           </div>
           <div class="clearfix"></div>
         </footer>

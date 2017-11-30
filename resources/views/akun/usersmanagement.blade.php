@@ -17,21 +17,21 @@ Moh. Ardiansyah
         </div>
         <div class="x_panel">
             <div class="x_title">
-                    <ul class="nav navbar-left panel_toolbox">
+                    <ul class="nav navbar-left panel_toolbox pull-left">
                         <li><a class="collapse-link btn btn-primary"><i class="fa fa-plus"></i></a></li>
                     </ul>
                     <div class="clearfix"></div>
             </div>
             <div class="x_content" style="display: none">
-                <div class="row">
-                  <div class="col-md-4 col-xs-4 col-sm-4">
-                    <input class="form-control" type="text" placeholder="Nama Lengkap"/>
-                  </div>
-                  <div class="col-md-4 col-xs-4 col-sm-4">
-                    <input class="form-control" type="text" placeholder="Username"/>
-                  </div>
-                  <div class="col-md-3 col-xs-3 col-sm-3">
-                    <select class="form-control">
+              <form class="form-inline form-horizontal">
+                <div class="form-group">
+                  <input id="accountFullname" class="form-control" type="text" style="margin-bottom: 0px;" placeholder="Nama Lengkap"/>
+                </div>
+                <div class="form-group">
+                    <input id="accountUsername" class="form-control" type="text" style="margin-bottom: 0px;" placeholder="Username"/>
+                </div>
+                <div class="form-group">
+                  <select class="form-control" style="margin-bottom: 0px;">
                         <option hidden="">Hak Akses</option>
                         <option>Administrator</option>
                         <option>Operator (Provinsi)</option>
@@ -39,12 +39,10 @@ Moh. Ardiansyah
                         <option>Operator (Kecamatan)</option>
                         <option>Operator (Kelurahan/Desa)</option>
                         <option>Operator (Area)</option>
-                    </select>
-                  </div>
-                  <div class="col-md-1 col-xs-1 col-sm-1">
-                    <button class="form-control btn btn-primary"><i class="fa fa-plus"></i></button>
-                  </div>
+                  </select>
                 </div>
+                  <button id="btnAdd" class="btn btn-primary" style="margin-bottom: 0px;"><i class="fa fa-plus"></i>Tambah</button>
+              </form>
             </div>
         </div>
         <div class="x_content">
@@ -55,7 +53,7 @@ Moh. Ardiansyah
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <table class="table table-striped table-bordered">
+                    <table class="table table-responsive table-striped table-bordered">
                         <thead>
                             <tr class="row">
                                 <th class="col-md-1 col-sm-1 col-xs-1">No</th>

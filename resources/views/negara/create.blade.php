@@ -19,18 +19,24 @@ Moh. Ardiansyah
 
 @section('content')
 <div class="x_panel">
-<div class=row>
-  <div class="col-md-12  col-sm-12 col-xs-12">
-    <input id="nama_negara" class="form-control" placeholder="Nama Negara"/>
-  </div><div class="clearfix"></div>
-  <br />
-  <div id="map" class="form-control col-md-10 col-sm-10 col-xs-10"></div>
-  <div class="clearfix"></div>
-  <br />
-  <div class="col-md-2 col-sm-2 col-xs-2">
-    <button class="form-control" onclick="startAdd()">Create</button>
+  <div class="x_content">
+    <form class="form-inline">
+      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <input id="nama_negara" class="form-control" placeholder="Nama Negara"/>
+      </div>
+      <div class="clearfix"></div>
+      <br />
+      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <div id="map" class="form-control"></div>
+      </div>
+      <div class="clearfix"></div>
+      <br />
+      <!-- <button id="btnAdd" class="form-control btn btn-primary"><i class="fa fa-plus"></i>Tambah</button> -->
+      <div class="form-group col-xs-5">
+      <button id="btnAdd" class="form-control btn btn-primary"onclick="startAdd()"><i class="fa fa-plus"></i>Tambah</button>
+    </div>
+    </form>
   </div>
-</div>
 </div>
 
 <script>
