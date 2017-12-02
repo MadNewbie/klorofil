@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-//use App\Models\User;
-use App\Role;
-//use App\Models\User;
-use App\Permission;
-//use App\Models\Permission;
+//use App\User;
+use App\Models\User;
+//use App\Role;
+use App\Models\Role;
+//use App\Permission;
+use App\Models\Permission;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
