@@ -21,31 +21,37 @@ Moh. Ardiansyah
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
         <div class="x_title">
-            <h2>Kabupaten / Kota</h2>
+            <h2>Kabupaten/Kota</h2>
             <div class="clearfix"></div>
         </div>
         <div class="x_panel">
             <div class="x_title">
-                    <ul class="nav navbar-left panel_toolbox">
-                        <li><a class="collapse-link btn btn-primary"><i class="fa fa-plus"></i></a></li>
+                    <ul class="nav navbar-left panel_toolbox pull-left">
+                        <li><a class="collapse-link btn btn-primary"  onclick="displayMap();"><i class="fa fa-plus"></i></a></li>
                     </ul>
                     <div class="clearfix"></div>
             </div>
             <div class="x_content" style="display: none">
-                <div class="row">
-                    <div class="col-md-12 col-xs-12 col-sm-12">
-                        <select class="col-md-2">
+              <form class="form-inline clearfix">
+                    <!-- <div class="col-md-12 col-xs-12 col-sm-12"> -->
+                        <div class="form-group">
+                        <select class="form-control">
                             <option hidden="">Provinsi</option>
                             <option>Jawa Timur</option>
                             <option>Jawa Barat</option>
                         </select>
-                        <input class="col-md-2" type="text" placeholder="Nama Kabupaten / Kota"/>
-                        <button class="col-md-1 btn btn-success" onclick="btnSimpanOnClick()">Simpan</button>
-                    </div>
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Nama Kabupaten/Kota"/>
+                      </div>
+                        <button class="form-control btn btn-success" style="margin-bottom: 0px;" onclick="btnSimpanOnClick();">Simpan</button>
+                    <!-- </div> -->
+                    <div class="clearfix"><br /></div>
+
+                  </form>
                 </div>
-                <div id="map"></div>
-            </div>
-        </div>
+                <div class="form-control" id="map"></div>
+              </div>
         <div class="x_content">
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12 dataTables_filter">
@@ -99,6 +105,6 @@ Moh. Ardiansyah
 @endsection
 
 @section('scripts')
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqbtULHt9MCzx6qiqosU40KgeKVylVTL0&callback=initMap" type="text/javascript"></script> 
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqbtULHt9MCzx6qiqosU40KgeKVylVTL0&callback=initMap" type="text/javascript"></script>
 <script src="{{URL::to('general/MapEditor.js')}}"></script>
 @endsection

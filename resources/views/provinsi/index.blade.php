@@ -27,7 +27,7 @@ Moh. Ardiansyah
         <div class="x_panel">
             <div class="x_title">
                     <ul class="nav navbar-left panel_toolbox pull-left">
-                        <li><a class="collapse-link btn btn-primary"><i class="fa fa-plus"></i></a></li>
+                        <li><a class="collapse-link btn btn-primary" onclick="displayMap();"><i class="fa fa-plus"></i></a></li>
                     </ul>
                     <div class="clearfix"></div>
             </div>
@@ -36,11 +36,12 @@ Moh. Ardiansyah
                 <div class="form-group">
                   <input class="form-control" type="text" placeholder="Nama Provinsi"/>
                 </div>
-                <button class="form-control btn btn-success" style="margin-bottom: 0px;" onclick="btnSimpanOnClick()">Simpan</button>
+                <button class="form-control btn btn-success" style="margin-bottom: 0px;" onclick="btnSimpanOnClick();">Simpan</button>
                 <div class="clearfix"><br /></div>
-                <div class="form-control" id="map"></div>
+
               </form>
             </div>
+            <div class="form-control" id="map"></div>
         </div>
         <div class="x_content">
             <div class="row">

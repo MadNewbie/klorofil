@@ -10,20 +10,42 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//=============================
+// Guest-page section
+//=============================
+
 Route::get('/',[
     'uses'=>'HomeController@getGuestIndex',
     'as'=>'guest.index'
 ]);
 
+//=============================
+// End Guest-page section
+//=============================
+
+//=============================
+// Ministered-page section
+//=============================
 Route::get('/price-and-planning', [
   'uses' => 'HomeController@getMinisteredIndex',
   'as' => 'ministered.index'
 ]);
 
+//=============================
+// End Ministered-page section
+//=============================
+
+//=============================
+// Blog-page section
+//=============================
 Route::get('/blog', [
   'uses' => 'HomeController@getBlogIndex',
   'as' => 'blog.index'
 ]);
+
+//=============================
+// End Blog-page section
+//=============================
 
 Route::get('/osmtest',function(){
     return view('test-osm');
@@ -40,12 +62,85 @@ Route::get('/gmap',function(){
 
 Route::group(['middleware'=>['web']],function(){
        Route::group(['prefix'=>'admin'],function(){
+         //============================
+         // Admin-page section
+         //============================
+         // Menu Dashboard
+         Route::get('/',[
+            'uses'=>'HomeController@getAdminIndex',
+            'as'=>'admin.index'
+         ]);
 
-           //Menu Dashboard
-           Route::get('/',[
-              'uses'=>'HomeController@getAdminIndex',
-              'as'=>'admin.index'
-           ]);
+         //============================
+         // End Admin-page section
+         //============================
+
+         //============================
+         //Admin region section
+         //============================
+         //============================
+         // Sublist Admin region
+         //============================
+         // Submenu Negara
+         Route::get('/negara',[
+              'uses'=>'NegaraController@getIndex',
+              'as'=>'negara.index'
+         ]);
+
+         Route::get('/negara/create',[
+              'uses'=>'NegaraController@getCreate',
+              'as'=>'negara.getCreate'
+          ]);
+
+         Route::post('/negara/create',[
+              'uses'=>'NegaraController@postCreate',
+              'as'=>'negara.create'
+          ]);
+
+         Route::get('/negara/retrieve',[
+              'uses'=>'NegaraController@getRetrieve',
+              'as'=>'negara.retrieve'
+          ]);
+
+         // Submenu Provinsi
+         Route::get('/provinsi',[
+             'uses'=>'ProvinsiController@getIndex',
+             'as'=>'provinsi.index'
+         ]);
+
+         Route::get('/provinsi/create',[
+             'uses'=>'ProvinsiController@getCreate',
+             'as'=>'provinsi.getCreate'
+         ]);
+
+         Route::post('/provinsi/create',[
+             'uses'=>'ProvinsiController@postCreate',
+             'as'=>'provinsi.Create'
+         ]);
+
+         // Submenu Kabupaten-Kota
+         Route::get('/kabupatenkota',[
+           'uses'=>'KabKotaController@getIndex',
+           'as'=>'kabkota.index'
+         ]);
+
+         Route::get('/kabupatenkota/create',[
+           'uses'=>'KabKotaController@getCreate',
+           'as'=>'kabkota.getCreate'
+         ]);
+
+         Route::post('/kabupatenkota/create',[
+           'uses'=>'KabKotaController@postCreate',
+           'as'=>'kabkota.Create'
+         ]);
+
+         //
+
+
+         //=============================
+         // End Admin region section
+         //=============================
+
 
            //Menu Plant General
             Route::get('plant_general',[
@@ -127,21 +222,7 @@ Route::group(['middleware'=>['web']],function(){
                 'as'=>'species.retrieve'
             ]);
 
-            //Menu Provinsi
-            Route::get('/provinsi',[
-                'uses'=>'ProvinsiController@getIndex',
-                'as'=>'provinsi.index'
-            ]);
 
-            Route::get('provinsi/create',[
-                'uses'=>'ProvinsiController@getCreate',
-                'as'=>'provinsi.getCreate'
-            ]);
-
-            Route::post('provinsi/create',[
-                'uses'=>'ProvinsiController@postCreate',
-                'as'=>'provinsi.Create'
-            ]);
 
            //Menu Treatment
            Route::get('/treatment',[
@@ -443,26 +524,7 @@ Route::group(['middleware'=>['web']],function(){
                'as'=>'roottype.delete'
            ]);
 
-           //Menu Negara
-           Route::get('/negara',[
-                'uses'=>'NegaraController@getIndex',
-                'as'=>'negara.index'
-           ]);
 
-           Route::get('/negara/create',[
-                'uses'=>'NegaraController@getCreate',
-                'as'=>'negara.getCreate'
-            ]);
-
-           Route::post('/negara/create',[
-                'uses'=>'NegaraController@postCreate',
-                'as'=>'negara.create'
-            ]);
-
-           Route::get('/negara/retrieve',[
-                'uses'=>'NegaraController@getRetrieve',
-                'as'=>'negara.retrieve'
-            ]);
 
            //Menu Jenis Penyakit
            Route::get('/jenis_penyakit/',[
@@ -516,21 +578,24 @@ Route::group(['middleware'=>['web']],function(){
                'as'=>'penyakit.get'
            ]);
 
-           //Menu Pengaturan Pengguna
-          // ==========================
-          //Submenu Pendaftaran Pengguna
+          // User-related section
+          //========================
+          //========================
+          // Menu Pengaturan Pengguna
+          //========================
+          // Submenu Pendaftaran Pengguna
            Route::get('/pengguna/',[
               'uses'=>'UserManagementController@getUsermanIndex',
               'as'=>'usersmanagement.index'
            ]);
 
-          //Submenu Peran pengguna
+          // Submenu Peran pengguna
           Route::get('/peranpengguna/',[
             'uses'=>'UserManagementController@getRolesmanIndex',
             'as'=>'rolesmanagement.index'
           ]);
 
-          //Submenu Perizinan Pengguna
+          // Submenu Perizinan Pengguna
           Route::get('/perizinanpengguna/',[
             'uses'=>'UserManagementController@getPermissionsmanIndex',
             'as'=>'permissionsmanagement.index'
