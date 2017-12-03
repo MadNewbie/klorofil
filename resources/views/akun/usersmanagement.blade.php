@@ -12,7 +12,7 @@ Moh. Ardiansyah
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
         <div class="x_header">
-            <h2>Akun</h2>
+            <h2>{{ $sectiontitle }}</h2>
             <div class="clearfix"></div>
         </div>
         <div class="x_panel">
@@ -23,7 +23,7 @@ Moh. Ardiansyah
                     <div class="clearfix"></div>
             </div>
             <div class="x_content" style="display: none">
-              <form class="form-inline form-horizontal">
+              <form class="form-inline clearfix">
                 <div class="form-group">
                   <input id="accountFullname" class="form-control" type="text" style="margin-bottom: 0px;" placeholder="Nama Lengkap"/>
                 </div>
@@ -97,4 +97,8 @@ Moh. Ardiansyah
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script src="{{URL::to('back-end/js/account_management/usersman.js')}}"></script>
 @endsection

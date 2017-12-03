@@ -17,10 +17,10 @@ class UserManagementController extends Controller
 {
     //User management CRUD section
     public function getUsermanIndex() {
-        $sectionTitle="Users Management";
+        $sectionTitle="User(s) Management";
         $users=User::orderBy('id')->paginate(10);
         return view('akun.usersmanagement',[
-
+          'sectiontitle'=>$sectionTitle,
         ]);
     }
 
