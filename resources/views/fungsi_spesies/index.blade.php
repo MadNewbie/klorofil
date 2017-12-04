@@ -26,11 +26,11 @@ Moh. Ardiansyah
               <form class="form-inline clearfix">
                   <div class="form-group">
                     <select id="drp_species_type" class="form-control"></select>
-                  </div>
-                  <div class="form-group">
+                  <!-- </div>
+                  <div class="form-group"> -->
                     <input id="function_type_species" class="form-control" type="text" placeholder="Fungsi Spesies"/>
                   </div>
-                  <button id="btnAdd" class="btn btn-primary" style="margin-bottom: 0px;"><i class="fa fa-plus"></i></button>
+                  <button id="btnAdd" class="form-control btn btn-primary btn-xs" style="margin-bottom: 0px;"><i class="fa fa-plus"></i></button>
               </form>
             </div>
         </div>

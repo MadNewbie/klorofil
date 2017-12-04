@@ -17,7 +17,7 @@ Moh. Ardiansyah
         </div>
         <div class="x_panel">
             <div class="x_title">
-                    <ul class="nav navbar-left panel_toolbox">
+                    <ul class="nav navbar-left panel_toolbox pull-left">
                         <li><a class="collapse-link btn btn-primary"><i class="fa fa-plus"></i></a></li>
                     </ul>
                     <div class="clearfix"></div>

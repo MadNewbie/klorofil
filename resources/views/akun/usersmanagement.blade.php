@@ -11,9 +11,10 @@ Moh. Ardiansyah
 @section('content')
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
-        <div class="x_header">
+        <!-- <div class="x_header"> -->
+        <div class="x_title clearfix">
             <h2>{{ $sectiontitle }}</h2>
-            <div class="clearfix"></div>
+            <!-- <div class="clearfix"></div> -->
         </div>
         <div class="x_panel">
             <div class="x_title">
@@ -26,11 +27,11 @@ Moh. Ardiansyah
               <form class="form-inline clearfix">
                 <div class="form-group">
                   <input id="accountFullname" class="form-control" type="text" style="margin-bottom: 0px;" placeholder="Nama Lengkap"/>
-                </div>
-                <div class="form-group">
+                <!-- </div> -->
+                <!-- <div class="form-group"> -->
                     <input id="accountUsername" class="form-control" type="text" style="margin-bottom: 0px;" placeholder="Username"/>
-                </div>
-                <div class="form-group">
+                <!-- </div> -->
+                <!-- <div class="form-group"> -->
                   <select class="form-control" style="margin-bottom: 0px;">
                         <option hidden="">Hak Akses</option>
                         <option>Administrator</option>
@@ -41,19 +42,25 @@ Moh. Ardiansyah
                         <option>Operator (Area)</option>
                   </select>
                 </div>
-                  <button id="btnAdd" class="btn btn-primary" style="margin-bottom: 0px;"><i class="fa fa-plus"></i>Tambah</button>
+                  <button id="btnAdd" class="form-control btn btn-primary btn-xs" style="margin-bottom: 0px;"><i class="fa fa-plus"></i>Tambah</button>
               </form>
             </div>
         </div>
+        <div class="x_panel">
         <div class="x_content">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12 dataTables_filter">
-                    <input type="search" placeholder="Cari"/>
+          <form class="form-inline clearfix">
+            <div class="form-group">
+              <div class="row clearfix">
+                <div class="dataTables_filter pull-right">
+                    <input class="form-control" type="search" placeholder="Cari"/>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <table class="table table-responsive table-striped table-bordered">
+              </div>
+              <br />
+            <!-- </div> -->
+              <div class="row clearfix">
+                <!-- <div class="form-group clearfix"> -->
+                  <div class="table-responsive">
+                    <table class="table table-striped">
                         <thead>
                             <tr class="row">
                                 <th class="col-md-1 col-sm-1 col-xs-1">No</th>
@@ -70,10 +77,10 @@ Moh. Ardiansyah
                                 <td class="col-md-2 col-sm-2 col-xs-2">moh_ardiahsyah</td>
                                 <td class="col-md-2 col-sm-2 col-xs-2">Administrator</td>
                                 <td class="col-md-2 col-sm-2 col-xs-2">
-                                   <div role="group" class="btn-group btn-group-justified">
-                                        <a class="btn btn-warning" data-toggle="tooltip" title="Reset Password"><i class="fa fa-undo"></i></a>
-                                        <a class="btn btn-success" data-toggle="tooltip" title="Edit Akun"><i class="fa fa-pencil"></i></a>
-<!--                                        <a class="btn btn-danger"><i class="fa fa-trash"></i></a>-->
+                                   <div role="group" class="btn-group btn-group-justified btn-group-xs">
+                                        <a class="btn btn-warning btn-xs" data-toggle="tooltip" title="Reset Password"><i class="fa fa-undo"></i></a>
+                                        <a class="btn btn-success btn-xs" data-toggle="tooltip" title="Edit Akun"><i class="fa fa-pencil"></i></a>
+                                        <a class="btn btn-danger btn-xs" data-toggle="tooltip" title="Hapus Akun"><i class="fa fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -83,10 +90,10 @@ Moh. Ardiansyah
                                 <td class="col-md-2 col-sm-2 col-xs-2">rachmad.y</td>
                                 <td class="col-md-2 col-sm-2 col-xs-2">Operator (Kabupaten/Kota)</td>
                                 <td class="col-md-2 col-sm-2 col-xs-2">
-                                   <div role="group" class="btn-group btn-group-justified">
-                                        <a class="btn btn-warning" data-toggle="tooltip" title="Reset Password"><i class="fa fa-undo"></i></a>
-                                        <a class="btn btn-success" data-toggle="tooltip" title="Edit Akun"><i class="fa fa-pencil"></i></a>
-                                        <a class="btn btn-danger" data-toggle="tooltip" title="Hapus Akun"><i class="fa fa-trash"></i></a>
+                                   <div role="group" class="btn-group btn-group-justified btn-group-xs">
+                                        <a class="btn btn-warning btn-xs" data-toggle="tooltip" title="Reset Password"><i class="fa fa-undo" aria-hidden="true"></i></a>
+                                        <a class="btn btn-success btn-xs" data-toggle="tooltip" title="Edit Akun"><i class="fa fa-pencil"></i></a>
+                                        <a class="btn btn-danger btn-xs" data-toggle="tooltip" title="Hapus Akun"><i class="fa fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -94,8 +101,11 @@ Moh. Ardiansyah
                     </table>
                 </div>
             </div>
+          </form>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 @endsection
 

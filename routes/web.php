@@ -119,23 +119,32 @@ Route::group(['middleware'=>['web']],function(){
          ]);
 
          // Submenu Kabupaten-Kota
-         Route::get('/kabupatenkota',[
+         Route::get('/kabupaten-kota',[
            'uses'=>'KabKotaController@getIndex',
            'as'=>'kabkota.index'
          ]);
 
-         Route::get('/kabupatenkota/create',[
+         Route::get('/kabupaten-kota/create',[
            'uses'=>'KabKotaController@getCreate',
            'as'=>'kabkota.getCreate'
          ]);
 
-         Route::post('/kabupatenkota/create',[
+         Route::post('/kabupaten-kota/create',[
            'uses'=>'KabKotaController@postCreate',
            'as'=>'kabkota.Create'
          ]);
 
-         //
+         // Submenu Kecamatan
+         Route::get('/kecamatan',[
+           'uses'=>'KecamatanController@getIndex',
+           'as'=>'kecamatan.index'
+         ]);
 
+         // Submenu Kelurahan-Desa
+         Route::get('/kelurahan-desa',[
+           'uses'=>'KelDesaController@getIndex',
+           'as'=>'kelurahandesa.index'
+         ]);
 
          //=============================
          // End Admin region section

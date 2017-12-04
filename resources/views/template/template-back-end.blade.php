@@ -71,6 +71,8 @@
                         <li><a href="{{Route('negara.index')}}">Negara</a></li>
                         <li><a href="{{Route('provinsi.index')}}">Provinsi</a></li>
                         <li><a href="{{Route('kabkota.index')}}">Kabupaten/Kota</a></li>
+                        <li><a href="{{Route('kecamatan.index')}}">Kecamatan</a></li>
+                        <li><a href="{{Route('kelurahandesa.index')}}">Kelurahan/Desa</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-tree"></i> Detail Pohon<span class="fa fa-chevron-down"></span></a>

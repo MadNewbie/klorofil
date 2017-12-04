@@ -26,8 +26,8 @@ Moh. Ardiansyah
                 <div class="form-group">
                   <select id="drp_species_type" class="form-control" tabindex="-1">
                   </select>
-                </div>
-                <div class="form-group">
+                <!-- </div>
+                <div class="form-group"> -->
                   <input id="spesies_perlakuan" class="form-control" type="text" placeholder="Perlakuan"/>
                 </div>
                 <button id="btnAdd" class="form-control btn btn-primary"  style="margin-bottom: 0px;"><i class="fa fa-plus"></i>Tambah</button>

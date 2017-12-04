@@ -13,7 +13,7 @@ class NegaraController extends Controller
     public function getIndex(){
         $negara = Negara::orderBy('name')->paginate(10);
         $sectionTitle = "Negara";
-        return view('negara.index',['datas'=>$negara,'pageslice'=>$sectionTitle]);
+        return view('negara.index',['datas'=>$negara,'sectiontitle'=>$sectionTitle]);
     }
 
     public function getCreate(){

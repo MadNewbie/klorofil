@@ -20,13 +20,14 @@ Moh. Ardiansyah
 @section('content')
 <div class="col-xs-12">
     <div class="x_panel">
+      <!-- <div class="x_header clearfix"> -->
       <div class="x_title clearfix">
-          <h2>{{ $pageslice }}</h2>
+          <h2>{{ $sectiontitle }}</h2>
       </div>
       <div class="x_panel">
           <div class="x_title">
                   <ul class="nav navbar-left panel_toolbox pull-left">
-                    <li><a class="btn btn-primary" href="{{Route('negara.getCreate')}}" style="margin-bottom: 0px;"><i class="fa fa-plus"></i></a></li>
+                    <li><a class="btn btn-primary btn-xs" href="{{Route('negara.getCreate')}}" style="margin-bottom: 0px;"><i class="fa fa-plus"></i></a></li>
                   </ul>
                   <div class="clearfix"></div>
           </div>

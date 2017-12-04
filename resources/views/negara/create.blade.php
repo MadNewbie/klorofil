@@ -33,7 +33,7 @@ Moh. Ardiansyah
       <br />
       <!-- <button id="btnAdd" class="form-control btn btn-primary"><i class="fa fa-plus"></i>Tambah</button> -->
       <div class="form-group col-xs-5">
-      <button id="btnAdd" class="form-control btn btn-primary"onclick="startAdd()"><i class="fa fa-plus"></i>Tambah</button>
+      <button id="btnAdd" class="form-control btn btn-primary btn-xs" onclick="startAdd()"><i class="fa fa-plus"></i>Tambah</button>
     </div>
     </form>
   </div>

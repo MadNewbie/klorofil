@@ -20,9 +20,9 @@ Moh. Ardiansyah
 @section('content')
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
-        <div class="x_title">
+        <div class="x_title clearfix">
             <h2>Provinsi</h2>
-            <div class="clearfix"></div>
+            <!-- <div class="clearfix"></div> -->
         </div>
         <div class="x_panel">
             <div class="x_title">
@@ -33,15 +33,15 @@ Moh. Ardiansyah
             </div>
             <div class="x_content" style="display: none">
               <form class="form-inline clearfix">
-                <div class="form-group">
+                <div class="form-group" style="margin-bottom: 0px;">
                   <input class="form-control" type="text" placeholder="Nama Provinsi"/>
                 </div>
                 <button class="form-control btn btn-success" style="margin-bottom: 0px;" onclick="btnSimpanOnClick();">Simpan</button>
                 <div class="clearfix"><br /></div>
-
+                <div class="form-control" id="map"></div>
               </form>
             </div>
-            <div class="form-control" id="map"></div>
+            <!-- <div class="form-control" id="map"></div> -->
         </div>
         <div class="x_content">
             <div class="row">
