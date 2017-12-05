@@ -23,14 +23,18 @@ Moh. Ardiansyah
                     <div class="clearfix"></div>
             </div>
             <div class="x_content" style="display: none">
-                <div class="row">
-                    <input id="animal_name" class="col-md-2" type="text" placeholder="Nama Hewan"/>
-                    <div class="clearfix"></div>
-                    <textarea id="description" class="col-md-8" type="text" placeholder="Keterangan" rows="1"></textarea>
-                    <div class="clearfix"></div>
-                    <button id="btnAdd" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+              <form class="form-horizontal form-label-left clearfix">
+                <div class="form-group">
+                  <input id="animal_name" class="form-control" type="text" placeholder="Nama Hewan"/>
+                  <div class="clearfix"></div>
+                  <textarea id="description" rows="7" class="form-control" type="text" style="resize: vertical;" placeholder="Keterangan" rows="1"></textarea>
+                  <div class="clearfix"></div><br />
+                <div>
+                  <button id="btnAdd" class="btn btn-primary"><i class="fa fa-plus"></i></button>
                 </div>
+              </form>
             </div>
+        </div>
         </div>
         <div class="x_content">
             @if(count($datas)===0)

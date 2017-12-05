@@ -31,7 +31,7 @@ Moh. Ardiansyah
                         <input id="weight" class="form-control" style="margin-bottom: 0px;"placeholder="Bobot"/>
                       </div>
                       <div class="form-group">
-                        <button id="btnAdd" class="form-control btn btn-primary btn-xs" style="margin-bottom: 0px;"><i class="fa fa-plus"></i></button>
+                        <button id="btnAdd" class="form-control btn btn-primary btn-sm" style="margin-bottom: 0px;"><i class="fa fa-plus"></i></button>
                     </div>
                 </div>
             </div>
