@@ -16,10 +16,12 @@ Moh. Ardiansyah
             <div class="clearfix"></div>
         </div>
         <div class="x_panel">
-            <ul class="nav navbar-left panel_toolbox">
+          <div class="x_title">
+            <ul class="nav navbar-left panel_toolbox pull-left">
                 <li><a data-toggle="modal" data-target="#modal_form" class="btn btn-primary" id="btnForm"><i class="fa fa-plus"></i></a></li>
             </ul>
             <div class="clearfix"></div>
+          </div>
         </div>
         <div class="x_content">
             @if(count($datas)===0)
@@ -112,7 +114,7 @@ Moh. Ardiansyah
                 <button type="button" class="btn btn-primary" id="btnSave">Simpan</button>
             </div>
         </div>
-    </div>    
+    </div>
 </div>
 @endsection
 

@@ -1,10 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Config;
 
 class User extends Authenticatable
 {
@@ -13,7 +16,7 @@ class User extends Authenticatable
         SoftDeletes::restore insteadof EntrustUserTrait;
         EntrustUserTrait::restore insteadof SoftDeletes;
     }
-    
+
     protected $table = "users";
     protected $primaryKey = "id_user";
 
@@ -44,5 +47,5 @@ class User extends Authenticatable
     {
         return "https://www.gravatar.com/avatar/" . md5($this->email) . "?d=mm";
     }
-    
+
 }

@@ -1,7 +1,7 @@
       var map;
       var pointBorder = new Array();
       var selectedBorder;
-      
+
       function initMap() {
         var defaultCenter = {lat: -7.9666204, lng: 112.6326321};
         map = new google.maps.Map(document.getElementById('map'), {
@@ -19,7 +19,7 @@
             onClick(point);
         });
       }
-      
+
       function onClick(point){
           pointBorder.push(point);
 //          console.log(pointBorder);
@@ -40,7 +40,26 @@
           selectedBorder.setMap(map);
 //          borderLine.setMap(map);
       }
-      
+
+      function displayMap() {
+        document.getElementById('map').style.display="block";
+        initMap();
+        //initialize();
+        //google.maps.event.trigger(map, "resize");
+      }
+
+      function initialize() {
+        // create the map
+        var myOptions = {
+          zoom: 14,
+          center: new google.maps.LatLng(0.0, 0.0),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+
+        map = new google.maps.Map(document.getElementById("map"),
+        myOptions);
+      }
+
 //      function btnSimpanOnClick(){
 //          pointBorder = new Array();
 //          for(var i=0;i<selectedBorder.getPath().getLength();i++){

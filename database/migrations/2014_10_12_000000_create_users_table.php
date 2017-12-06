@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->dateTime('api_expired');
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletesTz()->nullable();
         });
     }
 

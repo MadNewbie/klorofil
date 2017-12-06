@@ -11,11 +11,12 @@ Moh. Ardiansyah
 @section('content')
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
-        <div class="x_title">
+        <div class="x_title clearfix">
             <h2>Form Spesies</h2>
-            <div class="clearfix"></div>
+            <!-- <div class="clearfix"></div> -->
         </div>
         <div class="x_content">
+          <form class="form-inline">
             <div class="col-md-4">Jenis Spesies</div><select id="drp_species_type"class="col-md-8"/></select><div class="clearfix"></div>
             <div class="col-md-4">ID Spesies</div><input id="species_id" class="col-md-8"/><div class="clearfix"></div>
             <div class="col-md-4">Nama Ilmiah</div><input id="scientific_name" class="col-md-8"/><div class="clearfix"></div>
@@ -30,6 +31,8 @@ Moh. Ardiansyah
             <div class="col-md-4">Bentuk Kelopak Bunga</div><input id="flower_crown_shape" class="col-md-8"/><div class="clearfix"></div>
             <div class="col-md-4">Jumlah Kelopak Bunga</div><input id="flower_crown_number" class="col-md-8"/><div class="clearfix"></div>
             <div class="col-md-4">Periode Berbunga</div><input id="flower_bloom_periode" class="col-md-8"/><div class="clearfix"></div>
+            <!-- <i class="fa fa-plus"></i> -->
+          </form>
         </div>
     </div>
 </div>

@@ -20,24 +20,28 @@ Moh. Ardiansyah
 @section('content')
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
-        <div class="x_title">
+        <div class="x_title clearfix">
             <h2>Provinsi</h2>
-            <div class="clearfix"></div>
+            <!-- <div class="clearfix"></div> -->
         </div>
         <div class="x_panel">
             <div class="x_title">
-                    <ul class="nav navbar-left panel_toolbox">
-                        <li><a class="collapse-link btn btn-primary"><i class="fa fa-plus"></i></a></li>
+                    <ul class="nav navbar-left panel_toolbox pull-left">
+                        <li><a class="collapse-link btn btn-primary" onclick="displayMap();"><i class="fa fa-plus"></i></a></li>
                     </ul>
                     <div class="clearfix"></div>
             </div>
             <div class="x_content" style="display: none">
-                <div class="row">
-                        <input class="col-md-2" type="text" placeholder="Nama Provinsi"/>
-                        <button class="col-md-1 btn btn-success" onclick="btnSimpanOnClick()">Simpan</button>
+              <form class="form-inline clearfix">
+                <div class="form-group" style="margin-bottom: 0px;">
+                  <input class="form-control" type="text" placeholder="Nama Provinsi"/>
                 </div>
-                <div id="map"></div>
+                <button class="form-control btn btn-success" style="margin-bottom: 0px;" onclick="btnSimpanOnClick();">Simpan</button>
+                <div class="clearfix"><br /></div>
+                <div class="form-control" id="map"></div>
+              </form>
             </div>
+            <!-- <div class="form-control" id="map"></div> -->
         </div>
         <div class="x_content">
             <div class="row">
@@ -89,6 +93,6 @@ Moh. Ardiansyah
 @endsection
 
 @section('scripts')
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqbtULHt9MCzx6qiqosU40KgeKVylVTL0&callback=initMap" type="text/javascript"></script> 
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqbtULHt9MCzx6qiqosU40KgeKVylVTL0&callback=initMap" type="text/javascript"></script>
 <script src="{{URL::to('general/MapEditor.js')}}"></script>
 @endsection

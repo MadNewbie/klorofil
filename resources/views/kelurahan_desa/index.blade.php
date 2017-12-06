@@ -115,6 +115,6 @@ Moh. Ardiansyah
 @endsection
 
 @section('scripts')
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqbtULHt9MCzx6qiqosU40KgeKVylVTL0&callback=initMap" type="text/javascript"></script> 
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqbtULHt9MCzx6qiqosU40KgeKVylVTL0&callback=initMap" type="text/javascript"></script>
 <script src="{{URL::to('general/MapEditor.js')}}"></script>
 @endsection

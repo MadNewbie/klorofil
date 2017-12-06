@@ -24,9 +24,9 @@
     <link href="{{URL::to('back-end/vendors/pnotify/dist/pnotify.css')}}" rel="stylesheet">
     <link href="{{URL::to('back-end/vendors/pnotify/dist/pnotify.buttons.css')}}" rel="stylesheet">
     <link href="{{URL::to('back-end/vendors/pnotify/dist/pnotify.nonblock.css')}}" rel="stylesheet">
-    
+
     @yield('styles')
-    
+
     <!-- Custom Theme Style -->
     <link href="{{URL::to('back-end/css/custom.min.css')}}" rel="stylesheet">
   </head>
@@ -38,8 +38,10 @@
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
               <a href="{{Route('admin.index')}}" class="site_title">
+                <i style="background: transparent; background-color: #00ff004f;"><image src="{{URL::to('general/pictures/icon-logo.png')}}" style="width: 16px; height: 27px;"/></i>
                <span>
-                <image src="{{URL::to('general/pictures/icon-logo.png')}}" style="width: 16px; height: 27px;"/>CiBOR
+                <!-- <image src="{{URL::to('general/pictures/icon-logo.png')}}" style="width: 16px; height: 27px;"/> -->
+                {{config('app.name')}}
               </span></a>
             </div>
 
@@ -68,6 +70,9 @@
                     <ul class="nav child_menu">
                         <li><a href="{{Route('negara.index')}}">Negara</a></li>
                         <li><a href="{{Route('provinsi.index')}}">Provinsi</a></li>
+                        <li><a href="{{Route('kabkota.index')}}">Kabupaten/Kota</a></li>
+                        <li><a href="{{Route('kecamatan.index')}}">Kecamatan</a></li>
+                        <li><a href="{{Route('kelurahandesa.index')}}">Kelurahan/Desa</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-tree"></i> Detail Pohon<span class="fa fa-chevron-down"></span></a>
@@ -95,9 +100,9 @@
                   </li>
                   <li><a><i class="fa fa-user"></i> Pengelolaan Akun<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">Pendaftaran Pengguna</a></li>
-                      <li><a href="#">Tingkat Pengguna</a></li>
-                      <li><a href="#">Fungsi Pengguna</a></li>
+                      <li><a href="{{Route('usersmanagement.index')}}">Pendaftaran Pengguna</a></li>
+                      <li><a href="{{Route('rolesmanagement.index')}}">Peranan Pengguna</a></li>
+                      <li><a href="{{Route('permissionsmanagement.index')}}">Perizinan Pengguna</a></li>
                     </ul>
                 </ul>
               </div>
@@ -236,13 +241,13 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            CiBOR (City Arbor) Information Admin is powered by Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
           </div>
           <div class="clearfix"></div>
         </footer>
         <!-- /footer content -->
       </div>
-    </div>     
+    </div>
     <!--Token-->
         <script type="text/javascript">
             var token = "{{Session::token()}}";
@@ -266,14 +271,12 @@
     <script src="{{URL::to('back-end/vendors/pnotify/dist/pnotify.js')}}"></script>
     <script src="{{URL::to('back-end/vendors/pnotify/dist/pnotify.buttons.js')}}"></script>
     <script src="{{URL::to('back-end/vendors/pnotify/dist/pnotify.nonblock.js')}}"></script>
-    
+
     <!--Script from menu-->
     @yield('scripts')
 
     <!-- Custom Theme Scripts -->
     <script src="{{URL::to('back-end/js/custom.min.js')}}"></script>
-	
+
   </body>
 </html>
-
-

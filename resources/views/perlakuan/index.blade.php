@@ -16,20 +16,22 @@ Moh. Ardiansyah
             <div class="clearfix"></div>
         </div>
         <div class="x_panel">
-            <div class="x_title">
-                    <ul class="nav navbar-left panel_toolbox">
+            <div class="x_title clearfix">
+                    <ul class="nav navbar-left panel_toolbox pull-left">
                         <li><a class="collapse-link btn btn-primary"><i class="fa fa-plus"></i></a></li>
                     </ul>
-                    <div class="clearfix"></div>
             </div>
             <div class="x_content" style="display: none">
-                <div class="row">
-                    <div class="col-md-12 col-xs-12 col-sm-12">
-                        <select id="drp_species_type" class="col-md-2"></select>
-                        <input id="name" class="col-md-2" type="text" placeholder="Perlakuan"/>
-                        <button id="btnAdd" class="btn btn-primary"><i class="fa fa-plus"></i></button>
-                    </div>
+              <form class="form-inline clearfix">
+                <div class="form-group">
+                  <select id="drp_species_type" class="form-control" tabindex="-1">
+                  </select>
+                <!-- </div>
+                <div class="form-group"> -->
+                  <input id="spesies_perlakuan" class="form-control" type="text" placeholder="Perlakuan"/>
                 </div>
+                <button id="btnAdd" class="form-control btn btn-primary"  style="margin-bottom: 0px;"><i class="fa fa-plus"></i>Tambah</button>
+              </form>
             </div>
         </div>
         <div class="x_content">

@@ -18,9 +18,24 @@ Moh. Ardiansyah
 @endsection
 
 @section('content')
-    <a  class="btn btn-primary" href="{{Route('negara.getCreate')}}"><i class="fa fa-plus"></i></a>
+<div class="col-xs-12">
+    <div class="x_panel">
+      <!-- <div class="x_header clearfix"> -->
+      <div class="x_title clearfix">
+          <h2>{{ $sectiontitle }}</h2>
+      </div>
+      <div class="x_panel">
+          <div class="x_title">
+                  <ul class="nav navbar-left panel_toolbox pull-left">
+                    <li><a class="btn btn-primary btn-xs" href="{{Route('negara.getCreate')}}" style="margin-bottom: 0px;"><i class="fa fa-plus"></i></a></li>
+                  </ul>
+                  <div class="clearfix"></div>
+          </div>
+    </div>
+    <br />
     @if(count($datas)===0)
-    <h3>Tidak Ada Data</h3>
+    <br />
+    <p>Tidak Ada Data</p>
     @else
     <div class="row">
         <div class="col-sm-12">
@@ -52,4 +67,7 @@ Moh. Ardiansyah
         </div>
     </div>
     @endif
+  </div>
+</div>
+
 @endsection
