@@ -61,8 +61,12 @@ class SpeciesController extends Controller
         return Response::json(['kode'=>404,'message'=>'Data TIdak Berhasil Tersimpan'],200);
     }
     
-    public function getRetrieve() {
-        $species = Species::orderBy('scientific_name')->get();
+    public function getRetrieve($id=null) {
+        if($id==null){
+            $species = Species::orderBy('scientific_name')->get();
+        }else{
+            $species = Species::where('id',$id)->orderBy('scientific_name')->get();
+        }
         return Response::json(['species'=>$species]);
     }
 }
