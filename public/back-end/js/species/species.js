@@ -3,12 +3,19 @@ var docReady = setInterval(function(){
         return;
     }
     clearInterval(docReady);
-    var btnForm = document.getElementById('btnForm');
+    var btnForm = document.getElementById('btnForm'); 
+    var btnGroupOperation = document.getElementsByClassName('btnGroupOperation');
+    for(i=0;i<btnGroupOperation.length;i++){
+        btnGroupOperation[i].children[0].addEventListener('click',startEdit);
+//        btnGroupOperation[i].children[1].addEventListener('click',startDelete);
+    }
     btnForm.addEventListener('click',startForm);
 },100);
 
 function startForm(event){
     ajax("GET","/admin/species_type/retrieve/",null,injectSpeciesTypeData,[event]);
+    var btnSave = document.getElementById('btnSave');
+    btnSave.addEventListener('click',startAdd);
 }
 
 function injectSpeciesTypeData(params,success,responseObj){
@@ -28,7 +35,6 @@ function injectSpeciesTypeData(params,success,responseObj){
             }));
         }
     }
-    drp_species_type.addEventListener();
 }
 
 function startAdd(event){
@@ -45,23 +51,18 @@ function startAdd(event){
     var branch_type = document.getElementById('drp_branch_type').selectedOptions[0].value;
     var trunk_type = document.getElementById('drp_trunk_type').selectedOptions[0].value;
     var root_type = document.getElementById('drp_root_type').selectedOptions[0].value;
-    var function_type = document.getElementById('drp_function_type').selectedOptions[0].value;
+    var function_type = document.getElementById('drp_function_species_type').selectedOptions[0].value;
     var datas = {'species_id':species_id,'scientific_name':scientific_name,'density':density,'max_age':max_age,
             'flower_color':flower_color,'flower_crown_shape':flower_crown_shape,'flower_crown_number':flower_crown_number,
             'flower_bloom_periode':flower_bloom_periode,'species_type_id':species_type,'leaf_type_id':leaf_type,'branch_type_id':branch_type,
             'trunk_type_id':trunk_type,'root_type_id':root_type,'function_type_id':function_type};
-    ajax("POST","/species/create",datas,newSpeciesCreated,event);
-}
-
-function newSpeciesCreated(params,success,responseObj){
-      if(success){
-        showNotif('Sukses','success',responseObj.message);
-    }  
+    ajax("POST","/admin/species/create",datas,newSpeciesCreated,event);
 }
 
 function injectSpeciesTypes(params,success,responseObj){
     var drp_species_type = document.getElementById("drp_species_type");
     var species_type = responseObj.species_type;
+    drp_species_type.innerHTML = '';
     $(drp_species_type).append($('<option>',{
         text: 'Jenis Spesies',
         hidden:''
@@ -79,6 +80,7 @@ function injectSpeciesTypes(params,success,responseObj){
 function injectTrunkTypes(params,success,responseObj){
     var drp_trunk_type = document.getElementById('drp_trunk_type');
     var trunk_type = responseObj.trunk_type;
+    drp_trunk_type.innerHTML = '';
     $(drp_trunk_type).append($('<option>',{
         text:'Jenis Batang',
         hidden:''
@@ -96,6 +98,7 @@ function injectTrunkTypes(params,success,responseObj){
 function injectBranchTypes(params,success,responseObj){
     var drp_branch_type = document.getElementById('drp_branch_type');
     var branch_type = responseObj.branch_type;
+    drp_branch_type.innerHTML = '';
     $(drp_branch_type).append($('<option>',{
         text:'Jenis Cabang',
         hidden:''
@@ -113,6 +116,7 @@ function injectBranchTypes(params,success,responseObj){
 function injectLeafTypes(params,success,responseObj){
     var drp_leaf_type = document.getElementById('drp_leaf_type');
     var leaf_type = responseObj.leaf_type;
+    drp_leaf_type.innerHTML = '';
     $(drp_leaf_type).append($('<option>',{
         text:'Jenis Daun',
         hidden:''
@@ -130,6 +134,7 @@ function injectLeafTypes(params,success,responseObj){
 function injectRootTypes(params,success,responseObj){
     var drp_root_type = document.getElementById('drp_root_type');
     var root_type = responseObj.root_type;
+    drp_root_type.innerHTML = '';
     $(drp_root_type).append($('<option>',{
         text:'Jenis Akar',
         hidden:''
@@ -145,8 +150,9 @@ function injectRootTypes(params,success,responseObj){
 }
 
 function injectFunctionTypes(params,success,responseObj){
-    var drp_function_type = document.getElementById('drp_function_type');
+    var drp_function_type = document.getElementById('drp_function_species_type');
     var function_type = responseObj.function_type;
+    drp_function_type.innerHTML='';
      $(drp_function_type).append($('<option>',{
         text:'Fungsi Spesies',
         hidden:''
@@ -159,4 +165,105 @@ function injectFunctionTypes(params,success,responseObj){
             }));
         }
     }
+}
+
+function injectDataMaster(event){
+    var species_id = document.getElementById('species_id');
+    var scientific_name = document.getElementById('scientific_name');
+    var density = document.getElementById('density');
+    var max_age = document.getElementById('max_age');
+    var flower_color = document.getElementById('flower_color');
+    var flower_crown_shape = document.getElementById('flower_crown_shape');
+    var flower_crown_number = document.getElementById('flower_crown_number');
+    var flower_bloom_periode = document.getElementById('flower_bloom_periode');
+    var leaf_type = document.getElementById('drp_leaf_type');
+    var branch_type = document.getElementById('drp_branch_type');
+    var trunk_type = document.getElementById('drp_trunk_type');
+    var root_type = document.getElementById('drp_root_type');
+    var function_type = document.getElementById('drp_function_species_type');
+    ajax('GET','/admin/leaf_type/retrieve',null,injectLeafTypes,[event]);
+    ajax('GET','/admin/branch_type/retrieve',null,injectBranchTypes,[event]);
+    ajax('GET','/admin/trunk_type/retrieve',null,injectTrunkTypes,[event]);
+    ajax('GET','/admin/root_type/retrieve',null,injectRootTypes,[event]);
+    ajax('GET','/admin/function_type/retrieve',null,injectFunctionTypes,[event]);
+    species_id.disabled = false;
+    scientific_name.disabled = false;
+    density.disabled = false;
+    max_age.disabled = false;
+    flower_color.disabled = false;
+    flower_crown_shape.disabled = false;
+    flower_crown_number.disabled = false;
+    flower_bloom_periode.disabled = false;
+    leaf_type.disabled = false;
+    branch_type.disabled = false;
+    trunk_type.disabled = false;
+    root_type.disabled = false;
+    function_type.disabled = false;
+    leaf_type.selected(leaf_type.dataset.value !== null?leaf_type.dataset.value:'');
+}
+
+function newSpeciesCreated(params,success,responseObj){
+    if(success){
+        if(responseObj.kode == 200){
+            showNotif('Sukses','success',responseObj.message);
+            location.reload(); 
+        }else{
+            console.log(responseObj.message);
+            var error = '';
+            for (errors in responseObj.message){
+                for(i=0;i<responseObj.message[errors].length;i++){
+                    error += responseObj.message[errors][i]+'\n';
+                }
+            }
+            showNotif('Error','error',error);
+        }
+    }
+}
+
+function startEdit(event){
+    var id = event.target.parentElement.dataset['id'];
+    var btnSave = document.getElementById('btnSave');
+    btnSave.addEventListener('click',saveEdit(this));
+    ajax("GET","/admin/species_type/retrieve/",null,injectSpeciesTypeData,[event]);
+    ajax('GET','/admin/species/retrieve/'+id,null,injectDataEdit,[event]);
+}
+
+function injectDataEdit(params,success,responseObj){
+    var event = params[0];
+    var species = responseObj.species;
+    var species_id = document.getElementById('species_id');
+    var scientific_name = document.getElementById('scientific_name');
+    var density = document.getElementById('density');
+    var max_age = document.getElementById('max_age');
+    var flower_color = document.getElementById('flower_color');
+    var flower_crown_shape = document.getElementById('flower_crown_shape');
+    var flower_crown_number = document.getElementById('flower_crown_number');
+    var flower_bloom_periode = document.getElementById('flower_bloom_periode');
+    var leaf_type = document.getElementById('drp_leaf_type');
+    var branch_type = document.getElementById('drp_branch_type');
+    var trunk_type = document.getElementById('drp_trunk_type');
+    var root_type = document.getElementById('drp_root_type');
+    var function_type = document.getElementById('drp_function_species_type');
+    var species_type = document.getElementById('drp_species_type');
+    species_type.dataset.value = species[0]['species_type_id'];
+    species_id.dataset.value = species[0]['species_id'];
+    scientific_name.dataset.value = species[0]['scientific_name'];
+    density.dataset.value = species[0]['density'];
+    max_age.dataset.value = species[0]['max_age'];
+    flower_color.dataset.value = species[0]['flower_color'];
+    flower_crown_number.dataset.value = species[0]['flower_crown_number'];
+    flower_crown_shape.dataset.value = species[0]['flower_crown_shape'];
+    flower_bloom_periode.dataset.value = species[0]['flower_bloom_periode'];
+    leaf_type.dataset.value = species[0]['leaf_type_id'];
+    branch_type.dataset.value = species[0]['branch_type_id'];
+    trunk_type.dataset.value = species[0]['trunk_type_id'];
+    root_type.dataset.value = species[0]['root_type_id'];
+    function_type.dataset.value = species[0]['function_type_species_id'];
+    species_type.selectedOptions[0] = species_type.dataset.value;
+    species_id.value = species_id.dataset.value;
+    console.log(species_type.value);
+}
+
+function saveEdit(event){
+    
 }

@@ -226,10 +226,29 @@ Route::group(['middleware'=>['web']],function(){
                 'as'=>'species.create'
             ]);
 
-            Route::get('/species/retrieve',[
+            Route::get('/species/retrieve/{id?}',[
                 'uses'=>'SpeciesController@getRetrieve',
                 'as'=>'species.retrieve'
             ]);
+<<<<<<< HEAD
+            
+            Route::post('/species/update',[
+                'uses'=>'SpeciesController@postUpdate',
+                'as'=>'species.update'
+            ]);
+            
+            Route::get('/species/{id}/delete',[
+                'uses'=>'SpeciesController@getDelete',
+                'as'=>'species.delete'
+            ]);
+            
+            //Menu Provinsi
+            Route::get('/provinsi',[
+                'uses'=>'ProvinsiController@getIndex',
+                'as'=>'provinsi.index'
+            ]);
+=======
+>>>>>>> de5798fb2a1ffc601361aedb88a8864fa7ded546
 
 
 
