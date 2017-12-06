@@ -230,7 +230,6 @@ Route::group(['middleware'=>['web']],function(){
                 'uses'=>'SpeciesController@getRetrieve',
                 'as'=>'species.retrieve'
             ]);
-<<<<<<< HEAD
             
             Route::post('/species/update',[
                 'uses'=>'SpeciesController@postUpdate',
@@ -247,10 +246,6 @@ Route::group(['middleware'=>['web']],function(){
                 'uses'=>'ProvinsiController@getIndex',
                 'as'=>'provinsi.index'
             ]);
-=======
->>>>>>> de5798fb2a1ffc601361aedb88a8864fa7ded546
-
-
 
            //Menu Treatment
            Route::get('/treatment',[
