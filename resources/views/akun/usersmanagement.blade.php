@@ -46,7 +46,7 @@ Moh. Ardiansyah
               </form>
             </div>
         </div>
-        <div class="x_panel">
+        <!-- <div class="x_panel"> -->
         <div class="x_content">
           <form class="form-inline clearfix">
             <div class="form-group">
@@ -104,7 +104,7 @@ Moh. Ardiansyah
           </form>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
   </div>
 </div>
 @endsection
