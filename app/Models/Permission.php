@@ -16,4 +16,8 @@ class Permission extends EntrustPermission
     protected $primaryKey="id_permission";
 
     protected $fillable=['name','display_name','description'];
+
+    function Role(){
+      return $this->belongsTo('App\Models\Role');
+    }
 }
