@@ -46,10 +46,10 @@ Moh. Ardiansyah
               </form>
             </div>
         </div>
-        <!-- <div class="x_panel"> -->
+        <div class="x_content">
         <div class="x_content">
           <form class="form-inline clearfix">
-            @if(count($users)==0)
+            @if(count($users)===0)
             <div class="form-group">
               <div class="row clearfix">
                 <h4 class="text-center">Belum ada data user</h4>
@@ -116,7 +116,7 @@ Moh. Ardiansyah
           </form>
         </div>
       </div>
-    <!-- </div> -->
+    </div>
   </div>
 </div>
 @endsection

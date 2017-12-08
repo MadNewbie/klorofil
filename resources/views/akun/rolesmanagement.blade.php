@@ -40,8 +40,14 @@ Moh. Ardiansyah
         </div>
     </div>
     <div class="x_content">
+      <div class="x_content">
+        <form class="form-inline clearfix">
         @if(count($jenis_users)===0)
-        <h4 class="text-center">Tidak ada data jenis user</h4>
+        <div class="form-group">
+          <div class="row clearfix">
+            <h4 class="text-center">Tidak ada data jenis user</h4>
+          </div>
+        </div>
         @else
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-12 dataTables_filter">
@@ -80,8 +86,10 @@ Moh. Ardiansyah
             </div>
         </div>
         @endif
+      </form>
     </div>
-</div>
+    </div>
+  </div>
 </div>
 @endsection
 

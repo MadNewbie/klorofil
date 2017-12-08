@@ -32,17 +32,25 @@ Moh. Ardiansyah
             </div>
         </div>
         <div class="x_content">
+        <div class="x_content">
+          <form class="form-inline clearfix">
             @if(count($datas)===0)
-            <h4 class="text-center">Tidak ada data jenis spesies</h4>
-            @else
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12 dataTables_filter">
-                    <input type="search" placeholder="Cari"/>
-                </div>
+            <div class="form-group">
+              <div class="row clearfix">
+                <h4 class="text-center">Tidak ada data jenis spesies</h4>
+              </div>
             </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <table class="table table-striped table-bordered">
+            @else
+            <div class="form-group">
+              <div class="row clearfix">
+                <div class="dataTables_filter pull-right">
+                  <input class="form-control" type="search" placeholder="Cari"/>
+                </div>
+              </div>
+              <br />
+              <div class="row clearfix">
+                <div class="table-responsive">
+                    <table class="table table-striped">
                         <thead>
                             <tr class="row">
                                 <th class="col-md-1 col-sm-1 col-xs-1">No</th>
@@ -58,15 +66,16 @@ Moh. Ardiansyah
                                 <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
                                 <td class="col-md-10 col-sm-10 col-xs-10">{{$speciesType->species_type_name}}</td>
                                 <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div data-id="{{$speciesType->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
-                                        <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                                        <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                   <div data-id="{{$speciesType->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified btn-group-xs">
+                                        <a class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i></a>
+                                        <a class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
+                  </div>
                 </div>
             </div>
                 @if($datas->lastPage() > 1)
@@ -82,7 +91,9 @@ Moh. Ardiansyah
                 </div>
                 @endif
             @endif
+          </form>
         </div>
+      </div>
     </div>
 </div>
 @endsection
