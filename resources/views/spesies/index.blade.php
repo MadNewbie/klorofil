@@ -38,10 +38,10 @@ Moh. Ardiansyah
                         <thead>
                             <tr class="row">
                                 <th class="col-md-1 col-sm-1 col-xs-1">No</th>
-                                <th class="col-md-1 col-sm-1 col-xs-1">ID Spesies</th>
-                                <th class="col-md-3 col-sm-3 col-xs-3">Nama Ilmiah</th>
-                                <th class="col-md-1 col-sm-1 col-xs-1">Umur Maksimal</th>
-                                <th class="col-md-3 col-sm-3 col-xs-3">Warna Bunga</th>
+                                <th class="col-md-2 col-sm-2 col-xs-2">ID Spesies</th>
+                                <th class="col-md-2 col-sm-2 col-xs-2">Nama Ilmiah</th>
+                                <th class="col-md-2 col-sm-2 col-xs-2">Umur Maksimal</th>
+                                <th class="col-md-2 col-sm-2 col-xs-2">Warna Bunga</th>
                                 <th class="col-md-2 col-sm-2 col-xs-2">Periode Mekar</th>
                                 <th class="col-md-1 col-sm-1 col-xs-1">Operasi</th>
                             </tr>
@@ -52,14 +52,14 @@ Moh. Ardiansyah
                             <?php $i++?>
                             <tr class="row">
                                 <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
-                                <td class="col-md-1 col-sm-1 col-xs-1">{{$spesies->species_id}}</td>
-                                <td class="col-md-3 col-sm-3 col-xs-3">{{$spesies->scientific_name}}</td>
-                                <td class="col-md-1 col-sm-1 col-xs-1">{{$spesies->max_age}}</td>
-                                <td class="col-md-3 col-sm-3 col-xs-3">{{$spesies->flower_color}}</td>
+                                <td class="col-md-2 col-sm-2 col-xs-2">{{$spesies->species_id}}</td>
+                                <td class="col-md-2 col-sm-2 col-xs-2" style="font-style: italic">{{$spesies->scientific_name}}</td>
+                                <td class="col-md-2 col-sm-2 col-xs-2">{{$spesies->max_age}}</td>
+                                <td class="col-md-2 col-sm-2 col-xs-2">{{$spesies->flower_color}}</td>
                                 <td class="col-md-2 col-sm-2 col-xs-2">{{$spesies->flower_bloom_periode}}</td>
                                 <td class="col-md-1 col-sm-1 col-xs-1">
                                    <div data-id="{{$spesies->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
-                                        <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                                        <a class="btn btn-warning" data-toggle="modal" data-target="#modal_form" id="btnEdit"><i class="fa fa-pencil"></i></a>
                                         <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                     </div>
                                 </td>
@@ -95,23 +95,23 @@ Moh. Ardiansyah
                 </button>
             </div>
             <div class="modal-body">
-                <div class="col-md-4">Jenis Spesies</div><select id="drp_species_type"class="col-md-8"/></select><div class="clearfix"></div>
-                <div class="col-md-4">ID Spesies</div><input id="species_id" class="col-md-8"/><div class="clearfix"></div>
-                <div class="col-md-4">Nama Ilmiah</div><input id="scientific_name" class="col-md-8"/><div class="clearfix"></div>
-                <div class="col-md-4">Masa Jenis</div><input id="density" class="col-md-8"/><div class="clearfix"></div>
-                <div class="col-md-4">Umur Maksimal</div><input id="max_age" class="col-md-8"/><div class="clearfix"></div>
-                <div class="col-md-4">Jenis Daun</div><select id="drp_leaf_type"class="col-md-8"/></select><div class="clearfix"></div>
-                <div class="col-md-4">Jenis Cabang</div><select id="drp_branch_type"class="col-md-8"/></select><div class="clearfix"></div>
-                <div class="col-md-4">Jenis Batang</div><select id="drp_trunk_type"class="col-md-8"/></select><div class="clearfix"></div>
-                <div class="col-md-4">Jenis Akar</div><select id="drp_root_type"class="col-md-8"/></select><div class="clearfix"></div>
-                <div class="col-md-4">Fungsi Spesies</div><select id="drp_function_species_type"class="col-md-8"/></select><div class="clearfix"></div>
-                <div class="col-md-4">Warna Bunga</div><input id="flower_color" class="col-md-8"/><div class="clearfix"></div>
-                <div class="col-md-4">Bentuk Kelopak Bunga</div><input id="flower_crown_shape" class="col-md-8"/><div class="clearfix"></div>
-                <div class="col-md-4">Jumlah Kelopak Bunga</div><input id="flower_crown_number" class="col-md-8"/><div class="clearfix"></div>
-                <div class="col-md-4">Periode Berbunga</div><input id="flower_bloom_periode" class="col-md-8"/><div class="clearfix"></div>
+                <div class="col-md-4">Jenis Spesies</div><select id="drp_species_type"class="col-md-8" onclick="injectDataMaster(this)"/></select><div class="clearfix"></div>
+                <div class="col-md-4">ID Spesies</div><input id="species_id" class="col-md-8" disabled="true"/><div class="clearfix" ></div>
+                <div class="col-md-4">Nama Ilmiah</div><input id="scientific_name" class="col-md-8" disabled="true"/><div class="clearfix"></div>
+                <div class="col-md-4">Masa Jenis</div><input id="density" class="col-md-8" disabled="true"/><div class="clearfix"></div>
+                <div class="col-md-4">Umur Maksimal</div><input id="max_age" class="col-md-8" disabled="true"/><div class="clearfix"></div>
+                <div class="col-md-4">Jenis Daun</div><select id="drp_leaf_type"class="col-md-8" disabled="true"/></select><div class="clearfix"></div>
+                <div class="col-md-4">Jenis Cabang</div><select id="drp_branch_type"class="col-md-8" disabled="true"/></select><div class="clearfix"></div>
+                <div class="col-md-4">Jenis Batang</div><select id="drp_trunk_type"class="col-md-8" disabled="true"/></select><div class="clearfix"></div>
+                <div class="col-md-4">Jenis Akar</div><select id="drp_root_type"class="col-md-8" disabled="true"/></select><div class="clearfix"></div>
+                <div class="col-md-4">Fungsi Spesies</div><select id="drp_function_species_type"class="col-md-8" disabled="true"/></select><div class="clearfix"></div>
+                <div class="col-md-4">Warna Bunga</div><input id="flower_color" class="col-md-8" disabled="true"/><div class="clearfix"></div>
+                <div class="col-md-4">Bentuk Kelopak Bunga</div><input id="flower_crown_shape" class="col-md-8" disabled="true"/><div class="clearfix"></div>
+                <div class="col-md-4">Jumlah Kelopak Bunga</div><input id="flower_crown_number" class="col-md-8" disabled="true"/><div class="clearfix"></div>
+                <div class="col-md-4">Periode Berbunga</div><input id="flower_bloom_periode" class="col-md-8" disabled="true"/><div class="clearfix"></div>
             </div>
             <div>
-                <button type="button" class="btn btn-primary" id="btnAdd"><i class="fa fa-plus"></i></button>
+                <button type="button" class="btn btn-primary" id="btnSave">Simpan</button>
             </div>
         </div>
     </div>

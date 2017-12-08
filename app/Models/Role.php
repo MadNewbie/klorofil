@@ -16,4 +16,12 @@ class Role extends EntrustRole
     protected $primaryKey="id_role";
 
     protected $fillable=['name','display_name','description'];
+
+    function Permissions(){
+      return $this->hasMany('App\Models\Permission');
+    }
+
+    function User(){
+      return $this->belongsTo('App\Models\User');
+    }
 }

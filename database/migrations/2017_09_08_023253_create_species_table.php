@@ -17,7 +17,6 @@ class CreateSpeciesTable extends Migration
             $table->increments('id');
             $table->string('species_id')->unique();
             $table->string('scientific_name')->unique();
-            $table->double('age',10,2);
             $table->double('density',10,2);
             $table->double('max_age',10,2);
             $table->unsignedInteger('species_type_id');

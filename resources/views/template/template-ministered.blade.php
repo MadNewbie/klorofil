@@ -22,7 +22,7 @@
                 <div class="container">
                     <div class="mbr-table">
                         <div class="col-md-4 hidden-md-down mbr-table-cell">
-                            <a id="btn-get-started" href="javascript:;" data-toggle="modal" data-target=".login-modal-sm" class="navbar-caption">Login</a>
+                            <a id="btn-get-started" href="javascript:;" data-toggle="modal" data-target="#ministered-login" class="navbar-caption">Login</a>
                         </div>
                         <div class="col-xs-6 col-md-4 mbr-table-cell">
                             <center><a id="btn-home" href="{{route('ministered.index')}}" class="navbar-caption"><img style="padding:1vh; height:70px;" src="{{URL::to('homescreen/pictures/logo.png')}}"></a></center>
@@ -32,7 +32,7 @@
                                 <div class="hamburger-icon"></div>
                             </button>
                             <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
-                              <li class="nav-item hidden-lg-up"><a class="nav-link link mbr-editable-menu-item" href="{{route('ministered.index')}}">Login</a></li>
+                              <li class="nav-item hidden-lg-up"><a class="nav-link link mbr-editable-menu-item" href="javascript:;" data-toggle="modal" data-target="#ministered-login">Login</a></li>
                               <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="{{route('guest.index')}}">Homepage</a></li>
                               <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="{{ route('blog.index') }}">Blog</a></li>
 <!--                              <li class="nav-item dropdown open">
@@ -53,7 +53,7 @@
              <!-- Small modal -->
                   <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button> -->
 
-                  <div class="modal fade login-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div id="ministered-login" class="modal fade login-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-md">
                       <div class="modal-content">
 
@@ -72,6 +72,8 @@
                                   <input type="email" class="form-control" id="inputEmail" placeholder="Email">
                                 </div>
                               </div><div class="clearfix"></div><br/>
+                          <form class="form form-horizontal">
+                            <div class="box-body">
                               <div class="form-group">
                               <label for="inputPassword" class="col-sm-2 control-label">Password</label>
                               <div class="col-sm-10">
@@ -85,6 +87,23 @@
                                       <input type="checkbox"> Remember me
                                     </label>
                                   </div>
+                              <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                              <!-- <div class="form-group"> -->
+                                <input type="email" class="form-control input-sm" id="inputEmail" placeholder="Email">
+                              <!-- </div> -->
+                            </div>
+                            <div class="form-group">
+                            <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+                            <!-- <div class="col-sm-10"> -->
+                            <input type="password" class="form-control input-sm" id="inputPassword" placeholder="Password">
+                            <!-- </div> -->
+                            </div>
+                            <div class="form-group">
+                              <div class="col-sm-offset-1 col-sm-10">
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox">&nbspRemember me
+                                  </label>
                                 </div>
                               </div>
                             </div>
