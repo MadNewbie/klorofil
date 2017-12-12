@@ -40,30 +40,33 @@
           selectedBorder.setMap(map);
 //          borderLine.setMap(map);
       }
-
-      function displayMap() {
-        document.getElementById('map').style.display="block";
-        initMap();
-        //initialize();
-        //google.maps.event.trigger(map, "resize");
-      }
-
+      
+      function listen(e){
+              if(e.attrName === 'style'){
+                  if(e.newValue === ''){
+                      initialize();
+                  }
+              }
+          }
+      
       function initialize() {
+            document.getElementById('map').style.display="block";
+            initMap();
+            document.getElementById('form_add').removeEventListener('DOMAttrModified',listen);
         // create the map
-        var myOptions = {
-          zoom: 14,
-          center: new google.maps.LatLng(0.0, 0.0),
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-
-        map = new google.maps.Map(document.getElementById("map"),
-        myOptions);
+//        google.maps.event.trigger(map, "resize");
+//        var myOptions = {
+//          zoom: 14,
+//          center: new google.maps.LatLng(0.0, 0.0),
+//          mapTypeId: google.maps.MapTypeId.ROADMAP
+//        }
+//
+//        map = new google.maps.Map(document.getElementById("map"),
+//        myOptions);
       }
 
-//      function btnSimpanOnClick(){
-//          pointBorder = new Array();
-//          for(var i=0;i<selectedBorder.getPath().getLength();i++){
-//              pointBorder.push(selectedBorder.getPath().getAt(i).toUrlValue(6));
-//          }
-//          window.alert(pointBorder);
-//      }
+      function displayMap(event) {
+//        console.log(event);
+          document.getElementById('form_add').addEventListener('DOMAttrModified',listen,false);
+      }
+

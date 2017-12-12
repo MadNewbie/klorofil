@@ -33,19 +33,14 @@ Moh. Ardiansyah
       <br />
       <!-- <button id="btnAdd" class="form-control btn btn-primary"><i class="fa fa-plus"></i>Tambah</button> -->
       <div class="form-group col-xs-5">
-      <button id="btnAdd" class="form-control btn btn-primary btn-xs" onclick="startAdd()"><i class="fa fa-plus"></i>Tambah</button>
+          <button id="btnSave" class="form-control btn btn-primary btn-xs" onclick="startAdd(this)">Simpan</button>
     </div>
     </form>
   </div>
 </div>
-
-<script>
-    var token = "{{Session::token()}}";
-    var baseUrl="{{URL::to('/')}}";
-</script>
-
+@endsection
+@section('scripts')
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFXsQRK-9VXQg6jmNvdn64T1L35JqTKEM&callback=initMap&libraries=drawing,geometry" async defer></script>
-<script src="{{URL::to('back-end/vendors/jquery/dist/jquery.min.js')}}"></script>
-<script src="{{URL::to('back-end/js/negara/negara.js')}}"></script>
 <script src="{{URL::to('general/MapEditor.js')}}"></script>
+<script src="{{URL::to('back-end/js/negara/negara.js')}}"></script>
 @endsection

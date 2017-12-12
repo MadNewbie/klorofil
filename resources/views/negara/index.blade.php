@@ -25,13 +25,24 @@ Moh. Ardiansyah
           <h2>{{ $sectiontitle }}</h2>
       </div>
       <div class="x_panel">
-          <div class="x_title">
-                  <ul class="nav navbar-left panel_toolbox pull-left">
-                    <li><a class="btn btn-primary btn-xs" href="{{Route('negara.getCreate')}}" style="margin-bottom: 0px;"><i class="fa fa-plus"></i></a></li>
-                  </ul>
-                  <div class="clearfix"></div>
-          </div>
-    </div>
+            <div class="x_title">
+                    <ul class="nav navbar-left panel_toolbox pull-left">
+                        <li><a class="collapse-link btn btn-primary" onclick="displayMap(this);"><i class="fa fa-plus"></i></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+            </div>
+            <div id="form_add" class="x_content" style="display: none">
+              <form class="form-inline clearfix">
+                <div class="form-group" style="margin-bottom: 0px;">
+                  <input id="nama_negara" class="form-control" type="text" placeholder="Nama Negara"/>
+                </div>
+                <button class="form-control btn btn-success" style="margin-bottom: 0px;" onclick="startAdd(this)">Simpan</button>
+                <div class="clearfix"><br /></div>
+                <div class="form-control" id="map"></div>
+              </form>
+            </div>
+            <!-- <div class="form-control" id="map"></div> -->
+       </div>
     <br />
     @if(count($datas)===0)
     <br />
@@ -70,4 +81,10 @@ Moh. Ardiansyah
   </div>
 </div>
 
+@endsection
+
+@section('scripts')
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqbtULHt9MCzx6qiqosU40KgeKVylVTL0&callback=initMap" type="text/javascript"></script>
+<script src="{{URL::to('general/MapEditor.js')}}"></script>
+<script src="{{URL::to('back-end/js/negara/negara.js')}}"></script>
 @endsection

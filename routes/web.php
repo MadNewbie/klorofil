@@ -145,6 +145,12 @@ Route::group(['middleware'=>['web']],function(){
            'uses'=>'KelDesaController@getIndex',
            'as'=>'kelurahandesa.index'
          ]);
+         
+         //Submenu Area
+         Route::get('/area',[
+             'uses'=>'AreasController@getIndex',
+             'as'=>'area.index'
+         ]);
 
          //=============================
          // End Admin region section
