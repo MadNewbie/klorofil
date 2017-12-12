@@ -8,11 +8,11 @@ class Negara extends Model
 {
     protected $table = 'negaras';
     protected $detail_area = array('detail_area');
-    
-    function provinisis(){
+
+    function provinsis(){
         return $this->hasMany('App\Provinsi');
     }
-    
+
     function setDetailAreaAttribute(array $value){
         $area = implode(',', $value);
 //        dd($area);
@@ -25,13 +25,13 @@ class Negara extends Model
             \DB::rollBack();
         }
     }
-    
+
     function getDetailAreaAttribute($value){
         $loc = substr($value,8);
         $loc = preg_replace('/[,]+/',',',$loc,1);
         return substr($loc,0,-1);
     }
-    
+
     function newQuery($excludeDeleted = true) {
         $raw='';
         foreach($this->detail_area as $column){

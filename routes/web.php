@@ -152,6 +152,12 @@ Route::group(['middleware'=>['web']],function(){
              'as'=>'area.index'
          ]);
 
+         // Submenu Area
+         Route::get('/area',[
+           'uses'=>'AreasController@getIndex',
+           'as'=>'area.index',
+         ]);
+
          //=============================
          // End Admin region section
          //=============================
@@ -236,21 +242,15 @@ Route::group(['middleware'=>['web']],function(){
                 'uses'=>'SpeciesController@getRetrieve',
                 'as'=>'species.retrieve'
             ]);
-            
+
             Route::post('/species/update',[
                 'uses'=>'SpeciesController@postUpdate',
                 'as'=>'species.update'
             ]);
-            
+
             Route::get('/species/{id}/delete',[
                 'uses'=>'SpeciesController@getDelete',
                 'as'=>'species.delete'
-            ]);
-            
-            //Menu Provinsi
-            Route::get('/provinsi',[
-                'uses'=>'ProvinsiController@getIndex',
-                'as'=>'provinsi.index'
             ]);
 
            //Menu Treatment
@@ -614,19 +614,19 @@ Route::group(['middleware'=>['web']],function(){
           //========================
           // Submenu Pendaftaran Pengguna
            Route::get('/pengguna/',[
-              'uses'=>'UserManagementController@getUsermanIndex',
+              'uses'=>'UsersManagementController@getIndex',
               'as'=>'usersmanagement.index'
            ]);
 
           // Submenu Peran pengguna
           Route::get('/peranpengguna/',[
-            'uses'=>'UserManagementController@getRolesmanIndex',
+            'uses'=>'RolesManagementController@getIndex',
             'as'=>'rolesmanagement.index'
           ]);
 
           // Submenu Perizinan Pengguna
           Route::get('/perizinanpengguna/',[
-            'uses'=>'UserManagementController@getPermissionsmanIndex',
+            'uses'=>'PermissionsManagementController@getIndex',
             'as'=>'permissionsmanagement.index'
           ]);
 

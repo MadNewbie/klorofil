@@ -21,6 +21,7 @@ class UsersManagementController extends Controller
         $users=User::orderBy('id')->paginate(10);
         return view('akun.usersmanagement',[
           'sectiontitle'=>$sectionTitle,
+          'users'=>$users,
         ]);
     }
 }

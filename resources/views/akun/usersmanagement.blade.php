@@ -46,9 +46,16 @@ Moh. Ardiansyah
               </form>
             </div>
         </div>
-        <!-- <div class="x_panel"> -->
+        <div class="x_content">
         <div class="x_content">
           <form class="form-inline clearfix">
+            @if(count($users)===0)
+            <div class="form-group">
+              <div class="row clearfix">
+                <h4 class="text-center">Belum ada data user</h4>
+              </div>
+            </div>
+            @else
             <div class="form-group">
               <div class="row clearfix">
                 <div class="dataTables_filter pull-right">
@@ -71,11 +78,14 @@ Moh. Ardiansyah
                             </tr>
                         </thead>
                         <tbody>
+                          <?php $i=0 ?>
+                          @foreach($users as $user)
+                          <?php $i++ ?>
                             <tr class="row">
-                                <td class="col-md-1 col-sm-1 col-xs-1">1</td>
-                                <td class="col-md-5 col-sm-5 col-xs-5">Moh. Ardiansyah</td>
-                                <td class="col-md-2 col-sm-2 col-xs-2">moh_ardiahsyah</td>
-                                <td class="col-md-2 col-sm-2 col-xs-2">Administrator</td>
+                                <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
+                                <td class="col-md-5 col-sm-5 col-xs-5">{{$user->nama}}</td>
+                                <td class="col-md-2 col-sm-2 col-xs-2">{{$user->username}}</td>
+                                <td class="col-md-2 col-sm-2 col-xs-2">{{$user->role->display_name}}</td>
                                 <td class="col-md-2 col-sm-2 col-xs-2">
                                    <div role="group" class="btn-group btn-group-justified btn-group-xs">
                                         <a class="btn btn-warning btn-xs" data-toggle="tooltip" title="Reset Password"><i class="fa fa-undo"></i></a>
@@ -84,7 +94,7 @@ Moh. Ardiansyah
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="row">
+                            <!-- <tr class="row">
                                 <td class="col-md-1 col-sm-1 col-xs-1">2</td>
                                 <td class="col-md-5 col-sm-5 col-xs-5">Rachmad Yanuarianto</td>
                                 <td class="col-md-2 col-sm-2 col-xs-2">rachmad.y</td>
@@ -96,15 +106,17 @@ Moh. Ardiansyah
                                         <a class="btn btn-danger btn-xs" data-toggle="tooltip" title="Hapus Akun"><i class="fa fa-trash"></i></a>
                                     </div>
                                 </td>
-                            </tr>
+                            </tr> -->
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
+            @endif
           </form>
         </div>
       </div>
-    <!-- </div> -->
+    </div>
   </div>
 </div>
 @endsection

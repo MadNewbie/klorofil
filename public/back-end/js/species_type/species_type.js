@@ -19,10 +19,11 @@ function startAdd(event){
 }
 
 function newDataCreated(params,success,responseObj){
+      var event = params[0];
     if(success){
         if(responseObj.kode == 200){
             showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
+            location.reload();
         }else{
             console.log(responseObj.message);
             var error = '';
@@ -74,7 +75,7 @@ function dataUpdated(params,success,responseObj){
     if(success){
         if(responseObj.kode == 200){
             showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
+            location.reload();
         }else{
             console.log(responseObj.message);
             var error = '';
@@ -104,7 +105,7 @@ function endDeleteData(params,success,responseObj){
     if(success){
          if(responseObj.kode == 200){
             showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
+            location.reload();
         }else{
             console.log(responseObj.message.species_type_name);
             var error = '';

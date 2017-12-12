@@ -63,37 +63,61 @@
                           <h4 class="modal-title" id="loginLabel">Login</h4>
                         </div>
                         <div class="modal-body">
-                          <form class="form form-horizontal">
-                            <div class="box-body">
+                          <div class="x_content">
+                            <form id="login" data-parsley-validate class="form-horizontal form-label-left">
+                              <div class="box-body">
+                                <div class="form-group">
+                                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                                <div class="col-sm-10 col-xs-10">
+                                  <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                </div>
+                              </div><div class="clearfix"></div><br/>
+                          <!-- <form class="form form-horizontal"> -->
+                            <!-- <div class="box-body"> -->
                               <div class="form-group">
-                              <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                                <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+                                <div class="col-sm-10 col-xs-10">
+                                  <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                </div>
+                              </div>
                               <!-- <div class="form-group"> -->
-                                <input type="email" class="form-control input-sm" id="inputEmail" placeholder="Email">
+                                <!-- <div class="col-sm-offset-2 col-sm-10 col-xs-10"> -->
+                                  <!-- <div class="checkbox"> -->
+                                    <!-- <label> -->
+                                      <!-- <input type="checkbox"> Remember me -->
+                                    <!-- </label> -->
+                                  <!-- </div> -->
+                              <!-- <label for="inputEmail" class="col-sm-2 control-label">Email</label> -->
+                              <!-- <div class="form-group"> -->
+                                <!-- <input type="email" class="form-control input-sm" id="inputEmail" placeholder="Email"> -->
                               <!-- </div> -->
-                            </div>
-                            <div class="form-group">
-                            <label for="inputPassword" class="col-sm-2 control-label">Password</label>
-                            <!-- <div class="col-sm-10"> -->
-                            <input type="password" class="form-control input-sm" id="inputPassword" placeholder="Password">
                             <!-- </div> -->
-                            </div>
+                            <!-- <div class="form-group"> -->
+                            <!-- <label for="inputPassword" class="col-sm-2 control-label">Password</label> -->
+                            <!-- <div class="col-sm-10"> -->
+                            <!-- <input type="password" class="form-control input-sm" id="inputPassword" placeholder="Password"> -->
+                            <!-- </div> -->
+                            <!-- </div> -->
+                            <div class="clearfix"></div>
+                            <br />
                             <div class="form-group">
-                              <div class="col-sm-offset-1 col-sm-10">
+                              <div class="col-sm-offset-2 col-sm-10">
                                 <div class="checkbox">
                                   <label>
-                                    <input type="checkbox">&nbspRemember me
+                                    <input type="checkbox">Remember me</input>
                                   </label>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <!-- /.box-body -->
-                          <div class="box-footer">
-                            <button type="submit" class="btn btn-default" data-dismiss="modal" aria-label="Close">Cancel</button>
-                            <button type="submit" class="btn btn-info pull-right">Sign in</button>
-                          </div>
-                          <!-- /.box-footer -->
-                        </form>
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                              <button type="submit" class="btn btn-default" data-dismiss="modal" aria-label="Close">Cancel</button>
+                              <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                            </div>
+                            <!-- /.box-footer -->
+                          </form>
+                        </div>
                         </div>
                       </div>
                     </div>
