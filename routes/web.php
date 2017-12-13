@@ -19,6 +19,16 @@ Route::get('/',[
     'as'=>'guest.index'
 ]);
 
+Route::get('/overview',[
+    'uses'=>'HomeController@getGuestOverview',
+    'as'=>'guest.overview'
+]);
+
+Route::get('/information',[
+    'uses'=>'HomeController@getGuestInformation',
+    'as'=>'guest.information'
+]);
+
 //=============================
 // End Guest-page section
 //=============================
@@ -145,7 +155,7 @@ Route::group(['middleware'=>['web']],function(){
            'uses'=>'KelDesaController@getIndex',
            'as'=>'kelurahandesa.index'
          ]);
-         
+
          //Submenu Area
          Route::get('/area',[
              'uses'=>'AreasController@getIndex',
