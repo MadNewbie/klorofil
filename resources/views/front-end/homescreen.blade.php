@@ -28,7 +28,7 @@
 
 </section>
 
-<section id="what-we-do" class="mbr-section mbr-section__container article" style="padding-top: 83px; font-family: courier; background-color: rgba((171, 222, 227, 0.78); padding-bottom: 0px;">
+<section id="what-we-do" class="mbr-section mbr-section__container article" style="padding-top: 83px; font-family: courier; background-color: rgb(244, 244, 244); padding-bottom: 0px;">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
@@ -67,7 +67,7 @@
     </div>
 </section>
 
-<section id="how-we-do" class="mbr-section mbr-section__container article" style="padding-top: 83px; font-family: courier; background-color: rgb(255, 255, 255); padding-bottom: 0px; min-height:100vh;">
+<section id="how-we-do" class="mbr-section mbr-section__container article" style="padding-top: 83px; font-family: courier; background-color: rgba(171, 222, 227, 0.78); padding-bottom: 0px; min-height:100vh;">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
