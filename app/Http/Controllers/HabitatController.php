@@ -14,11 +14,11 @@ class HabitatController extends Controller
         $habitat = Habitat::orderBy('animal_name')->paginate(10);
         return view('habitat.index',['datas'=>$habitat]);
     }
-    
+
     public function getCreate() {
         return view('test-controller.create');
     }
-    
+
     public function postCreate(Request $request) {
         $rule = array(
             'animal_name'=>'required|unique:habitats',
@@ -39,12 +39,12 @@ class HabitatController extends Controller
         }
         return Response::json(['kode'=>404,'message'=>'Data tidak berhasil disimpan']);
     }
-    
+
     function getRetrieve(){
         $habitat = Habitat::orderBy('animal_name')->get();
         return Response::json(['habitat'=>$habitat]);
     }
-    
+
     public function postUpdate(Request $request) {
         $rule = array(
             'animal_name'=>'required',
@@ -65,7 +65,7 @@ class HabitatController extends Controller
         $habitat->update();
         return Response::json(['kode'=>200,'message'=>'Data berhasil diubah'],200);
     }
-    
+
     public function getDelete($id) {
         $habitat = Habitat::find($id);
         $habitat->delete();

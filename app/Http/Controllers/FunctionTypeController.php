@@ -14,11 +14,11 @@ class FunctionTypeController extends Controller
         $functionTypeSpecies = FunctionTypeSpecies::orderBy('species_type_id')->paginate(10);
         return view('fungsi_spesies.index',['datas'=>$functionTypeSpecies]);
     }
-    
+
     public function getCreate() {
         return view('test-controller.create');
     }
-    
+
     public function postCreate(Request $request) {
         $rule = array(
             'function_type_species'=>'required',
@@ -39,7 +39,7 @@ class FunctionTypeController extends Controller
         }
         return Response::json(['kode'=>404,'message'=>'Data Tidak Berhasil Disimpan'],200);
     }
-    
+
     public function getRetrieve($species_type_id = null) {
         if($species_type_id == null){
             $functionType = FunctionTypeSpecies::orderBy('function_type_species')->get();
@@ -48,7 +48,7 @@ class FunctionTypeController extends Controller
         }
         return Response::json(['function_type'=>$functionType],200);
     }
-    
+
     public function postUpdate(Request $request){
         $rule = array(
             'function_type_species'=>'required',
@@ -69,7 +69,7 @@ class FunctionTypeController extends Controller
         $functionType->update();
         return Response::json(['kode'=>200,'message'=>'Data berhasil diubah'],200);
     }
-    
+
     public function getDelete($id) {
         $functionType = FunctionTypeSpecies::find($id);
         $functionType->delete();

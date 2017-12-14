@@ -14,11 +14,11 @@ class BranchTypeController extends Controller
         $branchType = BranchType::orderBy('branch_type_name')->paginate(10);
         return view('cabang.index',['datas'=>$branchType]);
     }
-    
+
     public function getCreate() {
         return view('test-controller.create');
     }
-    
+
     public function postCreate(Request $request) {
         $rule = array(
             'branch_type_name'=>'required|unique:branch_types'
@@ -39,12 +39,12 @@ class BranchTypeController extends Controller
             }
         }
     }
-    
+
     public function getRetrieve() {
         $branchType = BranchType::orderBy('branch_type_name')->get();
         return Response::json(['branch_type'=>$branchType]);
     }
-    
+
     public function postUpdate(Request $request) {
         $rule = array(
             'branch_type_name' => 'required'
@@ -63,7 +63,7 @@ class BranchTypeController extends Controller
         $branchType->update();
         return Response::json(['kode'=>200,'message'=>'Data berhasil diubah'],200);
     }
-    
+
     public function getDelete($id) {
         $branchType = BranchType::find($id);
         $branchType->delete();

@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class FunctionTypeSpecies extends Model
 {
     protected $table = 'function_type_species';
-    
+
     function species(){
-        return $this->hasMany('App\Species');
+        return $this->hasMany('App\Models\DetailPohon\Species');
     }
-    
+
     function speciesType(){
-        return $this->belongsTo('App\SpeciesType');
+        return $this->belongsTo('App\Models\DetailPohon\SpeciesType');
     }
 }

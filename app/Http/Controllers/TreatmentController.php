@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DetailPohon\Treatment;
+use App\Models\Perlakuan\Treatment;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
@@ -14,11 +14,11 @@ class TreatmentController extends Controller
         $treatment = Treatment::orderBy('species_type_id')->paginate(10);
         return view('perlakuan.index',['datas'=>$treatment]);
     }
-    
+
     public function getCreate() {
         return view('test-controller.create');
     }
-    
+
     public function postCreate(Request $request) {
         $rule = array(
             'name' => 'required',
@@ -39,7 +39,7 @@ class TreatmentController extends Controller
         }
         return Response::json(['kode'=>404,'message'=>'Data Tidak Berhasil Tersimpan'],200);
     }
-    
+
     public function postUpdate(Request $request) {
         $rule = array(
             'name' => 'required',
@@ -58,11 +58,11 @@ class TreatmentController extends Controller
         $treatment->species_type_id = $input['species_type_id'];
         $treatment->created_by = 1;
          if($treatment->update()){
-            return Response::json(['kode'=>200,'message'=>'Data berhasil diubah'],200);           
+            return Response::json(['kode'=>200,'message'=>'Data berhasil diubah'],200);
         }
         return Response::json(['kode'=>404,'message'=>'Data tidak berhasil diubah'],200);
     }
-    
+
     public function getDelete($id) {
         $treatment= Treatment::find($id);
         $treatment->delete();
