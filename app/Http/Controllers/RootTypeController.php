@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\RootType;
+use App\Models\DetailPohon\RootType;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
