@@ -15,7 +15,7 @@ class HomeController extends Controller
     }
 
     public function getMinisteredIndex(){
-    	return view('ministered.ministered');
+    	return view('front-end.ministered');
     }
 
     public function getBlogIndex() {
