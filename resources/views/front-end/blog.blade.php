@@ -5,19 +5,19 @@
 @endsection
 
 @section('content')
-<section class="mbr-section mbr-section-hero mbr-section-full header2 mbr-parallax-background mbr-after-navbar" id="header2-1" style="background-image: url({{URL::to('homescreen/pictures/welcome.gif')}});">
+<section class="mbr-section mbr-section-hero mbr-section-full header2 mbr-parallax-background mbr-after-navbar" id="header2-1" style="background-image: url({{URL::to('homescreen/pictures/trees.gif')}});">
         <div class="caption">
             "we are commited to making the world a better place with love your tree from yourself, cleaner and greener. we're planting and managing trees where they're needed most in city. PLANT AND CARE"
         </div>
 <!--    <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(139, 195, 74);">
     </div>
-    
+
     <div class="mbr-table mbr-table-full">
         <div class="mbr-table-cell">
             <div class="container">
                 <div class="mbr-section row">
                     <div class="mbr-table-md-up">
-                        
+
                     </div>
                 </div>
             </div>
