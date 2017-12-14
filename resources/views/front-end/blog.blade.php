@@ -5,29 +5,11 @@
 @endsection
 
 @section('content')
-<section class="mbr-section mbr-section-hero mbr-section-full header2 mbr-parallax-background mbr-after-navbar" id="header2-1" style="background-image: url({{URL::to('homescreen/pictures/trees.gif')}});">
-        <div class="caption">
-            "we are commited to making the world a better place with love your tree from yourself, cleaner and greener. we're planting and managing trees where they're needed most in city. PLANT AND CARE"
-        </div>
-<!--    <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(139, 195, 74);">
-    </div>
-
-    <div class="mbr-table mbr-table-full">
-        <div class="mbr-table-cell">
-            <div class="container">
-                <div class="mbr-section row">
-                    <div class="mbr-table-md-up">
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>-->
-    <div class="mbr-arrow mbr-arrow-floating hidden-sm-down" aria-hidden="true"><a href="#what-we-do"><i class="mbr-arrow-icon"></i></a></div>
+<section class="mbr-section mbr-section-hero header2 mbr-parallax-background mbr-after-navbar" id="header2-1" style="background-color: rgba(69, 90, 100, 1);">
+</section>
+<section id="header-helper" class="mbr-section mbr-section__container article" style="padding-top: 83px; font-family: courier; background-color: rgba(69, 90, 100, 1); padding-bottom: 0px;">
 
 </section>
-
 <section id="what-we-do" class="mbr-section mbr-section__container article" style="padding-top: 83px; font-family: courier; background-color: rgb(244, 244, 244); padding-bottom: 0px;">
     <div class="container">
         <div class="row">
@@ -65,6 +47,7 @@
         <a class="right carousel-control hidden-lg-up" href="#slider-1" data-slide="next">
         </a>
     </div>
+    <div class="mbr-arrow mbr-arrow-floating hidden-sm-down" aria-hidden="true"><a href="#how-we-do"><i class="mbr-arrow-icon"></i></a></div>
 </section>
 
 <section id="how-we-do" class="mbr-section mbr-section__container article" style="padding-top: 83px; font-family: courier; background-color: rgb(255, 255, 255); padding-bottom: 0px; min-height:100vh;">
@@ -166,7 +149,7 @@
         The industry leader in tree inventory
     </div>
     <div class="col-md-4 col-xs-12 display-4">
-        <a href="{{ route('ministered.index') }}" id="btn-join-us" class="navbar-caption">Join with us</a>
+        <a href="{{ route('ministered.index') }}" id="btn-join-us" class="navbar-caption">Join Us</a>
     </div>
 </section>
 

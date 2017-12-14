@@ -166,7 +166,7 @@
         The industry leader in tree inventory
     </div>
     <div class="col-md-4 col-xs-12 display-4">
-        <a href="{{ route('ministered.index') }}" id="btn-join-us" class="navbar-caption">Join with us</a>
+        <a href="{{ route('ministered.index') }}" id="btn-join-us" class="navbar-caption">Join Us</a>
     </div>
 </section>
 
