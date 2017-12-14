@@ -32,24 +32,24 @@ Moh. Ardiansyah
             </div>
         </div>
         <div class="x_content">
-        <div class="x_content">
-          <form class="form-inline clearfix">
-            @if(count($datas)===0)
-            <div class="form-group">
-              <div class="row clearfix">
-                <h4 class="text-center">Tidak ada data jenis spesies</h4>
-              </div>
-            </div>
-            @else
-            <div class="form-group">
-              <div class="row clearfix">
-                <div class="dataTables_filter pull-right">
-                  <input class="form-control" type="search" placeholder="Cari"/>
+          <div class="x_content">
+            <form class="form-inline clearfix">
+              @if(count($datas)===0)
+              <!-- <div class="form-group">
+                <div class="row clearfix"> -->
+                  <h4 class="text-center">Tidak ada data jenis spesies</h4>
+                <!-- </div>
+              </div> -->
+              @else
+              <div class="form-group">
+                <div class="row clearfix">
+                  <div class="dataTables_filter pull-right">
+                    <input class="form-control" type="search" placeholder="Cari"/>
+                  </div>
                 </div>
-              </div>
-              <br />
-              <div class="row clearfix">
-                <div class="table-responsive">
+                <br />
+                <div class="row clearfix">
+                  <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                             <tr class="row">
@@ -66,9 +66,9 @@ Moh. Ardiansyah
                                 <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
                                 <td class="col-md-10 col-sm-10 col-xs-10">{{$speciesType->species_type_name}}</td>
                                 <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div data-id="{{$speciesType->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified btn-group-xs">
-                                        <a class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i></a>
-                                        <a class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
+                                   <div data-id="{{$speciesType->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified btn-group-sm btn-group-xs">
+                                        <a class="btn btn-warning btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
+                                        <a class="btn btn-danger btn-sm btn-xs"><i class="fa fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>

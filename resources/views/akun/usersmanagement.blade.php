@@ -42,20 +42,20 @@ Moh. Ardiansyah
                         <option>Operator (Area)</option>
                   </select>
                 </div>
-                  <button id="btnAdd" class="form-control btn btn-primary btn-xs" style="margin-bottom: 0px;"><i class="fa fa-plus"></i>Tambah</button>
+                  <button id="btnAdd" class="form-control btn btn-primary btn-sm" style="margin-bottom: 0px;"><i class="fa fa-plus"></i></button>
               </form>
             </div>
         </div>
         <div class="x_content">
         <div class="x_content">
           <form class="form-inline clearfix">
-            @if(count($users)===0)
-            <div class="form-group">
-              <div class="row clearfix">
-                <h4 class="text-center">Belum ada data user</h4>
-              </div>
-            </div>
-            @else
+            {{-- @if(count($users)===0) --}}
+            <!-- <div class="form-group">
+              <div class="row clearfix"> -->
+                <h4 class="text-center">Belum ada data Pengguna</h4>
+              <!-- </div>
+            </div> -->
+          {{-- @else --}}
             <div class="form-group">
               <div class="row clearfix">
                 <div class="dataTables_filter pull-right">
@@ -73,8 +73,8 @@ Moh. Ardiansyah
                                 <th class="col-md-1 col-sm-1 col-xs-1">No</th>
                                 <th class="col-md-5 col-sm-5 col-xs-5">Nama Lengkap</th>
                                 <th class="col-md-2 col-sm-2 col-xs-2">Username</th>
-                                <th class="col-md-2 col-sm-2 col-xs-2">Tingkatan</th>
-                                <th class="col-md-2 col-sm-2 col-xs-2">Operasi</th>
+                                <th class="col-md-3 col-sm-3 col-xs-3">Tingkatan</th>
+                                <th class="col-md-1 col-sm-1 col-xs-1">Operasi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -85,8 +85,8 @@ Moh. Ardiansyah
                                 <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
                                 <td class="col-md-5 col-sm-5 col-xs-5">{{$user->nama}}</td>
                                 <td class="col-md-2 col-sm-2 col-xs-2">{{$user->username}}</td>
-                                <td class="col-md-2 col-sm-2 col-xs-2">{{$user->role->display_name}}</td>
-                                <td class="col-md-2 col-sm-2 col-xs-2">
+                                <td class="col-md-3 col-sm-3 col-xs-3">{{$user->role->display_name}}</td>
+                                <td class="col-md-1 col-sm-1 col-xs-1">
                                    <div role="group" class="btn-group btn-group-justified btn-group-xs">
                                         <a class="btn btn-warning btn-xs" data-toggle="tooltip" title="Reset Password"><i class="fa fa-undo"></i></a>
                                         <a class="btn btn-success btn-xs" data-toggle="tooltip" title="Edit Akun"><i class="fa fa-pencil"></i></a>
@@ -94,25 +94,25 @@ Moh. Ardiansyah
                                     </div>
                                 </td>
                             </tr>
-                            <!-- <tr class="row">
-                                <td class="col-md-1 col-sm-1 col-xs-1">2</td>
+                            @endforeach
+                            <tr class="row">
+                                <td class="col-md-1 col-sm-1 col-xs-1">1</td>
                                 <td class="col-md-5 col-sm-5 col-xs-5">Rachmad Yanuarianto</td>
                                 <td class="col-md-2 col-sm-2 col-xs-2">rachmad.y</td>
                                 <td class="col-md-2 col-sm-2 col-xs-2">Operator (Kabupaten/Kota)</td>
-                                <td class="col-md-2 col-sm-2 col-xs-2">
+                                <td class="col-md-1 col-sm-1 col-xs-1">
                                    <div role="group" class="btn-group btn-group-justified btn-group-xs">
-                                        <a class="btn btn-warning btn-xs" data-toggle="tooltip" title="Reset Password"><i class="fa fa-undo" aria-hidden="true"></i></a>
-                                        <a class="btn btn-success btn-xs" data-toggle="tooltip" title="Edit Akun"><i class="fa fa-pencil"></i></a>
-                                        <a class="btn btn-danger btn-xs" data-toggle="tooltip" title="Hapus Akun"><i class="fa fa-trash"></i></a>
+                                        <a class="btn btn-warning btn-sm btn-xs" data-toggle="tooltip" title="Reset Password"><i class="fa fa-undo" aria-hidden="true"></i></a>
+                                        <a class="btn btn-success btn-sm btn-xs" data-toggle="tooltip" title="Edit Akun"><i class="fa fa-pencil"></i></a>
+                                        <a class="btn btn-danger btn-sm btn-xs" data-toggle="tooltip" title="Hapus Akun"><i class="fa fa-trash"></i></a>
                                     </div>
                                 </td>
-                            </tr> -->
-                            @endforeach
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            @endif
+            {{-- @endif --}}
           </form>
         </div>
       </div>

@@ -9,12 +9,13 @@ use Validator;
 
 class RolesManagementController extends Controller
 {
-  //User Role(s) management CRUD controller 
+  //User Role(s) management CRUD controller
   public function getIndex(){
       $sectionTitle="Role(s) Management";
       $roles=Role::orderBy('id')->paginate(10);
       return view('akun.rolesmanagement',[
-        'jenis_users'=>$roles,
+        'sectiontitle'=>$sectionTitle,
+        'roles'=>$roles,
       ]);
   }
 }
