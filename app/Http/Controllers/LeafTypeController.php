@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\LeafType;
+use App\Models\DetailPohon\LeafType;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;

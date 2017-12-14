@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Provinsi;
+use App\Models\Wilayah\Provinsi;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;

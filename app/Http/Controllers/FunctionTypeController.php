@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\FunctionTypeSpecies;
+use App\Models\DetailPohon\FunctionTypeSpecies;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;

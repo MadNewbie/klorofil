@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Disease;
+use App\Models\Penyakit\Disease;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;

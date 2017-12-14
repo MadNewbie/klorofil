@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 //use App\Models\KelurahanDesa;
-use App\KelurahanDesa;
+use App\Models\Wilayah\KelurahanDesa;
 use Illuminate\Support\Facades\Response;
 use Validator;
 

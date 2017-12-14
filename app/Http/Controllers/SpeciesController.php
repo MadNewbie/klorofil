@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Species;
-use App\HabitaSpecies;
+use App\Models\DetailPohon\Species;
+use App\Models\DetailPohon\HabitaSpecies;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\PlantTreatment;
+use App\Models\Tanaman\PlantTreatment;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;

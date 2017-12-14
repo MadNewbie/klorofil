@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Habitat;
+use App\Models\DetailPohon\Habitat;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;

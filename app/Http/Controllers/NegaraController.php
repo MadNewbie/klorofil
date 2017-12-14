@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Negara;
+use App\Models\Wilayah\Negara;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;

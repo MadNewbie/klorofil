@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Validator;
 
-use App\KabupatenKota;
+use App\Models\Wilayah\KabupatenKota;
 
 class KabKotaController extends Controller
 {
