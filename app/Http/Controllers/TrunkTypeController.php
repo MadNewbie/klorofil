@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\TrunkType;
+use App\Models\DetailPohon\TrunkType;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
@@ -14,11 +14,11 @@ class TrunkTypeController extends Controller
         $trunkType = TrunkType::orderBy('trunk_type_name')->paginate(10);
         return view('batang.index',['datas'=>$trunkType]);
     }
-    
+
     public function getCreate() {
         return view('test-controller.create');
     }
-    
+
     public function postCreate(Request $request) {
         $rule = array(
             'trunk_type_name'=>'required|unique:trunk_types'
@@ -39,12 +39,12 @@ class TrunkTypeController extends Controller
             }
         }
     }
-    
+
     public function getRetrieve() {
         $trunkType = TrunkType::orderBy('trunk_type_name')->get();
         return Response::json(['trunk_type'=>$trunkType]);
     }
-    
+
     public function postUpdate(Request $request) {
         $rule = array(
             'trunk_type_name'=>'required'
@@ -64,11 +64,11 @@ class TrunkTypeController extends Controller
             }
         }
     }
-    
+
     public function getDelete($id) {
         $trunkType = TrunkType::find($id);
         $trunkType->delete();
         return Response::json(['message'=>'Data berhasil dihapus','kode'=>200],200);
     }
-        
+
 }

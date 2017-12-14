@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\LeafType;
+use App\Models\DetailPohon\LeafType;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
@@ -14,11 +14,11 @@ class LeafTypeController extends Controller
         $leafType = LeafType::orderBy('leaf_type_name')->paginate(10);
         return view('daun.index',['datas'=>$leafType]);
     }
-    
+
     public function getCreate() {
         return view('test-controller.create');
     }
-    
+
     public function postCreate(Request $request) {
         $rule = array(
             'leaf_type_name'=>'required|unique:leaf_types'
@@ -37,12 +37,12 @@ class LeafTypeController extends Controller
         }
         return Response::json(['kode'=>200,'message'=>'Data tidak tersimpan'],200);
     }
-    
+
     public function getRetrieve() {
         $leafType = LeafType::orderBy('leaf_type_name')->get();
         return Response::json(['leaf_type'=>$leafType]);
     }
-    
+
     public function postUpdate(Request $request) {
         $rule = array(
             'leaf_type_name' => 'required'
@@ -61,7 +61,7 @@ class LeafTypeController extends Controller
         $leafType->update();
         return Response::json(['kode'=>200,'message'=>'Data berhasil diubah'],200);
     }
-    
+
     public function getDelete($id) {
         $leafType = LeafType::find($id);
         $leafType->delete();

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Species;
+use App\Models\DetailPohon\Species;
 use App\HabitaSpecies;
 
 use Illuminate\Http\Request;
@@ -15,11 +15,11 @@ class SpeciesController extends Controller
         $species = Species::orderBy('species_type_id')->paginate(10);
         return view('spesies.index',['datas'=>$species]);
     }
-    
+
     public function getCreate() {
         return view('spesies.form');
     }
-    
+
     public function postCreate(Request $request) {
         $rule = array(
             'species_id' => 'required|unique:species',
@@ -60,7 +60,7 @@ class SpeciesController extends Controller
         }
         return Response::json(['kode'=>404,'message'=>'Data TIdak Berhasil Tersimpan'],200);
     }
-    
+
     public function getRetrieve($id=null) {
         if($id==null){
             $species = Species::orderBy('scientific_name')->get();
@@ -69,7 +69,7 @@ class SpeciesController extends Controller
         }
         return Response::json(['species'=>$species]);
     }
-    
+
     public function postUpdate(Request $request){
         $rule = array(
             'species_id' => 'required',
@@ -112,7 +112,7 @@ class SpeciesController extends Controller
         }
         return Response::json(['kode'=>404,'message'=>'Data Tidak Berhasil Diperbarui'],200);
     }
-    
+
     public function getDelete($id){
         $species = Species::find($id);
         if($species->delete()){
