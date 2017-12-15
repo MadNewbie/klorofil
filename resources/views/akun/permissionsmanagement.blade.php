@@ -23,14 +23,14 @@ Moh. Ardiansyah
                     <div class="clearfix"></div>
             </div>
             <div class="x_content" style="display: none">
-              <form class="form-inline clearfix">
+              <form class="form form-horizontal clearfix">
                 <div class="form-group">
                   <input id="nama_jenis_izin" class="form-control col-xs-12 col-sm-6 col-md-4" type="text" placeholder="Jenis Perizinan"/>
-                </div>
-                <div class="form-group">
+                <!-- </div>
+                <div class="form-group"> -->
                   <input id="nama_layar_jenis_izin" class="form-control col-xs-12 col-sm-6 col-md-8" type="text" placeholder="Nama Layar Perizinan"/>
-                </div>
-                <div class="form-group">
+                <!-- </div>
+                <div class="form-group"> -->
                     <input id="deskripsi_jenis_izin" class="form-control col-xs-12 col-sm-12 col-md-12" type="text" placeholder="Deskripsi Perizinan"/>
                 </div>
                 <button id="btnAdd" class="btn btn-primary"  style="margin-bottom: 0px;"><i class="fa fa-plus"></i></button>
@@ -40,7 +40,7 @@ Moh. Ardiansyah
         <div class="x_content">
           <div class="x_content">
             <form class="form form-inline clearfix">
-              {{-- @if(count($roles)===0) --}}
+              {{-- @if(count($datas)===0) --}}
               <!-- <div class="form-group">
                 <div class="row clearfix"> -->
                   <h4 class="text-center">Belum ada data Perizinan Pengguna</h4>
@@ -74,11 +74,29 @@ Moh. Ardiansyah
                                 <td class="col-md-5 col-sm-5 col-xs-5">Operator (Kabupaten/Kota)</td>
                                 <td class="col-md-1 col-sm-1 col-xs-1">
                                    <div role="group" class="btnGroupOperation btn-group btn-group-justified btn-group-sm btn-group-xs">
-                                        <a class="btn btn-success btn-sm btn-xs" data-toggle="tooltip" title="Edit Akun"><i class="fa fa-pencil"></i></a>
+                                        <a class="btn btn-warning btn-sm btn-xs" data-toggle="tooltip" title="Edit Akun"><i class="fa fa-pencil"></i></a>
                                         <a class="btn btn-danger btn-sm btn-xs" data-toggle="tooltip" title="Hapus Akun"><i class="fa fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
+                        </tbody>
+                        <tbody>
+                          <?php $i=0?>
+                          @foreach($datas as $permission)
+                          <?php $i++?>
+                          <tr class="row">
+                            <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
+                            <td class="col-md-2 col-sm-2 col-xs-2">{{$permission->name}}</td>
+                            <td class="col-md-3 col-sm-3 col-xs-3">{{$permission->display_name}}</td>
+                            <th class="col-md-5 col-sm-5 col-xs-5">{{$permission->description}}</th>
+                            <td class="col-md-1 col-sm-1 col-xs-1">
+                                <div data-id="{{$negara->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified btn-group-sm btn-group-xs">
+                                    <a class="btn btn-warning btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-danger btn-sm btn-xs"><i class="fa fa-trash"></i></a>
+                                </div>
+                          </td>
+                        </tr>
+                        @endforeach
                         </tbody>
                     </table>
                   </div>

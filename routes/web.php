@@ -10,24 +10,37 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+// ============================
+// Experiment section
+// ============================
+
+// ============================
+// End Experiment
+// ============================
 //=============================
 // Guest-page section
 //=============================
 
-Route::get('/',[
-    'uses'=>'HomeController@getGuestIndex',
-    'as'=>'guest.index'
-]);
+// Route::group([
+//   'prefix' => '/',
+//   'namespace' => 'Guest',
+//   'before' => 'set-route-group:guest'],function(){
 
-Route::get('/overview',[
-    'uses'=>'HomeController@getGuestOverview',
-    'as'=>'guest.overview'
-]);
+    Route::get('/',[
+      'uses'=>'HomeController@getGuestIndex',
+      'as'=>'guest.index'
+    ]);
 
-Route::get('/information',[
+   Route::get('client-overview',[
+     'uses'=>'HomeController@getGuestOverview',
+     'as'=>'guest.overview'
+   ]);
+
+  Route::get('client-information',[
     'uses'=>'HomeController@getGuestInformation',
     'as'=>'guest.information'
-]);
+  ]);
+// });
 
 //=============================
 // End Guest-page section
@@ -36,7 +49,7 @@ Route::get('/information',[
 //=============================
 // Ministered-page section
 //=============================
-Route::get('/price-and-planning', [
+Route::get('/partnership', [
   'uses' => 'HomeController@getMinisteredIndex',
   'as' => 'ministered.index'
 ]);
@@ -83,6 +96,18 @@ Route::group(['middleware'=>['web']],function(){
 
          //============================
          // End Admin-page section
+         //============================
+         //============================
+         // Admin-page testing section
+         //============================
+         // Menu Test
+         Route::get('/epiphytes',[
+            'uses'=>'HomeController@getEpiphytesIndex',
+            'as'=>'epiphytestype.index'
+         ]);
+
+         //============================
+         // End Admin-page testing section
          //============================
 
          //============================
@@ -159,7 +184,7 @@ Route::group(['middleware'=>['web']],function(){
          //Submenu Area
          Route::get('/area',[
              'uses'=>'AreasController@getIndex',
-             'as'=>'area.index'
+             'as'=>'area.index',
          ]);
 
          // Submenu Area

@@ -7,8 +7,64 @@
 @section('content')
 <section class="mbr-section mbr-section-hero header2 mbr-parallax-background mbr-after-navbar" id="header2-1" style="background-color: rgba(69, 90, 100, 1);">
 </section>
-<section id="header-helper" class="mbr-section mbr-section__container article" style="padding-top: 83px; font-family: courier; background-color: rgba(69, 90, 100, 1); padding-bottom: 0px;">
-
+<!-- <section id="header-helper" class="mbr-section mbr-section__container article" style="padding-top: 183px; font-family: courier; background-color: rgba(69, 90, 100, 1); padding-bottom: 0px;"> -->
+<!-- </section> -->
+<section id="why-we-do" class="mbr-section mbr-section__container article" id="slider-3" style="padding-top: 83px; font-family: courier; background-color: rgb(244, 244, 244); padding-bottom: 0px;">
+    <h3 class="mbr-section-title display-2">WHY WE DO IT?</h3>
+        <div id="slider-3" class="mbr-slider carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators hidden-md-down">
+                <li data-target="#slider-3" data-slide-to="0" class="active"><img src="{{URL::to('homescreen/pictures/clean-air-icon.png')}}" alt="clean-air-icon.png" style="height: 10vh; margin-top: 5vh"></li>
+                <li data-target="#slider-3" data-slide-to="1"><img class="img-responsive" src="{{URL::to('homescreen/pictures/absorb-stormwater-icon.png')}}" alt="absorb-stormwater-icon.png" style="height: 10vh; margin-top: 5vh"></li>
+                <li data-target="#slider-3" data-slide-to="2"><img class="img-responsive" src="{{URL::to('homescreen/pictures/save-energy-icon.png')}}" alt="save-energy-icon.png" style="height: 10vh; margin-top: 5vh"></li>
+                <li data-target="#slider-3" data-slide-to="3"><img class="img-responsive" src="{{URL::to('homescreen/pictures/control-climate-icon.png')}}" alt="control-climate-icon.png" style="height: 10vh; margin-top: 5vh"></li>
+                <li data-target="#slider-3" data-slide-to="4"><img class="img-responsive" src="{{URL::to('homescreen/pictures/calm-traffic-icon.png')}}" alt="calm-traffic-icon.png" style="height:10vh; margin-top: 5vh"></li>
+                <li data-target="#slider-3" data-slide-to="5"><img class="img-responsive" src="{{URL::to('homescreen/pictures/prevent-species-loss-icon.png')}}" alt="prevent-species-loss-icon.png" style="height: 10vh; margin-top: 5vh"></li>
+                <li data-target="#slider-3" data-slide-to="6"><img class="img-responsive" src="{{URL::to('homescreen/pictures/feed-the-human-soul-icon.png')}}" alt="feed-the-human-soul-icon.png" style="height: 10vh; margin-top: 5vh"></li>
+            </ol>
+            <section class="inner-box">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active" style="">
+                        <center><img src="{{URL::to('homescreen/pictures/clean-air-icon.png')}}" alt="clean-air-icon.png" style="height: 10vh; margin-top: 5vh; filter: brightness(500%);" class="hidden-lg-up"></center>
+                        <div class="text-definition">Trees remove carbon dioxide from the air and produce oxygen. Trees also intercept airborne pollutants common to cities.</div>
+                        <h3 class="display-4">CLEAN AIR</h3>
+                    </div>
+                    <div class="carousel-item" style="">
+                        <center><img src="{{URL::to('homescreen/pictures/absorb-stormwater-icon.png')}}" alt="absorb-stormwater-icon.png" style="height: 10vh; margin-top: 5vh; filter: brightness(500%);" class="hidden-lg-up"></center>
+                        <div class="text-definition">Trees absorb stormwater runoff, reducing erosion and pollution in our waterways. A healthy tree canopy means cleaner rivers and less investment in costly infrastructure.</div>
+                        <h3 class="display-4">ABSORB STORMWATER</h3>
+                    </div>
+                    <div class="carousel-item" style="">
+                        <center><img src="{{URL::to('homescreen/pictures/save-energy-icon.png')}}" alt="save-energy-icon.png" style="height: 10vh; margin-top: 5vh; filter: brightness(500%);" class="hidden-lg-up"></center>
+                        <div class="text-definition">trees provide shade, saving district residents and businesses</div>
+                        <h3 class="display-4">SAVE ENERGY</h3>
+                    </div>
+                    <div class="carousel-item" style="">
+                        <center><img src="{{URL::to('homescreen/pictures/control-climate-icon.png')}}" alt="control-climate-icon.png" style="height: 10vh; margin-top: 5vh; filter: brightness(500%);" class="hidden-lg-up"></center>
+                        <div class="text-definition">tree can control climate change in urban area</div>
+                        <h3 class="display-4">CONTROL CLIMATE CHANGE</h3>
+                    </div>
+                    <div class="carousel-item" style="">
+                        <center><img src="{{URL::to('homescreen/pictures/calm-traffic-icon.png')}}" alt="calm-traffic-icon.png" style="height: 10vh; margin-top: 5vh; filter: brightness(500%);" class="hidden-lg-up"></center>
+                        <div class="text-definition">tree lined streets have a traffic calming effect, which keeps drivers and pedestrian safe</div>
+                        <h3 class="display-4">CALM TRAFFIC</h3>
+                    </div>
+                    <div class="carousel-item" style="">
+                        <center><img src="{{URL::to('homescreen/pictures/prevent-species-loss-icon.png')}}" alt="prevent-species-loss-icon.png" style="height: 10vh; margin-top: 5vh; filter: brightness(500%);" class="hidden-lg-up"></center>
+                        <div class="text-definition">tree provide food, homes and shelter for many native and migratory animals</div>
+                        <h3 class="display-4">PREVENT SPECIES LOSS</h3>
+                    </div>
+                    <div class="carousel-item" style="">
+                        <center><img src="{{URL::to('homescreen/pictures/feed-the-human-soul-icon.png')}}" alt="feed-the-human-soul-icon.png" style="height: 10vh; margin-top: 5vh; filter: brightness(500%);" class="hidden-lg-up"></center>
+                        <div class="text-definition">Green spaces help residents combat stress, anxiety and depression. Exposure to trees and nature aids concentration by reducing mental fatigue. access to nature is also associated with fewer sick days and faster recovery times</div>
+                        <h3 class="display-4">FEED THE HUMAN SOUL</h3>
+                    </div>
+                </div>
+                <a class="left carousel-control hidden-lg-up" href="#slider-3" data-slide="prev">
+                </a>
+                <a class="right carousel-control hidden-lg-up" href="#slider-3" data-slide="next">
+                </a>
+            </section>
+        </div>
 </section>
 <section id="what-we-do" class="mbr-section mbr-section__container article" style="padding-top: 83px; font-family: courier; background-color: rgb(244, 244, 244); padding-bottom: 0px;">
     <div class="container">
@@ -86,65 +142,7 @@
     </div>
 </section>
 
-<section id="why-we-do" class="mbr-section mbr-section__container article" id="slider-3" style="padding-top: 83px; font-family: courier; background-color: rgb(244, 244, 244); padding-bottom: 0px;">
-    <h3 class="mbr-section-title display-2">WHY WE DO IT?</h3>
-        <div id="slider-3" class="mbr-slider carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators hidden-md-down">
-                <li data-target="#slider-3" data-slide-to="0" class="active"><img src="{{URL::to('homescreen/pictures/clean-air-icon.png')}}" alt="clean-air-icon.png" style="height: 10vh; margin-top: 5vh"></li>
-                <li data-target="#slider-3" data-slide-to="1"><img class="img-responsive" src="{{URL::to('homescreen/pictures/absorb-stormwater-icon.png')}}" alt="absorb-stormwater-icon.png" style="height: 10vh; margin-top: 5vh"></li>
-                <li data-target="#slider-3" data-slide-to="2"><img class="img-responsive" src="{{URL::to('homescreen/pictures/save-energy-icon.png')}}" alt="save-energy-icon.png" style="height: 10vh; margin-top: 5vh"></li>
-                <li data-target="#slider-3" data-slide-to="3"><img class="img-responsive" src="{{URL::to('homescreen/pictures/control-climate-icon.png')}}" alt="control-climate-icon.png" style="height: 10vh; margin-top: 5vh"></li>
-                <li data-target="#slider-3" data-slide-to="4"><img class="img-responsive" src="{{URL::to('homescreen/pictures/calm-traffic-icon.png')}}" alt="calm-traffic-icon.png" style="height:10vh; margin-top: 5vh"></li>
-                <li data-target="#slider-3" data-slide-to="5"><img class="img-responsive" src="{{URL::to('homescreen/pictures/prevent-species-loss-icon.png')}}" alt="prevent-species-loss-icon.png" style="height: 10vh; margin-top: 5vh"></li>
-                <li data-target="#slider-3" data-slide-to="6"><img class="img-responsive" src="{{URL::to('homescreen/pictures/feed-the-human-soul-icon.png')}}" alt="feed-the-human-soul-icon.png" style="height: 10vh; margin-top: 5vh"></li>
-            </ol>
-            <section class="inner-box">
-                <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active" style="">
-                        <center><img src="{{URL::to('homescreen/pictures/clean-air-icon.png')}}" alt="clean-air-icon.png" style="height: 10vh; margin-top: 5vh; filter: brightness(500%);" class="hidden-lg-up"></center>
-                        <div class="text-definition">Trees remove carbon dioxide from the air and produce oxygen. Trees also intercept airborne pollutants common to cities.</div>
-                        <h3 class="display-4">CLEAN AIR</h3>
-                    </div>
-                    <div class="carousel-item" style="">
-                        <center><img src="{{URL::to('homescreen/pictures/absorb-stormwater-icon.png')}}" alt="absorb-stormwater-icon.png" style="height: 10vh; margin-top: 5vh; filter: brightness(500%);" class="hidden-lg-up"></center>
-                        <div class="text-definition">Trees absorb stormwater runoff, reducing erosion and pollution in our waterways. A healthy tree canopy means cleaner rivers and less investment in costly infrastructure.</div>
-                        <h3 class="display-4">ABSORB STORMWATER</h3>
-                    </div>
-                    <div class="carousel-item" style="">
-                        <center><img src="{{URL::to('homescreen/pictures/save-energy-icon.png')}}" alt="save-energy-icon.png" style="height: 10vh; margin-top: 5vh; filter: brightness(500%);" class="hidden-lg-up"></center>
-                        <div class="text-definition">trees provide shade, saving district residents and businesses</div>
-                        <h3 class="display-4">SAVE ENERGY</h3>
-                    </div>
-                    <div class="carousel-item" style="">
-                        <center><img src="{{URL::to('homescreen/pictures/control-climate-icon.png')}}" alt="control-climate-icon.png" style="height: 10vh; margin-top: 5vh; filter: brightness(500%);" class="hidden-lg-up"></center>
-                        <div class="text-definition">tree can control climate change in urban area</div>
-                        <h3 class="display-4">CONTROL CLIMATE CHANGE</h3>
-                    </div>
-                    <div class="carousel-item" style="">
-                        <center><img src="{{URL::to('homescreen/pictures/calm-traffic-icon.png')}}" alt="calm-traffic-icon.png" style="height: 10vh; margin-top: 5vh; filter: brightness(500%);" class="hidden-lg-up"></center>
-                        <div class="text-definition">tree lined streets have a traffic calming effect, which keeps drivers and pedestrian safe</div>
-                        <h3 class="display-4">CALM TRAFFIC</h3>
-                    </div>
-                    <div class="carousel-item" style="">
-                        <center><img src="{{URL::to('homescreen/pictures/prevent-species-loss-icon.png')}}" alt="prevent-species-loss-icon.png" style="height: 10vh; margin-top: 5vh; filter: brightness(500%);" class="hidden-lg-up"></center>
-                        <div class="text-definition">tree provide food, homes and shelter for many native and migratory animals</div>
-                        <h3 class="display-4">PREVENT SPECIES LOSS</h3>
-                    </div>
-                    <div class="carousel-item" style="">
-                        <center><img src="{{URL::to('homescreen/pictures/feed-the-human-soul-icon.png')}}" alt="feed-the-human-soul-icon.png" style="height: 10vh; margin-top: 5vh; filter: brightness(500%);" class="hidden-lg-up"></center>
-                        <div class="text-definition">Green spaces help residents combat stress, anxiety and depression. Exposure to trees and nature aids concentration by reducing mental fatigue. access to nature is also associated with fewer sick days and faster recovery times</div>
-                        <h3 class="display-4">FEED THE HUMAN SOUL</h3>
-                    </div>
-                </div>
-                <a class="left carousel-control hidden-lg-up" href="#slider-3" data-slide="prev">
-                </a>
-                <a class="right carousel-control hidden-lg-up" href="#slider-3" data-slide="next">
-                </a>
-            </section>
-        </div>
-</section>
-
-<section style="background: #FFFFFF; min-height: 20vh; text-align: center">
+<section style="background: #FFFFFF; min-height: 32vh; text-align: center;">
     <div class="col-md-8 col-xs-12 display-4">
         The industry leader in tree inventory
     </div>

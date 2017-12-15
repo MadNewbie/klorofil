@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Validator;
 
-use App\Models\Wilayah;
+use App\Models\Wilayah\Area;
 
 class AreasController extends Controller
 {

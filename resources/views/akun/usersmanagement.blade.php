@@ -24,14 +24,14 @@ Moh. Ardiansyah
                     <div class="clearfix"></div>
             </div>
             <div class="x_content" style="display: none">
-              <form class="form-inline clearfix">
+              <form class="form form-horizontal clearfix">
                 <div class="form-group">
                   <input id="accountFullname" class="form-control" type="text" style="margin-bottom: 0px;" placeholder="Nama Lengkap"/>
                 <!-- </div> -->
                 <!-- <div class="form-group"> -->
                     <input id="accountUsername" class="form-control" type="text" style="margin-bottom: 0px;" placeholder="Username"/>
                 <!-- </div> -->
-                <!-- <div class="form-group"> -->
+                <div class="form-group">
                   <select class="form-control" style="margin-bottom: 0px;">
                         <option hidden="">Hak Akses</option>
                         <option>Administrator</option>
@@ -45,26 +45,27 @@ Moh. Ardiansyah
                   <button id="btnAdd" class="form-control btn btn-primary btn-sm" style="margin-bottom: 0px;"><i class="fa fa-plus"></i></button>
               </form>
             </div>
+          </div>
         </div>
         <div class="x_content">
-        <div class="x_content">
-          <form class="form-inline clearfix">
-            {{-- @if(count($users)===0) --}}
+          <div class="x_content">
+            <form class="form-inline clearfix">
+            {{-- @if(count($datas)===0) --}}
             <!-- <div class="form-group">
               <div class="row clearfix"> -->
                 <h4 class="text-center">Belum ada data Pengguna</h4>
               <!-- </div>
             </div> -->
           {{-- @else --}}
-            <div class="form-group">
-              <div class="row clearfix">
-                <div class="dataTables_filter pull-right">
+              <div class="form-group">
+                <div class="row clearfix">
+                  <div class="dataTables_filter pull-right">
                     <input class="form-control" type="search" placeholder="Cari"/>
+                  </div>
                 </div>
-              </div>
-              <br />
+                <br />
             <!-- </div> -->
-              <div class="row clearfix">
+                <div class="row clearfix">
                 <!-- <div class="form-group clearfix"> -->
                   <div class="table-responsive">
                     <table class="table table-striped">
@@ -79,7 +80,7 @@ Moh. Ardiansyah
                         </thead>
                         <tbody>
                           <?php $i=0 ?>
-                          @foreach($users as $user)
+                          @foreach($datas as $user)
                           <?php $i++ ?>
                             <tr class="row">
                                 <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
@@ -87,10 +88,10 @@ Moh. Ardiansyah
                                 <td class="col-md-2 col-sm-2 col-xs-2">{{$user->username}}</td>
                                 <td class="col-md-3 col-sm-3 col-xs-3">{{$user->role->display_name}}</td>
                                 <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div role="group" class="btn-group btn-group-justified btn-group-xs">
-                                        <a class="btn btn-warning btn-xs" data-toggle="tooltip" title="Reset Password"><i class="fa fa-undo"></i></a>
-                                        <a class="btn btn-success btn-xs" data-toggle="tooltip" title="Edit Akun"><i class="fa fa-pencil"></i></a>
-                                        <a class="btn btn-danger btn-xs" data-toggle="tooltip" title="Hapus Akun"><i class="fa fa-trash"></i></a>
+                                   <div role="group" class="btn-group btn-group-justified btn-group-sm btn-group-xs">
+                                        <a class="btn btn-success btn-sm btn-xs" data-toggle="tooltip" title="Reset Password"><i class="fa fa-undo"></i></a>
+                                        <a class="btn btn-warning btn-sm btn-xs" data-toggle="tooltip" title="Edit Akun"><i class="fa fa-pencil"></i></a>
+                                        <a class="btn btn-danger btn-sm btn-xs" data-toggle="tooltip" title="Hapus Akun"><i class="fa fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -101,9 +102,9 @@ Moh. Ardiansyah
                                 <td class="col-md-2 col-sm-2 col-xs-2">rachmad.y</td>
                                 <td class="col-md-2 col-sm-2 col-xs-2">Operator (Kabupaten/Kota)</td>
                                 <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div role="group" class="btn-group btn-group-justified btn-group-xs">
-                                        <a class="btn btn-warning btn-sm btn-xs" data-toggle="tooltip" title="Reset Password"><i class="fa fa-undo" aria-hidden="true"></i></a>
-                                        <a class="btn btn-success btn-sm btn-xs" data-toggle="tooltip" title="Edit Akun"><i class="fa fa-pencil"></i></a>
+                                   <div role="group" class="btn-group btn-group-justified btn-group-sm btn-group-xs">
+                                        <a class="btn btn-success btn-sm btn-xs" data-toggle="tooltip" title="Reset Password"><i class="fa fa-undo" aria-hidden="true"></i></a>
+                                        <a class="btn btn-warning btn-sm btn-xs" data-toggle="tooltip" title="Edit Akun"><i class="fa fa-pencil"></i></a>
                                         <a class="btn btn-danger btn-sm btn-xs" data-toggle="tooltip" title="Hapus Akun"><i class="fa fa-trash"></i></a>
                                     </div>
                                 </td>
@@ -111,10 +112,10 @@ Moh. Ardiansyah
                         </tbody>
                     </table>
                 </div>
+              </div>
             </div>
             {{-- @endif --}}
-          </form>
-        </div>
+        </form>
       </div>
     </div>
   </div>

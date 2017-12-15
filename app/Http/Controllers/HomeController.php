@@ -29,4 +29,8 @@ class HomeController extends Controller
     public function getGuestInformation() {
     	return view('front-end.information');
     }
+
+    public function getEpiphytesIndex(){
+      return view('jenis_epifit.index');
+    }
 }

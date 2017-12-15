@@ -47,7 +47,7 @@ Moh. Ardiansyah
     <div class="x_content">
       <div class="x_content">
         <form class="form-inline clearfix">
-        {{-- @if(count($roles)===0) --}}
+        {{-- @if(count($datas)===0) --}}
         <!-- <div class="form-group">
           <div class="row clearfix"> -->
             <h4 class="text-center">Belum ada data Peranan Pengguna</h4>
@@ -73,7 +73,7 @@ Moh. Ardiansyah
                     </thead>
                     <tbody>
                         <?php $i=0 ?>
-                        @foreach($roles as $role)
+                        @foreach($datas as $role)
                         <?php $i++ ?>
                         <tr class="row">
                             <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
@@ -95,7 +95,7 @@ Moh. Ardiansyah
                             <td class="col-md-7 col-sm-7 col-xs-7" data-id="1">Post-All, Update-All, Delete-All</td>
                             <td class="col-md-1 col-sm-1 col-xs-1">
                                <div role="group" data-id="1" class="btnGroupOperation btn-group btn-group-justified btn-group-sm btn-group-xs">
-                                    <a class="btn btn-success btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-warning btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
                                     <a class="btn btn-danger btn-sm btn-xs"><i class="fa fa-trash"></i></a>
                                 </div>
                             </td>
