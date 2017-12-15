@@ -32,12 +32,14 @@ Moh. Ardiansyah
             </div>
         </div>
         <div class="x_content">
-            {{-- @if(count($datas)===0) --}}
+          <div class="x_content">
+            <form class="form form-inline clearfix">
+            @if(count($datas)===0)
             <h4 class="text-center">Tidak ada data cabang</h4>
-            {{--  @else --}}
+            @else
             <div class="row clearfix">
                 <div class="dataTables_filter pull-right">
-                    <input type="search" placeholder="Cari"/>
+                    <input class="form-control" type="search" placeholder="Cari"/>
                 </div>
             </div>
             <div class="row">
@@ -58,9 +60,9 @@ Moh. Ardiansyah
                                 <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
                                 <td class="col-md-10 col-sm-10 col-xs-10">{{$branchType->branch_type_name}}</td>
                                 <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div data-id="{{$branchType->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
-                                        <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                                        <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                   <div data-id="{{$branchType->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified btn-group-sm btn-group-xs">
+                                        <a class="btn btn-warning btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
+                                        <a class="btn btn-danger btn-sm btn-xs"><i class="fa fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -69,20 +71,22 @@ Moh. Ardiansyah
                     </table>
                 </div>
             </div>
-                @if($datas->lastPage() > 1)
-                <div class="row">
-                    <div class="col-sm-12 col-xs-12 text-center">
-                        @if($datas->currentPage() !== 1)
-                            <a href="{{$datas->previousPageUrl()}}"><i class="fa fa-caret-left"></i></a>
-                        @endif
-                        @if($datas->currentPage() !== $datas->lastPage())
-                            <a href="{{$datas->nextPageUrl()}}"><i class="fa fa-caret-right"></i></a>
-                        @endif
-                    </div>
-                </div>
-                @endif
-          {{-- @endif --}}
+            @if($datas->lastPage() > 1)
+            <div class="row clearfix">
+              <div class="col-sm-12 col-xs-12 text-center">
+              @if($datas->currentPage() !== 1)
+                <a href="{{$datas->previousPageUrl()}}"><i class="fa fa-caret-left"></i></a>
+              @endif
+              @if($datas->currentPage() !== $datas->lastPage())
+                <a href="{{$datas->nextPageUrl()}}"><i class="fa fa-caret-right"></i></a>
+              @endif
+              </div>
+            </div>
+            @endif
+          @endif
+          </form>
         </div>
+      </div>
     </div>
 </div>
 @endsection

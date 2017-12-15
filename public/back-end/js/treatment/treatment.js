@@ -16,7 +16,7 @@ var docReady = setInterval(function(){
 
 function startAdd(event){
     var name = document.getElementById('name').value;
-    var species_type_id = (document.getElementById('drp_species_type').selectedOptions[0].value==='Jenis Spesies'?"":document.getElementById('drp_species_type').selectedOptions[0].value);    
+    var species_type_id = (document.getElementById('drp_species_type').selectedOptions[0].value==='Jenis Spesies'?"":document.getElementById('drp_species_type').selectedOptions[0].value);
     var datas = {'name':name,'species_type_id':species_type_id};
     ajax("POST","/admin/treatment/create",datas,newTreatmentCreated,[event]);
 }
@@ -25,7 +25,7 @@ function newTreatmentCreated(params,success,responseObj){
      if(success){
         if(responseObj.kode == 200){
             showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
+            location.reload();
         }else{
             console.log(responseObj.message);
             var error = '';
@@ -126,7 +126,7 @@ function dataUpdated(params,success,responseObj){
     if(success){
         if(responseObj.kode == 200){
             showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
+            location.reload();
         }else{
             console.log(responseObj.message);
             var error = '';
@@ -156,7 +156,7 @@ function endDeleteData(params,success,responseObj){
     if(success){
         if(responseObj.kode == 200){
             showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
+            location.reload();
         }else{
             console.log(responseObj.message);
             var error = '';

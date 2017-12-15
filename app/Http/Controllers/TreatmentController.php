@@ -15,9 +15,9 @@ class TreatmentController extends Controller
         return view('perlakuan.index',['datas'=>$treatment]);
     }
 
-    public function getCreate() {
-        return view('test-controller.create');
-    }
+    // public function getCreate() {
+        // return view('test-controller.create');
+    // }
 
     public function postCreate(Request $request) {
         $rule = array(
@@ -29,7 +29,7 @@ class TreatmentController extends Controller
         if($validator->fails()){
             return Response::json(['kode'=>404,'message'=>$validator->errors()],200);
         }
-        $treatment = new Treatment;
+        $treatment = new Treatment();
         $treatment->name = $input['name'];
         $treatment->species_type_id = $input['species_type_id'];
         $treatment->created_by = 1;
