@@ -563,10 +563,10 @@ Route::group(['middleware'=>['web']],function(){
                 'as'=>'roottype.index'
            ]);
 
-           Route::get('/root_type/create',[
-                'uses'=>'RootTypeController@getCreate',
-                'as'=>'roottype.getCreate'
-           ]);
+           // Route::get('/root_type/create',[
+           //      'uses'=>'RootTypeController@getCreate',
+           //      'as'=>'roottype.getCreate'
+           // ]);
 
            Route::post('/root_type/create',[
                 'uses'=>'RootTypeController@postCreate',
@@ -669,7 +669,10 @@ Route::group(['middleware'=>['web']],function(){
           'PermissionsManagementController',[
             'names'=>[
               'index'=>'permissionsmanagement.index',
-              // 'create'=>'permissionsmanagement.create',
+              'create'=>'permissionsmanagement.create',
+              'update'=>'permissionsmanagement.update',
+              'destroy'=>'permissionsmanagement.delete',
+              'retrieve'=>'permissionsmanagement.retrieve'
             ]
           ]);
 

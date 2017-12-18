@@ -42,9 +42,9 @@ class PermissionsManagementController extends Controller
           return Response::json(['kode'=>404,'message'=>$validator->errors()],200);
       }
       $permission=new Permission();
-      $permission->name=$input['permission_name'];
-      $permission->display_name=$input['permission_display_name'];
-      $permission->description=$input['permission_description'];
+      $permission->name=$input['name'];
+      $permission->display_name=$input['display_name'];
+      $permission->description=$input['description'];
       $permission->created_by=1;
       $permission->updated_by=1;
       if($permission->save()){
@@ -90,12 +90,30 @@ class PermissionsManagementController extends Controller
    * Update the specified resource in storage.
    *
    * @param  \Illuminate\Http\Request  $request
-   * @param  int  $id
+   * @param  int  $id (Unused)
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, $id)
-  {
+  public function update(Request $request){
+      $rule=array(
+        'name'=>'required|unique:permissions',
+        'display_name'=>'required',
+      );
+      $input = $request->all();
+      $validator = Validator::make($input,$rule);
+      if($validator->fails()){
+          return response::json(['kode'=>404,'message'=>$validator->errors()],200);
+      }
       //
+      $permission=Permission::find($input['id']);
+      if(!$permission){
+        return Response::json(['kode'=>404,'message'=>'Data tidak ditemukan'],200);
+      }
+      $permission->name=($permission->name==$input['name']? $permission->name : $input['name']);
+      $permission->display_name=($permission->display_name==$input['display_name']? $permission->display_name : $input['display_name']);
+      $permission->description=($permission->description==$input['description']? $permission->description : $input['description']);
+      $permission->updated_by=1;
+      $permission->update();
+      return Response::json(['kode'=>200,'message'=>'Data berhasil diubah'],200);
   }
 
   /**
@@ -104,8 +122,14 @@ class PermissionsManagementController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function destroy($id)
-  {
-      //
+  public function destroy($id){
+      $permissions=Permission::find($id);
+      $permissions->delete();
+      return Response::json(['message'=>'Data berhasil dihapus','kode'=>200],200);
+  }
+
+  public function retrieve(){
+    $permissions=Permission::orderBy('name')->get();
+    return Response::json(['permission'=>$permissions]);
   }
 }
