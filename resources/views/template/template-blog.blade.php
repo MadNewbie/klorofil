@@ -25,7 +25,7 @@
                             <!-- <a id="btn-get-started" href="{{route('guest.index')}}" class="navbar-caption">Homepage</a> -->
                         </div>
                         <div class="col-xs-6 col-md-4 mbr-table-cell">
-                            <center><a id="btn-home" href="{{route('blog.index')}}" class="navbar-caption"><img style="padding:1vh; height:70px;" src="{{URL::to('homescreen/pictures/logo.png')}}"></a></center>
+                            <center><a id="btn-home" href="{{route('guest.index')}}" class="navbar-caption"><img style="padding:1vh; height:70px;" src="{{URL::to('homescreen/pictures/logo.png')}}"></a></center>
                         </div>
                         <div class="col-xs-6 col-md-4 mbr-table-cell">
                             <button class="navbar-toggler pull-xs-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
@@ -103,7 +103,7 @@
 
         </section>
         @yield('content')
-        <section id="footer" style="padding-bottom: 5vh; background: #FFFFFF;">
+        <section id="footer" style="padding-top: 3vh; padding-bottom: 5vh; background: #FFFFFF; position: fixed; bottom: 0; width: 100%;">
             <div class="container">
                 <div class="col-md-4 col-xs-12">
                     <i class="fa fa-envelope-o"></i> tatacipta.kanopi@gmail.com

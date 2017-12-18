@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Response;
 use App\Models\Wilayah\Negara;
 
 use Validator;
+use App\Models\Wilayah\Negara;
 
 class NegaraController extends Controller
 {

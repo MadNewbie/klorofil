@@ -15,7 +15,7 @@ class PermissionsManagementController extends Controller
     $permissions=Permission::orderBy('id')->paginate(10);
     return view('akun.permissionsmanagement',[
       'sectiontitle'=>$sectionTitle,
-      'permissions'=>$permissions,
+      'datas'=>$permissions,
     ]);
   }
 }

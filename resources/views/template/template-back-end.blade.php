@@ -84,6 +84,7 @@
                         <li><a href="{{Route('trunktype.index')}}">Jenis Batang</a></li>
                         <li><a href="{{Route('branchtype.index')}}">Jenis Cabang</a></li>
                         <li><a href="{{Route('leaftype.index')}}">Jenis Daun</a></li>
+                        <li><a href="{{Route('epiphytestype.index')}}">Jenis Epifit</a></li>
                         <li><a href="{{Route('habitat.index')}}">Habitat Hewan</a></li>
                         <li><a href="{{Route('species.index')}}">Spesies</a></li>
                     </ul>

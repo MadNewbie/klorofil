@@ -44,42 +44,48 @@ Moh. Ardiansyah
             <!-- <div class="form-control" id="map"></div> -->
         </div>
         <div class="x_content">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12 dataTables_filter">
-                    <input type="search" placeholder="Cari"/>
+          <div class="x_content">
+            <form class="form form-inline clearfix">
+              {{-- @ifcount($provinsi)===0 --}}
+              <h4 class="text-center">Belum ada data mengenai Provinsi</h4>
+              {{-- @else --}}
+              <div class="row clearfix">
+                <div class="dataTables_filter pull-right">
+                    <input class="form-control" type="search" placeholder="Cari"/>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <table class="table table-striped table-bordered">
+              </div>
+              <br />
+              <div class="row clearfix">
+                <div class="table-responsive">
+                    <table class="table table-striped">
                         <thead>
                             <tr class="row">
                                 <th class="col-md-1 col-sm-1 col-xs-1">No</th>
-                                <th class="col-md-9 col-sm-9 col-xs-9">Nama Provinsi</th>
-                                <th class="col-md-1 col-sm-1 col-xs-1">Detail Wilayah</th>
+                                <th class="col-md-8 col-sm-8 col-xs-8">Nama Provinsi</th>
+                                <th class="col-md-2 col-sm-2 col-xs-2">Detail Wilayah</th>
                                 <th class="col-md-1 col-sm-1 col-xs-1">Operasi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="row">
                                 <td class="col-md-1 col-sm-1 col-xs-1">1</td>
-                                <td class="col-md-9 col-sm-9 col-xs-9">Jawa Timur</td>
-                                <td class="col-md-1 col-sm-1 col-xs-1"><i class="fa fa-check" style="color: green"></i></td>
+                                <td class="col-md-8 col-sm-8 col-xs-8">Jawa Timur</td>
+                                <td class="col-md-2 col-sm-2 col-xs-2" style="text-align: center;"><i class="fa fa-check center-block" style="color: green;"></i></td>
                                 <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div role="group" class="btn-group btn-group-justified">
-                                        <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                                        <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                   <div role="group" class="btn-group btn-group-justified btn-group-sm btn-group-xs">
+                                        <a class="btn btn-warning btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
+                                        <a class="btn btn-danger btn-sm btn-xs"><i class="fa fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
                             <tr class="row">
                                 <td class="col-md-1 col-sm-1 col-xs-1">2</td>
-                                <td class="col-md-9 col-sm-9 col-xs-9">Jawa Barat</td>
-                                <td class="col-md-1 col-sm-1 col-xs-1"><i class="fa fa-times" style="color: red"></i></td>
+                                <td class="col-md-8 col-sm-8 col-xs-8">Jawa Barat</td>
+                                <td class="col-md-2 col-sm-2 col-xs-2" style="text-align: center;"><i class="fa fa-times center-block" style="color: red;"></i></td>
                                 <td class="col-md-1 col-sm-1 col-xs-1">
-                                    <div role="group" class="btn-group btn-group-justified">
-                                        <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                                        <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                    <div role="group" class="btn-group btn-group-justified btn-group-sm btn-group-xs">
+                                        <a class="btn btn-warning btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
+                                        <a class="btn btn-danger btn-sm btn-xs"><i class="fa fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -87,7 +93,10 @@ Moh. Ardiansyah
                     </table>
                 </div>
             </div>
-        </div>
+          </div>
+          {{-- @endif --}}
+        </form>
+      </div>
     </div>
 </div>
 @endsection

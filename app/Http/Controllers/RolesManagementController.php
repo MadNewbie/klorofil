@@ -15,7 +15,7 @@ class RolesManagementController extends Controller
       $roles=Role::orderBy('id')->paginate(10);
       return view('akun.rolesmanagement',[
         'sectiontitle'=>$sectionTitle,
-        'roles'=>$roles,
+        'datas'=>$roles,
       ]);
   }
 }

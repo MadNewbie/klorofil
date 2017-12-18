@@ -18,7 +18,7 @@
     </div>
   </div>
 </section>
-<section id="middle-content" class="mbr-section mbr-section__container article" style="padding-top: 83px; font-family: courier; background-color: rgba(255, 255, 255, 1); padding-bottom: 0px;">
+<section id="middle-content" class="mbr-section mbr-section-full mbr-section__container article" style="padding-top: 83px; font-family: courier; background-color: rgba(255, 255, 255, 1); padding-bottom: 0px;">
   <div class="container">
     <div class="x_panel">
       <div class="x_content">
@@ -29,7 +29,7 @@
     </div>
   </div>
 </section>
-<section id="bottom-content" class="mbr-section mbr-section__container article" style="padding-top: 83px; font-family: courier; background-color: rgba(255, 255, 255, 1); padding-bottom: 0px;">
+<section id="bottom-content" class="mbr-section mbr-section__container article" style="padding-top: 83px; font-family: courier; background-color: rgba(101, 204, 204, 1); padding-bottom: 0px;">
   <div class="container">
     <div class="x_panel">
       <div class="x_content">
@@ -40,7 +40,7 @@
     </div>
   </div>
 </section>
-<section id="footer-helper" style="min-height: 20vh; text-align: center">
+<section id="footer-helper" style="min-height: 5vh; text-align: center">
 
 </section>
 @endsection

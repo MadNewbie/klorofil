@@ -32,17 +32,17 @@ Moh. Ardiansyah
             </div>
         </div>
         <div class="x_content">
-            @if(count($datas)===0)
+            {{-- @if(count($datas)===0) --}}
             <h4 class="text-center">Tidak ada data cabang</h4>
-            @else
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12 dataTables_filter">
+            {{--  @else --}}
+            <div class="row clearfix">
+                <div class="dataTables_filter pull-right">
                     <input type="search" placeholder="Cari"/>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <table class="table table-striped table-bordered">
+                    <table class="table table-striped">
                         <thead>
                             <tr class="row">
                                 <th class="col-md-1 col-sm-1 col-xs-1">No</th>
@@ -81,7 +81,7 @@ Moh. Ardiansyah
                     </div>
                 </div>
                 @endif
-            @endif
+          {{-- @endif --}}
         </div>
     </div>
 </div>
