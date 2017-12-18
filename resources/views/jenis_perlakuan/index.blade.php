@@ -45,7 +45,7 @@ Moh. Ardiansyah
                             <tr class="row">
                                 <th class="col-md-1 col-sm-1 col-xs-1">No</th>
                                 <th class="col-md-10 col-sm-10 col-xs-10">Jenis Perlakuan</th>
-                                <th class="col-md-1 col-sm-1 col-xs-1">Operasi</th>
+                                <th class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">Operasi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -55,7 +55,7 @@ Moh. Ardiansyah
                             <tr class="row">
                                 <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
                                 <td class="col-md-10 col-sm-10 col-xs-10">{{$jenis_perlakuan->nama_jenis_perlakuan}}</td>
-                                <td class="col-md-1 col-sm-1 col-xs-1">
+                                <td class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">
                                    <div data-id="{{$jenis_perlakuan->id_jenis_perlakuan}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
                                         <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
                                         <a class="btn btn-danger"><i class="fa fa-trash"></i></a>

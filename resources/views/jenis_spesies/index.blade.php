@@ -27,7 +27,7 @@ Moh. Ardiansyah
                 <div class="form-group">
                   <input id="species_type_name" class="form-control" type="text" placeholder="Jenis Spesies"/>
                 </div>
-                <button id="btnAdd" class="form-control btn btn-primary"  style="margin-bottom: 0px;"><i class="fa fa-plus"></i></button>
+                <button id="btnAdd" class="form-control btn btn-primary" style="margin-bottom: 0px;"><i class="fa fa-plus"></i></button>
               </form>
             </div>
         </div>
@@ -55,7 +55,7 @@ Moh. Ardiansyah
                             <tr class="row">
                                 <th class="col-md-1 col-sm-1 col-xs-1">No</th>
                                 <th class="col-md-10 col-sm-10 col-xs-10">Jenis Spesies</th>
-                                <th class="col-md-1 col-sm-1 col-xs-1">Operasi</th>
+                                <th class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">Operasi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,8 +65,8 @@ Moh. Ardiansyah
                             <tr class="row">
                                 <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
                                 <td class="col-md-10 col-sm-10 col-xs-10">{{$speciesType->species_type_name}}</td>
-                                <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div data-id="{{$speciesType->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified btn-group-sm btn-group-xs">
+                                <td class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">
+                                   <div data-id="{{$speciesType->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
                                         <a class="btn btn-warning btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
                                         <a class="btn btn-danger btn-sm btn-xs"><i class="fa fa-trash"></i></a>
                                     </div>
