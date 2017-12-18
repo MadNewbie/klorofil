@@ -5,10 +5,25 @@
 @endsection
 
 @section('content')
-<section class="mbr-section mbr-section-hero header2 mbr-parallax-background mbr-after-navbar" id="header2-1" style="background-color: rgba(69, 90, 100, 1);">
+<section class="mbr-section mbr-section-hero header2 mbr-parallax-background mbr-after-navbar search-embed" id="header2-1" style="background-color: rgba(69, 90, 100, 1);">
+
 </section>
-<!-- <section id="header-helper" class="mbr-section mbr-section__container article" style="padding-top: 183px; font-family: courier; background-color: rgba(69, 90, 100, 1); padding-bottom: 0px;"> -->
-<!-- </section> -->
+<section id="header-helper" class="mbr-section mbr-section__container article" style="padding-top: 0px; font-family: courier; background-color: rgba(69, 90, 100, 1); padding-bottom: 25px;">
+  <div class="container" style="">
+    <div class="row clearfix">
+      <form class="form form-inline" action="" method="">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="form-group">
+            <input class="form-control" type="search" placeholder="What are you looking for within this section?" style="width: 498px;">
+            <!-- <div class="input-group-addon"> -->
+              <button class="form-control" style="width: 80px;">Search</button>
+            <!-- </div> -->
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 <section id="why-we-do" class="mbr-section mbr-section__container article" id="slider-3" style="padding-top: 83px; font-family: courier; background-color: rgb(244, 244, 244); padding-bottom: 0px;">
     <h3 class="mbr-section-title display-2">WHY WE DO IT?</h3>
         <div id="slider-3" class="mbr-slider carousel slide" data-ride="carousel">
@@ -141,6 +156,7 @@
         </div>
     </div>
 </section>
+
 
 <section style="background: #FFFFFF; min-height: 32vh; text-align: center;">
     <div class="col-md-8 col-xs-12 display-4">

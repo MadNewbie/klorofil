@@ -24,17 +24,20 @@ Moh. Ardiansyah
           </div>
         </div>
         <div class="x_content">
+          <div class="x_content">
+            <form class="form form-inline">
             @if(count($datas)===0)
             <h4 class="text-center">Tidak ada data spesies</h4>
             @else
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12 dataTables_filter">
-                    <input type="search" placeholder="Cari"/>
+            <div class="row clearfix">
+                <div class="dataTables_filter pull-right">
+                    <input class="form-control" type="search" placeholder="Cari"/>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <table class="table table-striped table-bordered">
+            <br />
+            <div class="row clearfix">
+                <div class="table-responsive">
+                    <table class="table table-striped">
                         <thead>
                             <tr class="row">
                                 <th class="col-md-1 col-sm-1 col-xs-1">No</th>
@@ -82,6 +85,8 @@ Moh. Ardiansyah
                 </div>
                 @endif
             @endif
+          </form>
+          </div>
         </div>
     </div>
 </div>
@@ -95,24 +100,56 @@ Moh. Ardiansyah
                 </button>
             </div>
             <div class="modal-body">
-                <div class="col-md-4">Jenis Spesies</div><select id="drp_species_type"class="col-md-8" onclick="injectDataMaster(this)"/></select><div class="clearfix"></div>
-                <div class="col-md-4">ID Spesies</div><input id="species_id" class="col-md-8" disabled="true"/><div class="clearfix" ></div>
-                <div class="col-md-4">Nama Ilmiah</div><input id="scientific_name" class="col-md-8" disabled="true"/><div class="clearfix"></div>
-                <div class="col-md-4">Masa Jenis</div><input id="density" class="col-md-8" disabled="true"/><div class="clearfix"></div>
-                <div class="col-md-4">Umur Maksimal</div><input id="max_age" class="col-md-8" disabled="true"/><div class="clearfix"></div>
-                <div class="col-md-4">Jenis Daun</div><select id="drp_leaf_type"class="col-md-8" disabled="true"/></select><div class="clearfix"></div>
-                <div class="col-md-4">Jenis Cabang</div><select id="drp_branch_type"class="col-md-8" disabled="true"/></select><div class="clearfix"></div>
-                <div class="col-md-4">Jenis Batang</div><select id="drp_trunk_type"class="col-md-8" disabled="true"/></select><div class="clearfix"></div>
-                <div class="col-md-4">Jenis Akar</div><select id="drp_root_type"class="col-md-8" disabled="true"/></select><div class="clearfix"></div>
-                <div class="col-md-4">Fungsi Spesies</div><select id="drp_function_species_type"class="col-md-8" disabled="true"/></select><div class="clearfix"></div>
-                <div class="col-md-4">Warna Bunga</div><input id="flower_color" class="col-md-8" disabled="true"/><div class="clearfix"></div>
-                <div class="col-md-4">Bentuk Kelopak Bunga</div><input id="flower_crown_shape" class="col-md-8" disabled="true"/><div class="clearfix"></div>
-                <div class="col-md-4">Jumlah Kelopak Bunga</div><input id="flower_crown_number" class="col-md-8" disabled="true"/><div class="clearfix"></div>
-                <div class="col-md-4">Periode Berbunga</div><input id="flower_bloom_periode" class="col-md-8" disabled="true"/><div class="clearfix"></div>
-            </div>
-            <div>
-                <button type="button" class="btn btn-primary" id="btnSave">Simpan</button>
-            </div>
+              <form class="form form-horizontal">
+              <div class="form-group">
+                <div class="col-md-4"><label class="control-label" for="drp_species_type">Jenis Spesies</label></div>
+                <div class="col-md-8"><select id="drp_species_type" class="form-control" onclick="injectDataMaster(this)"/></select></div>
+                <div class="clearfix"><br /></div>
+                <div class="col-md-4"><label class="control-label" for="species_id">ID Spesies</label></div>
+                <div class="col-md-8"><input id="species_id" class="form-control" disabled="true"/></div>
+                <div class="clearfix"><br /></div>
+                <div class="col-md-4"><label class="control-label" for="scientific_name">Nama Ilmiah</label></div>
+                <div class="col-md-8"><input id="scientific_name" class="form-control" disabled="true"/>
+                </div><div class="clearfix"><br /></div>
+                <div class="col-md-4"><label class="control-label" for="density">Masa Jenis</label>
+                </div><div class="col-md-8"><input id="density" class="form-control" disabled="true" />
+                </div><div class="clearfix"><br /></div>
+                <div class="col-md-4"><label class="control-label" for="max_age">Umur Maksimal</label>
+                </div><div class="col-md-8"><input id="max_age" class="form-control" disabled="true" />
+                </div><div class="clearfix"><br /></div>
+                <div class="col-md-4"><label class="control-label" for="drp_leaf_type">Jenis Daun</label></div>
+                <div class="col-md-8"><select id="drp_leaf_type"class="form-control" disabled="true"></select></div>
+                <div class="clearfix"><br /></div>
+                <div class="col-md-4"><label class="control-label" for="drp_branch_type">Jenis Cabang</label></div>
+                <div class="col-md-8"><select id="drp_branch_type"class="form-control" disabled="true"></select></div>
+                <div class="clearfix"><br /></div>
+                <div class="col-md-4"><label class="control-label" for="drp_trunk_type">Jenis Batang</label></div>
+                <div class="col-md-8"><select id="drp_trunk_type"class="form-control" disabled="true"></select></div>
+                <div class="clearfix"></div>
+                <div class="col-md-4"><label class="control-label" for="drp_root_type">Jenis Akar</label></div>
+                <div class="col-md-8"><select id="drp_root_type"class="form-control" disabled="true"></select></div>
+                <div class="clearfix"></div>
+                <div class="col-md-4"><label class="control-label" for="drp_function_species_type">Fungsi Spesies</label></div>
+                <div class="col-md-8"><select id="drp_function_species_type"class="form-control" disabled="true"></select></div>
+                <div class="clearfix"><br /></div>
+                <div class="col-md-4"><label class="control-label" for="flower_color">Warna Bunga</label></div>
+                <div class="col-md-8"><input id="flower_color" class="form-control" disabled="true"></input></div>
+                <div class="clearfix"><br /></div>
+                <div class="col-md-4"><label class="control-label" for="flower_crown_shape">Bentuk Kelopak Bunga</label></div>
+                <div class="col-md-8"><input id="flower_crown_shape" class="form-control" disabled="true"></input></div>
+                <div class="clearfix"><br /></div>
+                <div class="col-md-4"><label class="control-label" for="flower_crown_number">Jumlah Kelopak Bunga</label></div>
+                <div class="col-md-8"><input id="flower_crown_number" class="form-control" disabled="true" /></div>
+                <div class="clearfix"><br /></div>
+                <div class="col-md-4"><label class="control-label" for="flower_bloom_periode">Periode Berbunga</label></div>
+                <div class="col-md-8"><input id="flower_bloom_periode" class="form-control" disabled="true" /></div>
+                <div class="clearfix"><br /></div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="btnSave">Simpan</button>
+          </div>
         </div>
     </div>
 </div>

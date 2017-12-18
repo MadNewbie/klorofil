@@ -648,21 +648,29 @@ Route::group(['middleware'=>['web']],function(){
           // Menu Pengaturan Pengguna
           //========================
           // Submenu Pendaftaran Pengguna
-           Route::get('/pengguna/',[
+           Route::get('/users/',[
               'uses'=>'UsersManagementController@getIndex',
               'as'=>'usersmanagement.index'
            ]);
 
           // Submenu Peran pengguna
-          Route::get('/peranpengguna/',[
+          Route::get('/roles/',[
             'uses'=>'RolesManagementController@getIndex',
             'as'=>'rolesmanagement.index'
           ]);
 
           // Submenu Perizinan Pengguna
-          Route::get('/perizinanpengguna/',[
-            'uses'=>'PermissionsManagementController@getIndex',
-            'as'=>'permissionsmanagement.index'
+          // Route::get('/perizinanpengguna/',[
+          //   'uses'=>'PermissionsManagementController@index',
+          //   'as'=>'permissionsmanagement.index'
+          // ]);
+
+          Route::resource('/permissions/',
+          'PermissionsManagementController',[
+            'names'=>[
+              'index'=>'permissionsmanagement.index',
+              // 'create'=>'permissionsmanagement.create',
+            ]
           ]);
 
        });

@@ -25,13 +25,13 @@ Moh. Ardiansyah
             <div class="x_content" style="display: none">
               <form class="form form-horizontal clearfix">
                 <div class="form-group">
-                  <input id="nama_jenis_izin" class="form-control col-xs-12 col-sm-6 col-md-4" type="text" placeholder="Jenis Perizinan"/>
+                  <input id="name" class="form-control col-xs-12 col-sm-6 col-md-4" type="text" placeholder="Jenis Perizinan"/>
                 <!-- </div>
                 <div class="form-group"> -->
-                  <input id="nama_layar_jenis_izin" class="form-control col-xs-12 col-sm-6 col-md-8" type="text" placeholder="Nama Layar Perizinan"/>
+                  <input id="display_name" class="form-control col-xs-12 col-sm-6 col-md-8" type="text" placeholder="Nama Layar Perizinan"/>
                 <!-- </div>
                 <div class="form-group"> -->
-                    <input id="deskripsi_jenis_izin" class="form-control col-xs-12 col-sm-12 col-md-12" type="text" placeholder="Deskripsi Perizinan"/>
+                    <input id="description" class="form-control col-xs-12 col-sm-12 col-md-12" type="text" placeholder="Deskripsi Perizinan"/>
                 </div>
                 <button id="btnAdd" class="btn btn-primary"  style="margin-bottom: 0px;"><i class="fa fa-plus"></i></button>
               </form>
@@ -40,13 +40,13 @@ Moh. Ardiansyah
         <div class="x_content">
           <div class="x_content">
             <form class="form form-inline clearfix">
-              {{-- @if(count($datas)===0) --}}
+              @if(count($datas)===0)
               <!-- <div class="form-group">
                 <div class="row clearfix"> -->
                   <h4 class="text-center">Belum ada data Perizinan Pengguna</h4>
                 <!-- </div>
               </div> -->
-              {{-- @else --}}
+              @else
               <div class="form-group">
                 <div class="row clearfix">
                   <div class="dataTables_filter pull-right">
@@ -66,7 +66,7 @@ Moh. Ardiansyah
                                 <th class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">Operasi</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <!-- <tbody>
                             <tr class="row">
                                 <td class="col-md-1 col-sm-1 col-xs-1">1</td>
                                 <td class="col-md-2 col-sm-2 col-xs-2">Rachmad Yanuarianto</td>
@@ -79,7 +79,7 @@ Moh. Ardiansyah
                                     </div>
                                 </td>
                             </tr>
-                        </tbody>
+                        </tbody> -->
                         <tbody>
                           <?php $i=0?>
                           @foreach($datas as $permission)
@@ -101,7 +101,7 @@ Moh. Ardiansyah
                     </table>
                   </div>
                 </div>
-              {{-- @endif --}}
+              @endif
               </div>
             </form>
           </div>
