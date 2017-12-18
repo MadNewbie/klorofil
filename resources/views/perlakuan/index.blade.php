@@ -54,8 +54,8 @@ Moh. Ardiansyah
                             <tr class="row">
                                 <th class="col-md-1 col-sm-1 col-xs-1">No</th>
                                 <th class="col-md-5 col-sm-5 col-xs-5">Nama Perlakuan</th>
-                                <th class="col-md-5 col-sm-5 col-xs-5">Jenis Perlakuan</th>
-                                <th class="col-md-1 col-sm-1 col-xs-1">Operasi</th>
+                                <th class="col-md-5 col-sm-5 col-xs-5">Jenis Spesies</th>
+                                <th class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">Operasi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -66,8 +66,8 @@ Moh. Ardiansyah
                                 <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
                                 <td class="col-md-5 col-sm-5 col-xs-5">{{$perlakuan->name}}</td>
                                 <td class="col-md-5 col-sm-5 col-xs-5" data-id="{{$perlakuan->species_type_id}}">{{$perlakuan->speciesType->species_type_name}}</td>
-                                <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div data-id="{{$perlakuan->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified btn-group-sm btn-group-xs">
+                                <td class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">
+                                   <div data-id="{{$perlakuan->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
                                         <a class="btn btn-warning btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
                                         <a class="btn btn-danger btn-sm btn-xs"><i class="fa fa-trash"></i></a>
                                     </div>

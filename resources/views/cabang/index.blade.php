@@ -42,14 +42,15 @@ Moh. Ardiansyah
                     <input class="form-control" type="search" placeholder="Cari"/>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-12">
+            <br />
+            <div class="row clearfix">
+                <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                             <tr class="row">
                                 <th class="col-md-1 col-sm-1 col-xs-1">No</th>
                                 <th class="col-md-10 col-sm-10 col-xs-10">Jenis Cabang</th>
-                                <th class="col-md-1 col-sm-1 col-xs-1">Operasi</th>
+                                <th class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">Operasi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -59,8 +60,8 @@ Moh. Ardiansyah
                             <tr class="row">
                                 <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
                                 <td class="col-md-10 col-sm-10 col-xs-10">{{$branchType->branch_type_name}}</td>
-                                <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div data-id="{{$branchType->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified btn-group-sm btn-group-xs">
+                                <td class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">
+                                   <div data-id="{{$branchType->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
                                         <a class="btn btn-warning btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
                                         <a class="btn btn-danger btn-sm btn-xs"><i class="fa fa-trash"></i></a>
                                     </div>

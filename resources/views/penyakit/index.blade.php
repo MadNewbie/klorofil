@@ -36,13 +36,14 @@ Moh. Ardiansyah
             @if(count($datas)===0)
             <h4 class="text-center">Tidak ada data penyakit</h4>
             @else
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12 dataTables_filter">
-                    <input type="search" placeholder="Cari"/>
+            <div class="row clearfix">
+                <div class="dataTables_filter pull-right">
+                    <input class="form-control" type="search" placeholder="Cari"/>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-12">
+            <br />
+            <div class="row clearfix">
+                <div class="table-responsive">
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr class="row">
@@ -50,8 +51,8 @@ Moh. Ardiansyah
                                 <th class="col-md-3 col-sm-3 col-xs-3">Nama Penyakit</th>
                                 <th class="col-md-3 col-sm-3 col-xs-3">Jenis Penyakit</th>
                                 <th class="col-md-2 col-sm-2 col-xs-2">Jenis Spesies</th>
-                                <th class="col-md-2 col-sm-2 col-xs-2">Bobot</th>
-                                <th class="col-md-1 col-sm-1 col-xs-1">Operasi</th>
+                                <th class="col-md-2 col-sm-2 col-xs-2" style="text-align: center;">Bobot</th>
+                                <th class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">Operasi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -63,8 +64,8 @@ Moh. Ardiansyah
                                 <td class="col-md-3 col-sm-3 col-xs-3">{{$penyakit->name}}</td>
                                 <td class="col-md-3 col-sm-3 col-xs-3" data-id="{{$penyakit->disease_type_id}}">{{$penyakit->diseaseType->name}}</td>
                                 <td class="col-md-2 col-sm-2 col-xs-2">{{$penyakit->diseaseType->speciesType->species_type_name}}</td>
-                                <td class="col-md-2 col-sm-2 col-xs-2">{{$penyakit->weight}}</td>
-                                <td class="col-md-1 col-sm-1 col-xs-1">
+                                <td class="col-md-2 col-sm-2 col-xs-2" style="text-align: center;">{{$penyakit->weight}}</td>
+                                <td class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">
                                    <div data-id="{{$penyakit->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
                                         <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
                                         <a class="btn btn-danger"><i class="fa fa-trash"></i></a>

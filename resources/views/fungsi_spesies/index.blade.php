@@ -54,7 +54,7 @@ Moh. Ardiansyah
                                 <th class="col-md-1 col-sm-1 col-xs-1">No</th>
                                 <th class="col-md-5 col-sm-5 col-xs-5">Fungsi Jenis Spesies</th>
                                 <th class="col-md-5 col-sm-5 col-xs-5">Jenis Spesies</th>
-                                <th class="col-md-1 col-sm-1 col-xs-1">Operasi</th>
+                                <th class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">Operasi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,8 +65,8 @@ Moh. Ardiansyah
                                 <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
                                 <td class="col-md-5 col-sm-5 col-xs-5">{{$functionTypeSpecies->function_type_species}}</td>
                                 <td class="col-md-5 col-sm-5 col-xs-5" data-id='{{$functionTypeSpecies->species_type_id}}'>{{$functionTypeSpecies->speciesType->species_type_name}}</td>
-                                <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div data-id="{{$functionTypeSpecies->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified btn-group-sm btn-group-xs">
+                                <td class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">
+                                   <div data-id="{{$functionTypeSpecies->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
                                         <a class="btn btn-warning btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
                                         <a class="btn btn-danger btn-sm btn-xs"><i class="fa fa-trash"></i></a>
                                     </div>

@@ -49,7 +49,7 @@ Moh. Ardiansyah
           {{-- @if(count($datas)===0) --}}
             <h4 class="text-center">Belum ada data mengenai {{ $sectiontitle }}</h4>
           {{-- @else --}}
-            <div class="form-group">
+            <!-- <div class="form-group"> -->
               <div class="row clearfix">
                 <div class="dataTables_filter pull-right">
                   <input class="form-control" type="search" placeholder="Cari"/>
@@ -63,20 +63,31 @@ Moh. Ardiansyah
                       <tr class="row">
                         <th class="col-md-1 col-sm-1 col-xs-1">No</th>
                         <th class="col-md-8 col-sm-8 col-xs-8">Nama Negara</th>
-                        <th class="col-md-2 col-sm-2 col-xs-2">Detail Wilayah</th>
-                        <th class="col-md-1 col-sm-1 col-xs-1">Operasi</th>
+                        <th class="col-md-2 col-sm-2 col-xs-2" style="text-align: center;">Detail Wilayah</th>
+                        <th class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">Operasi</th>
                       </tr>
                     </thead>
                     <tbody>
+                      <tr class="row">
+                        <td class="col-md-1 col-sm-1 col-xs-1">1</td>
+                        <td class="col-md-8 col-sm-8 col-xs-8">Zimbabwe</td>
+                        <td class="col-md-2 col-sm-2 col-xs-2" style="text-align: center;"><i class="fa fa-times" style="color: red"></i></td>
+                        <td class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">
+                            <div data-id="1" role="group" class="btnGroupOperation btn-group btn-group-justified">
+                                <a class="btn btn-warning btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
+                                <a class="btn btn-danger btn-sm btn-xs"><i class="fa fa-trash"></i></a>
+                            </div>
+                      </td>
+                    </tr>
                       <?php $i=0?>
                       @foreach($datas as $negara)
                       <?php $i++?>
                       <tr class="row">
                         <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
-                        <td class="col-md-10 col-sm-10 col-xs-10">{{$negara->name}}</td>
-                        <td class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;"><i class="fa fa-times" style="color: red"></i></td>
-                        <td class="col-md-1 col-sm-1 col-xs-1">
-                            <div data-id="{{$negara->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified btn-group-sm btn-group-xs">
+                        <td class="col-md-8 col-sm-8 col-xs-8">{{$negara->name}}</td>
+                        <td class="col-md-2 col-sm-2 col-xs-2" style="text-align: center;"><i class="fa fa-times" style="color: red"></i></td>
+                        <td class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">
+                            <div data-id="{{$negara->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
                                 <a class="btn btn-warning btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
                                 <a class="btn btn-danger btn-sm btn-xs"><i class="fa fa-trash"></i></a>
                             </div>
@@ -88,7 +99,7 @@ Moh. Ardiansyah
               </div>
             </div>
           {{-- @endif --}}
-          </div>
+          <!-- </div> -->
         </form>
       </div>
     </div>

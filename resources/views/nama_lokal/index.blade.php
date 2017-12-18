@@ -38,7 +38,7 @@ Moh. Ardiansyah
         </div>
         <div class="x_content">
             @if(count($nama_lokals)===0)
-            <h4 class="text-center">Tidak ada nama lokal </h4>
+            <h4 class="text-center">Tidak ada nama lokal</h4>
             @else
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12 dataTables_filter">

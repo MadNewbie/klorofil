@@ -72,8 +72,8 @@ Moh. Ardiansyah
                                 <th class="col-md-1 col-sm-1 col-xs-1">No</th>
                                 <th class="col-md-5 col-sm-5 col-xs-5">Nama Kabupaten / Kota</th>
                                 <th class="col-md-3 col-sm-3 col-xs-3">Provinsi</th>
-                                <th class="col-md-2 col-sm-2 col-xs-3">Detail Wilayah</th>
-                                <th class="col-md-1 col-sm-1 col-xs-1">Operasi</th>
+                                <th class="col-md-2 col-sm-2 col-xs-2" style="text-align: center;">Detail Wilayah</th>
+                                <th class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">Operasi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -82,8 +82,8 @@ Moh. Ardiansyah
                                 <td class="col-md-5 col-sm-5 col-xs-5">Kota Malang</td>
                                 <td class="col-md-3 col-sm-3 col-xs-3">Jawa Timur</td>
                                 <td class="col-md-2 col-sm-2 col-xs-2" style="text-align: center;"><i class="fa fa-check" style="color: green"></i></td>
-                                <td class="col-md-1 col-sm-1 col-xs-1">
-                                   <div role="group" class="btn-group btn-group-justified btn-group-sm btn-group-xs">
+                                <td class="col-md-1 col-sm-1 col-xs-1  style="text-align: center;"">
+                                   <div role="group" class="btnGroupOperation btn-group btn-group-justified btn-group-sm btn-group-xs">
                                         <a class="btn btn-warning btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
                                         <a class="btn btn-danger btn-sm btn-xs"><i class="fa fa-trash"></i></a>
                                     </div>
@@ -92,10 +92,10 @@ Moh. Ardiansyah
                             <tr class="row">
                                 <td class="col-md-1 col-sm-1 col-xs-1">2</td>
                                 <td class="col-md-5 col-sm-5 col-xs-5">Kabupaten Malang</td>
-                                <td class="col-md-4 col-sm-4 col-xs-4">Jawa Timur</td>
-                                <td class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;"><i class="fa fa-times" style="color: red"></i></td>
-                                <td class="col-md-1 col-sm-1 col-xs-1">
-                                    <div role="group" class="btn-group btn-group-justified btn-group-sm btn-group-xs">
+                                <td class="col-md-3 col-sm-3 col-xs-3">Jawa Timur</td>
+                                <td class="col-md-2 col-sm-2 col-xs-2" style="text-align: center;"><i class="fa fa-times" style="color: red"></i></td>
+                                <td class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">
+                                    <div role="group" class="btnGroupOperation btn-group btn-group-justified">
                                         <a class="btn btn-warning btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
                                         <a class="btn btn-danger btn-sm btn-xs"><i class="fa fa-trash"></i></a>
                                     </div>

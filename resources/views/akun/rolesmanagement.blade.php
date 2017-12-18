@@ -68,7 +68,7 @@ Moh. Ardiansyah
                             <th class="col-md-1 col-sm-1 col-xs-1">No</th>
                             <th class="col-md-3 col-sm-3 col-xs-3">Nama Peranan</th>
                             <th class="col-md-7 col-sm-7 col-xs-7">Perizinan</th>
-                            <th class="col-md-1 col-sm-1 col-xs-1">Operasi</th>
+                            <th class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">Operasi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -79,7 +79,7 @@ Moh. Ardiansyah
                             <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
                             <td class="col-md-3 col-sm-3 col-xs-3">{{$jenis_user->nama_jenis_akun}}</td>
                             <td class="col-md-7 col-sm-7 col-xs-7" data-id="{{$jenis_user->id_jenis_wilayah_user}}">{{$jenis_user->jenisWilayahUser->nama_jenis_wilayah_user}}</td>
-                            <td class="col-md-1 col-sm-1 col-xs-1">
+                            <td class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">
                                <div role="group" data-id="{{$jenis_user->id_jenis_user}}" class="btnGroupOperation btn-group btn-group-justified">
                                     <a class="btn btn-success btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
                                     <a class="btn btn-danger btn-sm btn-xs"><i class="fa fa-trash"></i></a>
@@ -93,8 +93,8 @@ Moh. Ardiansyah
                             <td class="col-md-1 col-sm-1 col-xs-1">1</td>
                             <td class="col-md-3 col-sm-3 col-xs-3">Super Administrator</td>
                             <td class="col-md-7 col-sm-7 col-xs-7" data-id="1">Post-All, Update-All, Delete-All</td>
-                            <td class="col-md-1 col-sm-1 col-xs-1">
-                               <div role="group" data-id="1" class="btnGroupOperation btn-group btn-group-justified btn-group-sm btn-group-xs">
+                            <td class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">
+                               <div role="group" data-id="1" class="btnGroupOperation btn-group btn-group-justified">
                                     <a class="btn btn-warning btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
                                     <a class="btn btn-danger btn-sm btn-xs"><i class="fa fa-trash"></i></a>
                                 </div>

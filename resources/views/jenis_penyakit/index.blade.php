@@ -56,8 +56,8 @@ Moh. Ardiansyah
                                 <th class="col-md-1 col-sm-1 col-xs-1">No</th>
                                 <th class="col-md-4 col-sm-4 col-xs-4">Jenis Penyakit</th>
                                 <th class="col-md-4 col-sm-4 col-xs-4">Jenis Spesies</th>
-                                <th class="col-md-2 col-sm-2 col-xs-2">Bobot</th>
-                                <th class="col-md-1 col-sm-1 col-xs-1">Operasi</th>
+                                <th class="col-md-2 col-sm-2 col-xs-2" style="text-align: center;">Bobot</th>
+                                <th class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">Operasi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -68,8 +68,8 @@ Moh. Ardiansyah
                                 <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
                                 <td class="col-md-4 col-sm-4 col-xs-4">{{$jenis_penyakit->name}}</td>
                                 <td class="col-md-4 col-sm-4 col-xs-4" data-id="{{$jenis_penyakit->species_type_id}}">{{$jenis_penyakit->speciesType->species_type_name}}</td>
-                                <td class="col-md-2 col-sm-2 col-xs-2">{{$jenis_penyakit->weight}}</td>
-                                <td class="col-md-1 col-sm-1 col-xs-1">
+                                <td class="col-md-2 col-sm-2 col-xs-2" style="text-align: center;">{{$jenis_penyakit->weight}}</td>
+                                <td class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">
                                    <div data-id="{{$jenis_penyakit->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified btn-group-sm btn-group-xs">
                                         <a class="btn btn-warning btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
                                         <a class="btn btn-danger btn-sm btn-xs"><i class="fa fa-trash"></i></a>
