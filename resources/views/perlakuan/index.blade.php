@@ -28,7 +28,7 @@ Moh. Ardiansyah
                   </select>
                 <!-- </div>
                 <div class="form-group"> -->
-                  <input id="spesies_perlakuan" class="form-control" type="text" placeholder="Perlakuan"/>
+                  <input id="name" class="form-control" type="text" placeholder="Perlakuan"/>
                 </div>
                 <button id="btnAdd" class="form-control btn btn-primary"  style="margin-bottom: 0px;"><i class="fa fa-plus"></i>Tambah</button>
               </form>
@@ -93,5 +93,6 @@ Moh. Ardiansyah
 @endsection
 
 @section('scripts')
+<script src="{{URL::to('back-end/js/helper_backend.js')}}"></script>
 <script src="{{URL::to('back-end/js/treatment/treatment.js')}}"></script>
 @endsection

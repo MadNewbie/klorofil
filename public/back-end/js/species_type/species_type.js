@@ -15,26 +15,7 @@ var docReady = setInterval(function(){
 function startAdd(event){
     var species_type_name = document.getElementById('species_type_name').value;
     var datas = {'species_type_name':species_type_name};
-    ajax("POST","/admin/species_type/create",datas,newDataCreated,[event]);
-}
-
-function newDataCreated(params,success,responseObj){
-      var event = params[0];
-    if(success){
-        if(responseObj.kode == 200){
-            showNotif('Sukses','success',responseObj.message);
-            location.reload();
-        }else{
-            console.log(responseObj.message);
-            var error = '';
-            for (errors in responseObj.message){
-                for(i=0;i<responseObj.message[errors].length;i++){
-                    error += responseObj.message[errors][i]+'\n';
-                }
-            }
-            showNotif('Error','error',error);
-        }
-    }
+    postData(datas,"/admin/species_type/create",event);
 }
 
 function startEdit(event){
@@ -67,26 +48,7 @@ function saveEdit(event){
     var id = event.target.parentElement.dataset['id'];
     var species_type_name = column[1].firstChild.value;
     var datas = {'id':id,'species_type_name':species_type_name};
-    ajax("POST","/admin/species_type/update",datas,dataUpdated,[event]);
-}
-
-function dataUpdated(params,success,responseObj){
-    var event = params[0];
-    if(success){
-        if(responseObj.kode == 200){
-            showNotif('Sukses','success',responseObj.message);
-            location.reload();
-        }else{
-            console.log(responseObj.message);
-            var error = '';
-            for (errors in responseObj.message){
-                for(i=0;i<responseObj.message[errors].length;i++){
-                    error += responseObj.message[errors][i]+'\n';
-                }
-            }
-            showNotif('Error','error',error);
-        }
-    }
+    postData(datas,"/admin/species_type/update",[event]);
 }
 
 function startDelete(event){
@@ -97,22 +59,5 @@ function deleteData(event){
     event.preventDefault();
     var id = event.target.parentElement.dataset['id'];
     event.target.removeEventListener('click',startDelete);
-    ajax("GET","/admin/species_type/"+id+"/delete/",null,endDeleteData,[event.target.parentElement]);
-}
-
-function endDeleteData(params,success,responseObj){
-    var event = params[0];
-    if(success){
-         if(responseObj.kode == 200){
-            showNotif('Sukses','success',responseObj.message);
-            location.reload();
-        }else{
-            console.log(responseObj.message.species_type_name);
-            var error = '';
-            for(i=0;i<responseObj.message.species_type_name.length;i++){
-                error+=responseObj.message.species_type_name[i];
-            }
-            showNotif('Error','error',error);
-        }
-    }
+    getData(null,"/admin/species_type/"+id+"/delete/",[event.target.parentElement]);
 }

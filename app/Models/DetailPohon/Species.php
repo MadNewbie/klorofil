@@ -9,38 +9,38 @@ class Species extends Model
     protected $table = 'species';
     
     function plantGenerals(){
-        return $this->hasMany('App\PlantGenral');
+        return $this->hasMany('App\Models\Tanaman\PlantGenral');
     }
     
     function commonNames(){
-        return $this->hasMany('App\CommonName');
+        return $this->hasMany('App\Models\DetailPohon\CommonName');
     }
     
     function leafType(){
-        return $this->belongsTo('App\LeafType');
+        return $this->belongsTo('App\Models\DetailPohon\LeafType');
     }
     
     function branchType(){
-        return $this->belongsTo('App\BranchType');
+        return $this->belongsTo('App\Models\DetailPohon\BranchType');
     }
     
     function trunkType(){
-        return $this->belongsTo('App\TrunkType');
+        return $this->belongsTo('App\Models\DetailPohon\TrunkType');
     }
     
     function rootType(){
-        return $this->belongsTo('App\RootType');
+        return $this->belongsTo('App\Models\DetailPohon\RootType');
     }
     
     function habitatSpecies(){
-        return $this->hasMany('App\HabitatSpecies');
+        return $this->hasMany('App\Models\DetailPohon\HabitatSpecies');
     }
     
     function functionTypeSpecies(){
-        return $this->belongsTo('App\FunctionTypeSpecies');
+        return $this->belongsTo('App\Model\DetailPohon\FunctionTypeSpecies');
     }
     
     function speciesType(){
-        return $this->belongsTo('App\SpeciesType');
+        return $this->belongsTo('App\Model\DetailPohon\SpeciesType');
     }
 }
