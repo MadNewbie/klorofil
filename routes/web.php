@@ -648,22 +648,49 @@ Route::group(['middleware'=>['web']],function(){
           // Menu Pengaturan Pengguna
           //========================
           // Submenu Pendaftaran Pengguna
-           Route::get('/users/',[
-              'uses'=>'UsersManagementController@getIndex',
-              'as'=>'usersmanagement.index'
+          //********Obsolete********
+           // Route::get('/users/',[
+           //    'uses'=>'UsersManagementController@getIndex',
+           //    'as'=>'usersmanagement.index'
+           // ]);
+           //********Obsolete********
+           Route::get('/users/',
+           'UsersManagementController',[
+             'names'=>[
+               'index'=>'usersmanagement.index',
+               'create'=>'usersmanagement.create',
+               'update'=>'usersmanagement.update',
+               'delete'=>'usersmanagement.delete',
+               'retrieve'=>'usersmanagement.retrieve',
+             ]
            ]);
 
           // Submenu Peran pengguna
-          Route::get('/roles/',[
-            'uses'=>'RolesManagementController@getIndex',
-            'as'=>'rolesmanagement.index'
+          //********Obsolete********
+          // Route::get('/roles/',[
+          //   'uses'=>'RolesManagementController@getIndex',
+          //   'as'=>'rolesmanagement.index'
+          // ]);
+          //********Obsolete********
+
+          Route::get('/roles/',
+          'RolesManagementController',[
+            'names'=>[
+              'index'=>'rolesmanagement.index',
+              'create'=>'rolesmanagement.create',
+              'update'=>'rolesmanagement.update',
+              'delete'=>'rolesmanagement.delete',
+              'retrieve'=>'rolesmanagement.retrieve',
+            ]
           ]);
 
           // Submenu Perizinan Pengguna
+          //********Obsolete********
           // Route::get('/perizinanpengguna/',[
           //   'uses'=>'PermissionsManagementController@index',
           //   'as'=>'permissionsmanagement.index'
           // ]);
+          //********Obsolete********
 
           Route::resource('/permissions/',
           'PermissionsManagementController',[
@@ -671,7 +698,7 @@ Route::group(['middleware'=>['web']],function(){
               'index'=>'permissionsmanagement.index',
               'create'=>'permissionsmanagement.create',
               'update'=>'permissionsmanagement.update',
-              'destroy'=>'permissionsmanagement.delete',
+              'delete'=>'permissionsmanagement.delete',
               'retrieve'=>'permissionsmanagement.retrieve'
             ]
           ]);

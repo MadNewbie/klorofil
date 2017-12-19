@@ -122,7 +122,7 @@ class PermissionsManagementController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function destroy($id){
+  public function delete($id){
       $permissions=Permission::find($id);
       $permissions->delete();
       return Response::json(['message'=>'Data berhasil dihapus','kode'=>200],200);
