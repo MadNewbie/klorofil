@@ -654,7 +654,7 @@ Route::group(['middleware'=>['web']],function(){
            //    'as'=>'usersmanagement.index'
            // ]);
            //********Obsolete********
-           Route::get('/users/',
+           Route::resource('/users/',
            'UsersManagementController',[
              'names'=>[
                'index'=>'usersmanagement.index',
@@ -673,7 +673,7 @@ Route::group(['middleware'=>['web']],function(){
           // ]);
           //********Obsolete********
 
-          Route::get('/roles/',
+          Route::resource('/roles/',
           'RolesManagementController',[
             'names'=>[
               'index'=>'rolesmanagement.index',
@@ -699,7 +699,7 @@ Route::group(['middleware'=>['web']],function(){
               'create'=>'permissionsmanagement.create',
               'update'=>'permissionsmanagement.update',
               'delete'=>'permissionsmanagement.delete',
-              'retrieve'=>'permissionsmanagement.retrieve'
+              'retrieve'=>'permissionsmanagement.retrieve',
             ]
           ]);
 
