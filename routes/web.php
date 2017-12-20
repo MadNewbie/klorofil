@@ -563,10 +563,10 @@ Route::group(['middleware'=>['web']],function(){
                 'as'=>'roottype.index'
            ]);
 
-           Route::get('/root_type/create',[
-                'uses'=>'RootTypeController@getCreate',
-                'as'=>'roottype.getCreate'
-           ]);
+           // Route::get('/root_type/create',[
+           //      'uses'=>'RootTypeController@getCreate',
+           //      'as'=>'roottype.getCreate'
+           // ]);
 
            Route::post('/root_type/create',[
                 'uses'=>'RootTypeController@postCreate',
@@ -648,21 +648,59 @@ Route::group(['middleware'=>['web']],function(){
           // Menu Pengaturan Pengguna
           //========================
           // Submenu Pendaftaran Pengguna
-           Route::get('/pengguna/',[
-              'uses'=>'UsersManagementController@getIndex',
-              'as'=>'usersmanagement.index'
+          //********Obsolete********
+           // Route::get('/users/',[
+           //    'uses'=>'UsersManagementController@getIndex',
+           //    'as'=>'usersmanagement.index'
+           // ]);
+           //********Obsolete********
+           Route::resource('/users/',
+           'UsersManagementController',[
+             'names'=>[
+               'index'=>'usersmanagement.index',
+               'create'=>'usersmanagement.create',
+               'update'=>'usersmanagement.update',
+               'delete'=>'usersmanagement.delete',
+               'retrieve'=>'usersmanagement.retrieve',
+             ]
            ]);
 
           // Submenu Peran pengguna
-          Route::get('/peranpengguna/',[
-            'uses'=>'RolesManagementController@getIndex',
-            'as'=>'rolesmanagement.index'
+          //********Obsolete********
+          // Route::get('/roles/',[
+          //   'uses'=>'RolesManagementController@getIndex',
+          //   'as'=>'rolesmanagement.index'
+          // ]);
+          //********Obsolete********
+
+          Route::resource('/roles/',
+          'RolesManagementController',[
+            'names'=>[
+              'index'=>'rolesmanagement.index',
+              'create'=>'rolesmanagement.create',
+              'update'=>'rolesmanagement.update',
+              'delete'=>'rolesmanagement.delete',
+              'retrieve'=>'rolesmanagement.retrieve',
+            ]
           ]);
 
           // Submenu Perizinan Pengguna
-          Route::get('/perizinanpengguna/',[
-            'uses'=>'PermissionsManagementController@getIndex',
-            'as'=>'permissionsmanagement.index'
+          //********Obsolete********
+          // Route::get('/perizinanpengguna/',[
+          //   'uses'=>'PermissionsManagementController@index',
+          //   'as'=>'permissionsmanagement.index'
+          // ]);
+          //********Obsolete********
+
+          Route::resource('/permissions/',
+          'PermissionsManagementController',[
+            'names'=>[
+              'index'=>'permissionsmanagement.index',
+              'create'=>'permissionsmanagement.create',
+              'update'=>'permissionsmanagement.update',
+              'delete'=>'permissionsmanagement.delete',
+              'retrieve'=>'permissionsmanagement.retrieve',
+            ]
           ]);
 
        });

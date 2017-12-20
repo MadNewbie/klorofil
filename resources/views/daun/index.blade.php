@@ -32,13 +32,15 @@ Moh. Ardiansyah
             </div>
         </div>
         <div class="x_content">
+          <div class="x_content">
+            <form class="form form-inline">
             @if(count($datas)===0)
             <h4 class="text-center">Tidak ada data jenis daun</h4>
             @else
             <div class="row clearfix">
-                <div class="dataTables_filter pull-right">
-                    <input class="form-control" type="search" placeholder="Cari"/>
-                </div>
+              <div class="dataTables_filter pull-right">
+                <input class="form-control" type="search" placeholder="Cari"/>
+              </div>
             </div>
             <br />
             <div class="row clearfix">
@@ -83,7 +85,9 @@ Moh. Ardiansyah
                 </div>
                 @endif
             @endif
+          </form>
         </div>
+      </div>
     </div>
 </div>
 @endsection

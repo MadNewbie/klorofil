@@ -2,33 +2,23 @@
 
 namespace App\Http\Controllers;
 
-//use App\User;
-use App\Models\User\User;
-//use App\Role;
-// use App\Models\Role;
-//use App\Permission;
-// use App\Models\Permission;
-
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Response;
-use Validator;
 
-class UsersManagementController extends Controller
+class ScientificNameController extends Controller
 {
-    //User management CRUD controller
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
-        $sectionTitle="User(s) Management";
-        $users=User::orderBy('id')->paginate(10);
-        return view('akun.usersmanagement',[
-          'sectiontitle'=>$sectionTitle,
-          'datas'=>$users,
-        ]);
+    public function index()
+    {
+      $sectionTitle="Nama Ilmiah";
+      $scientificNames=ScientificName::orderBy('id')->paginate(10);
+      return view('nama_ilmiah.index',[
+        'sectiontitle'=>$sectionTitle,
+        'datas'=>$scientificNames,
+      ]);
     }
 
     /**
@@ -36,7 +26,7 @@ class UsersManagementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
         //
     }
@@ -81,8 +71,7 @@ class UsersManagementController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function update(Request $request, $id)
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -94,11 +83,6 @@ class UsersManagementController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function delete($id)
-    {
-        //
-    }
-
-    public function retrieve()
     {
         //
     }

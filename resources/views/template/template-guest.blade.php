@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="{{URL::to('homescreen/assets/theme/css/style.css')}}">
         <link rel="stylesheet" href="{{URL::to('homescreen/assets/mobirise/css/mbr-additional.css')}}">
         <link rel="stylesheet" href="{{URL::to('homescreen/assets/custom-style.css')}}">
+        <link rel="stylesheet" href="{{URL::to('front-end/assets/search.css')}}">
     </head>
     <body>
         <div id="menu-0" custom-code="true">

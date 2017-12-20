@@ -11,13 +11,23 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Permission extends EntrustPermission
 {
-    //
-    protected $table="permissions";
-    protected $primaryKey="id_permission";
+  // use ValidatingModelTrait;
+  protected $throwValidationExceptions = true;
 
-    protected $fillable=['name','display_name','description'];
+  // protected $table="permissions";
+  // protected $primaryKey="id_permission";
 
-    function Role(){
-      return $this->belongsTo('App\Models\Role');
-    }
+  // function Role(){
+  //   return $this->belongsTo('App\Models\Role');
+  // }
+
+  protected $fillable = [
+    'name',
+    'display_name',
+    'description',
+  ];
+
+  protected $rules = [
+    'name'      => 'required|unique:permissions',
+  ];
 }

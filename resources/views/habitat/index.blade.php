@@ -37,23 +37,26 @@ Moh. Ardiansyah
         </div>
         </div>
         <div class="x_content">
+          <div class="x_content">
+            <form class="form form-inline">
             @if(count($datas)===0)
             <h4 class="text-center">Tidak ada data habitat</h4>
             @else
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12 dataTables_filter">
-                    <input type="search" placeholder="Cari"/>
+            <div class="row clearfix">
+                <div class="dataTables_filter pull-right">
+                    <input class="form-control" type="search" placeholder="Cari"/>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <table class="table table-striped table-bordered">
+            <br />
+            <div class="row clearfix">
+                <div class="table-responsive">
+                    <table class="table table-striped">
                         <thead>
                             <tr class="row">
                                 <th class="col-md-1 col-sm-1 col-xs-1">No</th>
                                 <th class="col-md-5 col-sm-5 col-xs-5">Nama Hewan</th>
                                 <th class="col-md-5 col-sm-5 col-xs-5">Deskripsi</th>
-                                <th class="col-md-1 col-sm-1 col-xs-1">Operasi</th>
+                                <th class="col-md-1 col-sm-1 col-xs-1"  style="text-align: center;">Operasi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -64,10 +67,10 @@ Moh. Ardiansyah
                                 <td class="col-md-1 col-sm-1 col-xs-1">{{$i}}</td>
                                 <td class="col-md-5 col-sm-5 col-xs-5">{{$habitat->animal_name}}</td>
                                 <td class="col-md-5 col-sm-5 col-xs-5">{{$habitat->description}}</td>
-                                <td class="col-md-1 col-sm-1 col-xs-1">
+                                <td class="col-md-1 col-sm-1 col-xs-1"  style="text-align: center;">
                                    <div data-id="{{$habitat->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
-                                        <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                                        <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                        <a class="btn btn-warning btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
+                                        <a class="btn btn-danger btn-sm btn-xs"><i class="fa fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -77,7 +80,7 @@ Moh. Ardiansyah
                 </div>
             </div>
                 @if($datas->lastPage() > 1)
-                <div class="row">
+                <div class="row clearfix">
                     <div class="col-sm-12 col-xs-12 text-center">
                         @if($datas->currentPage() !== 1)
                             <a href="{{$datas->previousPageUrl()}}"><i class="fa fa-caret-left"></i></a>
@@ -89,7 +92,9 @@ Moh. Ardiansyah
                 </div>
                 @endif
             @endif
+          </form>
         </div>
+      </div>
     </div>
 </div>
 @endsection
@@ -97,4 +102,4 @@ Moh. Ardiansyah
 @section('scripts')
 <script src="{{URL::to('back-end/js/helper_backend.js')}}"></script>
 <script src="{{URL::to('back-end/js/habitat/habitat.js')}}"></script>
-@endsection 
+@endsection

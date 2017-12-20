@@ -38,9 +38,9 @@ Moh. Ardiansyah
                     <input type="search" placeholder="Cari"/>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <table class="table table-striped table-bordered">
+            <div class="row clearfix">
+                <div class="table-responsive">
+                    <table class="table table-striped">
                         <thead>
                             <tr class="row">
                                 <th class="col-md-1 col-sm-1 col-xs-1">No</th>
