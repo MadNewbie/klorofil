@@ -28,10 +28,6 @@ Moh. Ardiansyah
                   </select>
                 <!-- </div>
                 <div class="form-group"> -->
-<<<<<<< HEAD
-=======
-                  <!-- <input id="spesies_perlakuan" class="form-control" type="text" placeholder="Perlakuan"/> -->
->>>>>>> 320187bea1a446933f539e3a7addda654f253397
                   <input id="name" class="form-control" type="text" placeholder="Perlakuan"/>
                 </div>
                 <button id="btnAdd" class="form-control btn btn-primary" style="margin-bottom: 0px;"><i class="fa fa-plus"></i></button>

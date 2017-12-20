@@ -14,7 +14,7 @@ var docReady = setInterval(function(){
 
 function startAdd(event){
     var species_type_name = document.getElementById('species_type_name').value;
-    var datas = {'species_type_name':species_type_name};
+    var datas = {'species_type_name':species_type_name,'token':token};
     postData(datas,"/admin/species_type/create",event);
 }
 

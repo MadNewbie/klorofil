@@ -24,11 +24,12 @@ function ajax(method,url,datas,callback,callbackParams){
     }
     
     http.onreadystatechange = function(){
+        console.log(http.status);
         if(http.readyState == XMLHttpRequest.DONE){
             if(http.status == 200){
                 var obj = JSON.parse(http.responseText);
                 callback(callbackParams,true,obj);
-            }else if(http.status == 400){
+            }else if(http.status == 404){
                 showNotif("Error","error","Data could not be saved. Please Try Again");
 //                alert("Data could not be saved. Please Try Again");
                 callback(callbackParams,false);
@@ -44,7 +45,6 @@ function ajax(method,url,datas,callback,callbackParams){
             }
         };
     }
-    
     http.open(method,baseUrl + url, true);
     http.setRequestHeader('Content-Type','application/json');
     http.setRequestHeader('X-Requested-With','XMLHttpRequest');

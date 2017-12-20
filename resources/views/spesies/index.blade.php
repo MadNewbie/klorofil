@@ -119,5 +119,6 @@ Moh. Ardiansyah
 @endsection
 
 @section('scripts')
+<script src="{{URL::to('back-end/js/helper_backend.js')}}"></script>
 <script src="{{URL::to('/back-end/js/species/species.js')}}"></script>
 @endsection

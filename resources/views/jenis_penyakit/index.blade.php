@@ -102,5 +102,6 @@ Moh. Ardiansyah
 @endsection
 
 @section('scripts')
+<script src="{{URL::to('back-end/js/helper_backend.js')}}"></script>
 <script src="{{URL::to('back-end/js/disease_type/disease_type.js')}}"></script>
 @endsection

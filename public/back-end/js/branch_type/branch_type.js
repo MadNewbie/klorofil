@@ -15,23 +15,7 @@ var docReady = setInterval(function(){
 function startAdd(event){
     var branch_type_name = document.getElementById('branch_type_name').value;
     var datas = {'branch_type_name':branch_type_name};
-    ajax("POST","/admin/branch_type/create",datas,newDataCreated,[event]);
-}
-
-function newDataCreated(params,success,responseObj){
-    if(success){
-        if(responseObj.kode == 200){
-            showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
-        }else{
-            console.log(responseObj.message.branch_type_name);
-            var error = '';
-            for(i=0;i<responseObj.message.branch_type_name.length;i++){
-                error+=responseObj.message.branch_type_name[i];
-            }
-            showNotif('Error','error',error);
-        }
-    }
+    postData(datas,"/admin/branch_type/create",[event]);
 }
 
 function startEdit(event){
@@ -64,25 +48,7 @@ function saveEdit(event){
     var id = event.target.parentElement.dataset['id'];
     var branch_type_name = column[1].firstChild.value;
     var datas = {'id':id,'branch_type_name':branch_type_name};
-    ajax("POST","/admin/branch_type/update",datas,dataUpdated,[event]);
-}
-
-function dataUpdated(params,success,responseObj){
-    var event = params[0];
-     if(success){
-        if(responseObj.kode == 200){
-            changeToInput(event.target.parentElement.parentElement);
-            showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
-        }else{
-            console.log(responseObj.message.branch_type_name);
-            var error = '';
-            for(i=0;i<responseObj.message.branch_type_name.length;i++){
-                error+=responseObj.message.branch_type_name[i];
-            }
-            showNotif('Error','error',error);
-        }
-    }
+    postData(datas,"/admin/branch_type/update",[event]);
 }
 
 function startDelete(event){
@@ -94,22 +60,5 @@ function deleteData(event){
     var id = event.target.parentElement.dataset['id'];
     console.log(event.target.parentElement);
     event.target.removeEventListener('click',startDelete);
-    ajax("GET","/admin/branch_type/"+id+"/delete/",null,endDeleteData,[event.target.parentElement]);
-}
-
-function endDeleteData(params,success,responseObj){
-    var event = params[0];
-    if(success){
-         if(responseObj.kode == 200){
-            showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
-        }else{
-            console.log(responseObj.message.branch_type_name);
-            var error = '';
-            for(i=0;i<responseObj.message.branch_type_name.length;i++){
-                error+=responseObj.message.branch_type_name[i];
-            }
-            showNotif('Error','error',error);
-        }
-    }
+    getData(null,"/admin/branch_type/"+id+"/delete/",[event.target.parentElement]);
 }

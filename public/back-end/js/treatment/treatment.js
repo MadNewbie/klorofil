@@ -11,36 +11,14 @@ var docReady = setInterval(function(){
         btnGroupOperation[i].children[1].addEventListener('click',startDelete);
     }
     clearInterval(docReady);
-    ajax("GET","/admin/species_type/retrieve",null,injectSpeciesTypes,null);
+    getAndInjectData(null,"/admin/species_type/retrieve",null,injectSpeciesTypes);
 },100);
 
 function startAdd(event){
     var name = document.getElementById('name').value;
     var species_type_id = (document.getElementById('drp_species_type').selectedOptions[0].value==='Jenis Spesies'?"":document.getElementById('drp_species_type').selectedOptions[0].value);
     var datas = {'name':name,'species_type_id':species_type_id};
-<<<<<<< HEAD
     postData(datas,"/admin/treatment/create",[event]);
-=======
-    ajax("POST","/admin/treatment/create",datas,newTreatmentCreated,[event]);
-}
-
-function newTreatmentCreated(params,success,responseObj){
-     if(success){
-        if(responseObj.kode == 200){
-            showNotif('Sukses','success',responseObj.message);
-            location.reload();
-        }else{
-            console.log(responseObj.message);
-            var error = '';
-            for (errors in responseObj.message){
-                for(i=0;i<responseObj.message[errors].length;i++){
-                    error += responseObj.message[errors][i]+'\n';
-                }
-            }
-            showNotif('Error','error',error);
-        }
-    }
->>>>>>> 320187bea1a446933f539e3a7addda654f253397
 }
 
 function injectSpeciesTypes(params,success,responseObj){
@@ -87,7 +65,8 @@ function changeIntoInput(event){
                 $(this).text($(this).find('select').val());
             }else{
                 $(this).text('').append($('<select />',{'id':'drp_species_type_edit'}));
-                ajax('GET','/admin/species_type/retrieve/',null,injectSpeciesTypeEdit,[event]);
+                getAndInjectData(null,'/admin/species_type/retrieve/',[event],injectSpeciesTypeEdit);
+//                ajax('GET','/admin/species_type/retrieve/',null,injectSpeciesTypeEdit,[event]);
             }
         }
     });
@@ -121,31 +100,7 @@ function saveEdit(event){
     var name = document.getElementById('name_edit').value;
     var species_type_id = (document.getElementById('drp_species_type_edit').selectedOptions[0].value==='Jenis Spesies'?"":document.getElementById('drp_species_type_edit').selectedOptions[0].value);
     var datas = {'name':name,'species_type_id':species_type_id,'id':id};
-<<<<<<< HEAD
     postData(datas,"/admin/treatment/update",[event]);
-=======
-//    console.log(datas);
-    ajax('POST','/admin/treatment/update',datas,dataUpdated,[event]);
-}
-
-function dataUpdated(params,success,responseObj){
-    var event = params[0];
-    if(success){
-        if(responseObj.kode == 200){
-            showNotif('Sukses','success',responseObj.message);
-            location.reload();
-        }else{
-            console.log(responseObj.message);
-            var error = '';
-            for (errors in responseObj.message){
-                for(i=0;i<responseObj.message[errors].length;i++){
-                    error += responseObj.message[errors][i]+'\n';
-                }
-            }
-            showNotif('Error','error',error);
-        }
-    }
->>>>>>> 320187bea1a446933f539e3a7addda654f253397
 }
 
 function startDelete(event){
@@ -156,29 +111,5 @@ function deleteData(event){
     event.preventDefault();
     var id = event.target.parentElement.dataset['id'];
     event.target.removeEventListener('click',startDelete);
-<<<<<<< HEAD
     getData(null,'/admin/treatment/'+id+'/delete',[event]);
 }
-=======
-    ajax('GET','/admin/treatment/'+id+'/delete',null,endDeleteData,[event]);
-}
-
-function endDeleteData(params,success,responseObj){
-    var event = params[0];
-    if(success){
-        if(responseObj.kode == 200){
-            showNotif('Sukses','success',responseObj.message);
-            location.reload();
-        }else{
-            console.log(responseObj.message);
-            var error = '';
-            for (errors in responseObj.message){
-                for(i=0;i<responseObj.message[errors].length;i++){
-                    error += responseObj.message[errors][i]+'\n';
-                }
-            }
-            showNotif('Error','error',error);
-        }
-    }
-}
->>>>>>> 320187bea1a446933f539e3a7addda654f253397

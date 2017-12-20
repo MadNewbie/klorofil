@@ -6,12 +6,17 @@ function getData(data,link,params){
     ajax("GET",link,data,reporting,params);
 }
 
+function getAndInjectData(data,link,params,inject_function){
+    ajax("GET",link,data,inject_function,params);
+}
+
 function reporting(params,success,responseObj){
     var event = params[0];
     if(success){
         if(responseObj.kode == 200){
             showNotif('Sukses','success',responseObj.message);
-            location.reload();
+            console.log(responseObj.message);
+//            location.reload();
         }else{
             console.log(responseObj.message);
             var error = '';
