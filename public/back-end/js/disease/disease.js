@@ -12,7 +12,7 @@ var docReady = setInterval(function(){
         btnGroupOperation[i].children[1].addEventListener('click',startDelete);
     }
     clearInterval(docReady);
-    ajax("GET","/admin/species_type/retrieve",null,injectSpeciesTypes,null);
+    getAndInjectData(null,"/admin/species_type/retrieve",null,injectSpeciesTypes);
 },100);
 
 function startAdd(event){
@@ -20,25 +20,7 @@ function startAdd(event){
     var weight = isNaN(parseFloat(document.getElementById('weight').value))?"":parseFloat(document.getElementById('weight').value).toFixed(1);
     var disease_type_id = (document.getElementById('drp_disease_type').selectedOptions[0].value==='Jenis Penyakit'?"":document.getElementById('drp_disease_type').selectedOptions[0].value);
     var datas = {'name':name,'weight':weight,'disease_type_id':disease_type_id};
-    ajax("POST",'/admin/disease/create',datas,newDiseaseCreated,[event]);
-}
-
-function newDiseaseCreated(params,success,responseObj){
-    if(success){
-        if(responseObj.kode == 200){
-            showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
-        }else{
-            console.log(responseObj.message);
-            var error = '';
-            for (errors in responseObj.message){
-                for(i=0;i<responseObj.message[errors].length;i++){
-                    error += responseObj.message[errors][i]+'\n';
-                }
-            }
-            showNotif('Error','error',error);
-        }
-    }
+    postData(datas,'/admin/disease/create',[event]);
 }
 
 function injectSpeciesTypes(params,success,responseObj){
@@ -66,7 +48,7 @@ function getDiseaseTypeData(event){
         drp_disease_type.disabled = true;
     }else{
         drp_disease_type.disabled = false;
-        ajax('GET','/admin/disease_type/retrieve/'+species_type_id,null,injectDiseaseType,null);
+        getAndInjectData(null,'/admin/disease_type/retrieve/'+species_type_id,null,injectDiseaseType);
     }
 }
 
@@ -139,7 +121,7 @@ function changeIntoInput(event){
             }else{
                 var t = $(this).text();
                 $(this).text('').append($('<input/>',{'id':'weight_edit','value':t,'disabled':true}).val(t));
-                ajax('GET','/admin/species_type/retrieve/',null,injectSpeciesTypeEdit,[event]);
+                getAndInjectData(null,'/admin/species_type/retrieve/',[event],injectSpeciesTypeEdit);
             }
         }
     });
@@ -172,7 +154,7 @@ function injectSpeciesTypeEdit(params,success,responseObj){
 function getDiseaseTypeDataEdit(event){
     var species_type_id = document.getElementById('drp_species_type_edit').selectedOptions[0].value;
     var drp_disease_type = document.getElementById('drp_disease_type_edit');
-    ajax('GET','/admin/disease_type/retrieve/'+species_type_id,null,injectDiseaseTypeEdit,null);
+    getAndInjectData(null,'/admin/disease_type/retrieve/'+species_type_id,null,injectDiseaseTypeEdit);
 }
 
 function injectDiseaseTypeEdit(params,success,responseObj){
@@ -225,27 +207,7 @@ function saveEdit(event){
     var weight = isNaN(parseFloat(document.getElementById('weight_edit').value))?"":parseFloat(document.getElementById('weight_edit').value).toFixed(1);
     var disease_type_id = (document.getElementById('drp_disease_type_edit').selectedOptions[0].value==='Jenis Penyakit'?"":document.getElementById('drp_disease_type_edit').selectedOptions[0].value);
     var datas = {'name':name,'weight':weight,'disease_type_id':disease_type_id,'id':id};
-//    console.log(datas);
-    ajax('POST','/admin/disease/update',datas,dataUpdated,[event]);
-}
-
-function dataUpdated(params,success,responseObj){
-    var event = params[0];
-    if(success){
-        if(responseObj.kode == 200){
-            showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
-        }else{
-            console.log(responseObj.message);
-            var error = '';
-            for (errors in responseObj.message){
-                for(i=0;i<responseObj.message[errors].length;i++){
-                    error += responseObj.message[errors][i]+'\n';
-                }
-            }
-            showNotif('Error','error',error);
-        }
-    }
+    postData(datas,'/admin/disease/update',[event]);
 }
 
 function startDelete(event){
@@ -256,24 +218,5 @@ function deleteData(event){
     event.preventDefault();
     var id = event.target.parentElement.dataset['id'];
     event.target.removeEventListener('click',startDelete);
-    ajax('GET','/admin/disease/'+id+'/delete',null,endDeleteData,[event]);
-}
-
-function endDeleteData(params,success,responseObj){
-    var event = params[0];
-    if(success){
-        if(responseObj.kode == 200){
-            showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
-        }else{
-            console.log(responseObj.message);
-            var error = '';
-            for (errors in responseObj.message){
-                for(i=0;i<responseObj.message[errors].length;i++){
-                    error += responseObj.message[errors][i]+'\n';
-                }
-            }
-            showNotif('Error','error',error);
-        }
-    }
+    getData(null,'/admin/disease/'+id+'/delete',[event]);
 }

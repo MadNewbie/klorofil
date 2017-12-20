@@ -3,7 +3,7 @@ var docReady = setInterval(function(){
         return;
     }
     clearInterval(docReady);
-    ajax("GET","/admin/species_type/retrieve",null,injectData,null);
+    getAndInjectData(null,"/admin/species_type/retrieve",null,injectData);
     var btnAdd = document.getElementById('btnAdd');
     var btnGroupOperation = document.getElementsByClassName('btnGroupOperation');
     btnAdd.addEventListener('click',startAdd);
@@ -35,24 +35,9 @@ function startAdd(event){
     var function_type_species = document.getElementById("function_type_species").value;
     var species_type_id = document.getElementById('drp_species_type').selectedOptions[0].value;
     var datas = {'function_type_species':function_type_species,'species_type_id':species_type_id};
-    ajax("POST","/admin/function_type/create",datas,newDataCreated,[event]);
+    postData(datas,"/admin/function_type/create",[event]);
 }
 
-function newDataCreated(params,success,responseObj){
-    if(success){
-        if(responseObj.kode == 200){
-            showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
-        }else{
-            console.log(responseObj.message.function_type_species);
-            var error = '';
-            for(i=0;i<responseObj.message.function_type_species.length;i++){
-                error+=responseObj.message.function_type_species[i];
-            }
-            showNotif('Error','error',error);
-        }
-    }
-}
 
 function startEdit(event){
     changeToInput(event.target.parentElement.parentElement);
@@ -82,7 +67,7 @@ function changeToInput(event){
             }else{
                 var t = $(this).context.dataset['id'];
                 $(this).text('').append($('<select id=drp_species_type_edit data-id="'+t+'">'));
-                ajax("GET","/admin/species_type/retrieve",null,injectDataEdit,null)
+                getAndInjectData(null,"/admin/species_type/retrieve",null,injectDataEdit);
             }
         }
     });
@@ -114,25 +99,7 @@ function saveEdit(event){
     var function_type_species = column[1].firstChild.value;
     var species_type_id = column[2].firstChild.value;
     var datas = {'id':id,'function_type_species':function_type_species,'species_type_id':species_type_id};
-    ajax("POST","/admin/function_type/update",datas,dataUpdated,[event])
-}
-
-function dataUpdated(params,success,responseObj){
-    var event = params[0];
-     if(success){
-        if(responseObj.kode == 200){
-            changeToInput(event.target.parentElement.parentElement);
-            showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
-        }else{
-            console.log(responseObj.message.function_type_species);
-            var error = '';
-            for(i=0;i<responseObj.message.function_type_species.length;i++){
-                error+=responseObj.message.function_type_species[i];
-            }
-            showNotif('Error','error',error);
-        }
-    }
+    postData(datas,"/admin/function_type/update",[event]);
 }
 
 function startDelete(event){
@@ -143,22 +110,5 @@ function deleteData(event){
     event.preventDefault();
     var id = event.target.parentElement.dataset['id'];
     event.target.removeEventListener('click',startDelete);
-    ajax("GET","/admin/function_type/"+id+"/delete/",null,endDeleteData,[event.target.parentElement]);
-}
-
-function endDeleteData(params,success,responseObj){
-    var event = params[0];
-    if(success){
-         if(responseObj.kode == 200){
-            showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
-        }else{
-            console.log(responseObj.message.function_type_species);
-            var error = '';
-            for(i=0;i<responseObj.message.function_type_species.length;i++){
-                error+=responseObj.message.function_type_species[i];
-            }
-            showNotif('Error','error',error);
-        }
-    }
+    getData(null,"/admin/function_type/"+id+"/delete/",[event.target.parentElement]);
 }

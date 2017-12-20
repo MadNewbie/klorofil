@@ -16,23 +16,7 @@ function startAdd(event){
     var animal_name = document.getElementById('animal_name').value;
     var description = document.getElementById('description').value;
     var datas = {'animal_name':animal_name,'description':description};
-    ajax("POST","/admin/habitat/create",datas,newDataCreated,[event]);
-}
-
-function newDataCreated(params,success,responseObj){
-    if(success){
-        if(responseObj.kode == 200){
-            showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
-        }else{
-            console.log(responseObj.message.root_type_name);
-            var error = '';
-            for(i=0;i<responseObj.message.root_type_name.length;i++){
-                error+=responseObj.message.root_type_name[i];
-            }
-            showNotif('Error','error',error);
-        }
-    }
+    postData(datas,"/admin/habitat/create",[event]);
 }
 
 function startEdit(event){
@@ -74,25 +58,7 @@ function saveEdit(event){
     var animal_name = column[1].firstChild.value;
     var description = column[2].firstChild.value;
     var datas = {'id':id,'animal_name':animal_name,'description':description};
-    ajax("POST","/admin/habitat/update",datas,dataUpdated,[event]);
-}
-
-function dataUpdated(params,success,responseObj){
-    var event = params[0];
-     if(success){
-        if(responseObj.kode == 200){
-            changeToInput(event.target.parentElement.parentElement);
-            showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
-        }else{
-            console.log(responseObj.message.root_type_name);
-            var error = '';
-            for(i=0;i<responseObj.message.root_type_name.length;i++){
-                error+=responseObj.message.root_type_name[i];
-            }
-            showNotif('Error','error',error);
-        }
-    }
+    postData(datas,"/admin/habitat/update",[event]);
 }
 
 function startDelete(event){
@@ -104,22 +70,5 @@ function deleteData(event){
     var id = event.target.parentElement.dataset['id'];
     console.log(event.target.parentElement);
     event.target.removeEventListener('click',startDelete);
-    ajax("GET","/admin/habitat/"+id+"/delete/",null,endDeleteData,[event.target.parentElement]);
-}
-
-function endDeleteData(params,success,responseObj){
-    var event = params[0];
-    if(success){
-         if(responseObj.kode == 200){
-            showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
-        }else{
-            console.log(responseObj.message.root_type_name);
-            var error = '';
-            for(i=0;i<responseObj.message.root_type_name.length;i++){
-                error+=responseObj.message.root_type_name[i];
-            }
-            showNotif('Error','error',error);
-        }
-    }
+    getData(null,"/admin/habitat/"+id+"/delete/",[event.target.parentElement]);
 }

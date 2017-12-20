@@ -13,7 +13,7 @@ var docReady = setInterval(function(){
 },100);
 
 function startForm(event){
-    ajax("GET","/admin/species_type/retrieve/",null,injectSpeciesTypeData,[event]);
+    getAndInjectData(null,"/admin/species_type/retrieve/",[event],injectSpeciesTypeData);
     var btnSave = document.getElementById('btnSave');
     btnSave.addEventListener('click',startAdd);
     var species_id = document.getElementById('species_id');
@@ -103,7 +103,7 @@ function startAdd(event){
             'flower_color':flower_color,'flower_crown_shape':flower_crown_shape,'flower_crown_number':flower_crown_number,
             'flower_bloom_periode':flower_bloom_periode,'species_type_id':species_type,'leaf_type_id':leaf_type,'branch_type_id':branch_type,
             'trunk_type_id':trunk_type,'root_type_id':root_type,'function_type_id':function_type};
-    ajax("POST","/admin/species/create",datas,newSpeciesCreated,event);
+    postData(datas,"/admin/species/create",event);
 }
 
 function injectTrunkTypes(params,success,responseObj){
@@ -210,11 +210,11 @@ function injectDataMaster(event){
     var trunk_type = document.getElementById('drp_trunk_type');
     var root_type = document.getElementById('drp_root_type');
     var function_type = document.getElementById('drp_function_species_type');
-    ajax('GET','/admin/leaf_type/retrieve',null,injectLeafTypes,[event]);
-    ajax('GET','/admin/branch_type/retrieve',null,injectBranchTypes,[event]);
-    ajax('GET','/admin/trunk_type/retrieve',null,injectTrunkTypes,[event]);
-    ajax('GET','/admin/root_type/retrieve',null,injectRootTypes,[event]);
-    ajax('GET','/admin/function_type/retrieve',null,injectFunctionTypes,[event]);
+    getAndInjectData(null,"/admin/leaf_type/retrieve",[event],injectLeafTypes);
+    getAndInjectData(null,"/admin/branch_type/retrieve",[event],injectBranchTypes);
+    getAndInjectData(null,"/admin/trunk_type/retrieve",[event],injectTrunkTypes);
+    getAndInjectData(null,"/admin/root_type/retrieve",[event],injectRootTypes);
+    getAndInjectData(null,"/admin/function_type/retrieve",[event],injectFunctionTypes);
     species_id.disabled = false;
     scientific_name.disabled = false;
     density.disabled = false;
@@ -230,30 +230,12 @@ function injectDataMaster(event){
     function_type.disabled = false;
 }
 
-function newSpeciesCreated(params,success,responseObj){
-    if(success){
-        if(responseObj.kode == 200){
-            showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
-        }else{
-            console.log(responseObj.message);
-            var error = '';
-            for (errors in responseObj.message){
-                for(i=0;i<responseObj.message[errors].length;i++){
-                    error += responseObj.message[errors][i]+'\n';
-                }
-            }
-            showNotif('Error','error',error);
-        }
-    }
-}
-
 function startEdit(event){
     var id = event.target.parentElement.dataset['id'];
     var btnSave = document.getElementById('btnSave');
     btnSave.addEventListener('click',saveEdit);
-    ajax('GET','/admin/species/retrieve/'+id,null,injectDataEdit,[event]);
-    ajax("GET","/admin/species_type/retrieve/",null,injectSpeciesTypeData,[event]);
+    getAndInjectData(null,"/admin/species/retrieve/"+id,[event],injectDataEdit);
+    getAndInjectData(null,"/admin/species_type/retrieve/",[event],injectSpeciesTypeData);
 }
 
 function injectDataEdit(params,success,responseObj){
@@ -319,26 +301,7 @@ function saveEdit(event){
             'flower_color':flower_color,'flower_crown_shape':flower_crown_shape,'flower_crown_number':flower_crown_number,
             'flower_bloom_periode':flower_bloom_periode,'species_type_id':species_type,'leaf_type_id':leaf_type,'branch_type_id':branch_type,
             'trunk_type_id':trunk_type,'root_type_id':root_type,'function_type_id':function_type};
-    ajax("POST","/admin/species/update",datas,dataUpdated,event);
-}
-
-function dataUpdated(params,success,responseObj){
-    var event = params[0];
-    if(success){
-        if(responseObj.kode == 200){
-            showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
-        }else{
-            console.log(responseObj.message);
-            var error = '';
-            for (errors in responseObj.message){
-                for(i=0;i<responseObj.message[errors].length;i++){
-                    error += responseObj.message[errors][i]+'\n';
-                }
-            }
-            showNotif('Error','error',error);
-        }
-    }
+    postData(datas,"/admin/species/update",event);
 }
 
 function startDelete(event){
@@ -349,24 +312,5 @@ function deleteData(event){
     event.preventDefault();
     var id = event.target.parentElement.dataset['id'];
     event.target.removeEventListener('click',startDelete);
-    ajax('GET','/admin/species/'+id+'/delete',null,endDeleteData,[event]);
-}
-
-function endDeleteData(params,success,responseObj){
-    var event = params[0];
-    if(success){
-        if(responseObj.kode == 200){
-            showNotif('Sukses','success',responseObj.message);
-            location.reload(); 
-        }else{
-            console.log(responseObj.message);
-            var error = '';
-            for (errors in responseObj.message){
-                for(i=0;i<responseObj.message[errors].length;i++){
-                    error += responseObj.message[errors][i]+'\n';
-                }
-            }
-            showNotif('Error','error',error);
-        }
-    }
+    getData(null,'/admin/species/'+id+'/delete',[event]);
 }
