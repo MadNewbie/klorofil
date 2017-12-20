@@ -14,12 +14,12 @@ class Permission extends EntrustPermission
   // use ValidatingModelTrait;
   protected $throwValidationExceptions = true;
 
-  // protected $table="permissions";
-  // protected $primaryKey="id_permission";
+  protected $table="permissions";
+  protected $primaryKey="id_permission";
 
-  // function Role(){
-  //   return $this->belongsTo('App\Models\Role');
-  // }
+  function Role(){
+    return $this->belongsTo('App\Models\Role');
+  }
 
   protected $fillable = [
     'name',

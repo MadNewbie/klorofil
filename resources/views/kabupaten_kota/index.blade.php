@@ -21,7 +21,7 @@ Moh. Ardiansyah
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
         <div class="x_title clearfix">
-            <h2>Kabupaten/Kota</h2>
+            <h2>{{$sectiontitle}}</h2>
             <!-- <div class="clearfix"></div> -->
         </div>
         <div class="x_panel">
@@ -32,9 +32,9 @@ Moh. Ardiansyah
                     <div class="clearfix"></div>
             </div>
             <div class="x_content" style="display: none">
-              <form class="form-inline clearfix">
+              <form class="form form-inline clearfix">
                     <!-- <div class="col-md-12 col-xs-12 col-sm-12"> -->
-                        <div class="form-group" style="margin-bottom: 0px;">
+                      <div class="form-group" style="margin-bottom: 0px;">
                         <select class="form-control">
                             <option hidden="">Provinsi</option>
                             <option>Jawa Timur</option>
@@ -55,16 +55,16 @@ Moh. Ardiansyah
         <div class="x_content">
           <div class="x_content">
             <form class="form form-inline clearfix">
-            {{-- @if(count($datas)===0)--}}
-            <h4 class="text-center">Belum ada data mengenai {{$sectiontitle}}</h4>
-            {{-- @else --}}
-            <div class="row clearfix">
-                <div class="dataTables_filter">
-                    <input class="form-control" type="search" placeholder="Cari"/>
+              {{-- @if(count($datas)===0)--}}
+              <h4 class="text-center">Belum ada data mengenai {{$sectiontitle}}</h4>
+              {{-- @else --}}
+              <div class="row clearfix">
+                <div class="dataTables_filter pull-right">
+                  <input class="form-control" type="search" placeholder="Cari"/>
                 </div>
-            </div>
-            <br />
-            <div class="row clearfix">
+              </div>
+              <br />
+              <div class="row clearfix">
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>

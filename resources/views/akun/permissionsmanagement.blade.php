@@ -33,7 +33,7 @@ Moh. Ardiansyah
                 <div class="form-group"> -->
                     <input id="description" class="form-control col-xs-12 col-sm-12 col-md-12" type="text" placeholder="Deskripsi Perizinan"/>
                 </div>
-                <button id="btnAdd" class="btn btn-primary"  style="margin-bottom: 0px;"><i class="fa fa-plus"></i></button>
+                <button id="btnAdd" class="btn btn-primary" style="margin-bottom: 0px;"><i class="fa fa-plus"></i></button>
               </form>
             </div>
         </div>
@@ -90,7 +90,7 @@ Moh. Ardiansyah
                             <td class="col-md-3 col-sm-3 col-xs-3">{{$permission->display_name}}</td>
                             <th class="col-md-5 col-sm-5 col-xs-5">{{$permission->description}}</th>
                             <td class="col-md-1 col-sm-1 col-xs-1" style="text-align: center;">
-                                <div data-id="{{$negara->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
+                                <div data-id="{{$permission->id}}" role="group" class="btnGroupOperation btn-group btn-group-justified">
                                     <a class="btn btn-warning btn-sm btn-xs"><i class="fa fa-pencil"></i></a>
                                     <a class="btn btn-danger btn-sm btn-xs"><i class="fa fa-trash"></i></a>
                                 </div>

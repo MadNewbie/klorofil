@@ -22,7 +22,7 @@ Moh. Ardiansyah
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
         <div class="x_title">
-            <h2>Kecamatan</h2>
+            <h2>{{$sectiontitle}}</h2>
             <div class="clearfix"></div>
         </div>
         <div class="x_panel">
@@ -33,34 +33,46 @@ Moh. Ardiansyah
                     <div class="clearfix"></div>
             </div>
             <div class="x_content" style="display: none">
-                <div class="row">
-                    <div class="col-md-12 col-xs-12 col-sm-12">
-                        <select class="col-md-2">
+                <div class="form form-inline clearfix">
+                    <!-- <div class="col-md-12 col-xs-12 col-sm-12"> -->
+                      <div class="form-group" style="margin-bottom: 0px;">
+                        <select class="form-control">
                             <option hidden="">Provinsi</option>
                             <option>Jawa Timur</option>
                             <option>Jawa Barat</option>
                         </select>
-                        <select class="col-md-2">
-                            <option hidden="">Kabupaten / Kota</option>
+                      </div>
+                      <div class="form-group" style="margin-bottom: 0px;">
+                        <select class="form-control">
+                            <option hidden="">Kabupaten/Kota</option>
                             <option>Kota Malang</option>
                             <option>Kabupaten Malang</option>
                         </select>
-                        <input class="col-md-2" type="text" placeholder="Nama Kecamatan"/>
-                        <button class="col-md-1 btn btn-success" onclick="btnSimpanOnClick()">Simpan</button>
+                      </div>
+                      <div class="form-group" style="margin-bottom: 0px;">
+                        <input class="form-control" type="text" placeholder="Nama Kecamatan"/>
+                      </div>
+                        <button class="form-control btn btn-success" style="margin-bottom: 0px;" onclick="btnSimpanOnClick()">Simpan</button>
                     </div>
-                </div>
-                <div id="map"></div>
+                <div class="clearfix"><br /></div>
+                <div class="form-control" id="map"></div>
             </div>
         </div>
         <div class="x_content">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12 dataTables_filter">
-                    <input type="search" placeholder="Cari"/>
+          <div class="x_content">
+            <form class="form form-inline clearfix">
+              {{-- @if(count($datas)===0)--}}
+              <h4 class="text-center">Belum ada data mengenai {{$sectiontitle}}</h4>
+              {{-- @else --}}
+              <div class="row clearfix">
+                <div class="dataTables_filter pull-right">
+                  <input class="form-control" type="search" placeholder="Cari"/>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <table class="table table-striped table-bordered">
+              </div>
+              <br />
+              <div class="row clearfix">
+                <div class="table-responsive">
+                    <table class="table table-striped">
                         <thead>
                             <tr class="row">
                                 <th class="col-md-1 col-sm-1 col-xs-1">No</th>
@@ -102,8 +114,11 @@ Moh. Ardiansyah
                     </table>
                 </div>
             </div>
-        </div>
+        {{-- @endif --}}
+        </form>
+      </div>
     </div>
+  </div>
 </div>
 @endsection
 
