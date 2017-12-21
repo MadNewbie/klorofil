@@ -93,5 +93,6 @@ Moh. Ardiansyah
 @endsection
 
 @section('scripts')
+<script src="{{URL::to('back-end/js/helper_backend.js')}}"></script>
 <script src="{{URL::to('back-end/js/leaf_type/leaf_type.js')}}"></script>
 @endsection

@@ -15,9 +15,9 @@ class LeafTypeController extends Controller
         return view('daun.index',['datas'=>$leafType]);
     }
 
-    public function getCreate() {
-        return view('test-controller.create');
-    }
+    // public function getCreate() {
+    //     return view('test-controller.create');
+    // }
 
     public function postCreate(Request $request) {
         $rule = array(
